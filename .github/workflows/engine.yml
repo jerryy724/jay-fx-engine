@@ -1,0 +1,39 @@
+name: Jay Empire Trading Engine
+
+on:
+  repository_dispatch:
+    types: [engine_trigger]
+
+jobs:
+  run-engine:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests pillow python-dotenv feedparser
+
+      - name: Execute Jay Empire Engine Module
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
+          TWELVE_DATA_API_KEY: ${{ secrets.TWELVE_DATA_API_KEY }}
+          ACTION_TYPE: ${{ github.event.client_payload.action_type }}
+        run: |
+          python main.py
+
+      - name: Commit and Push Updated Trade Logs
+        run: |
+          git config --global user.name "JayEmpireBot"
+          git config --global user.email "bot@jayempire.com"
+          git add trades.json state.json
+          git commit -m "auto: update trade state logs" || exit 0
+          git push
