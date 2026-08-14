@@ -126,7 +126,7 @@ def run_signal_dispatch():
     tp3_str = f"{tp3:{fmt}}"
     tp4_str = f"{tp4:{fmt}}"
 
-    # Format matching Image 1 exactly with Tap-to-Copy backticks
+    # Format matching Telegram display with Tap-to-Copy backticks
     caption = (
         f"👑 *JAYFX PREMIUM SIGNALS*\n"
         f"🌐 *Session:* {session_name} | 🔥 *High Conviction*\n"
@@ -166,22 +166,25 @@ def run_news_dispatch():
 # ENTRY POINT ROUTER
 # ==========================================
 if __name__ == "__main__":
-    action = "signal"
-    if len(sys.argv) > 1:
-        action = sys.argv[1].lower()
+    action = ""
+
+    # Check CLI argument first
+    if len(sys.argv) > 1 and sys.argv[1].strip():
+        action = sys.argv[1].lower().strip()
+    # Otherwise check environment variable
     else:
-        action = os.getenv("ACTION_TYPE", "signal").lower()
+        action = os.getenv("ACTION_TYPE", "").lower().strip()
 
-    print(f"Executing Action: {action}")
+    print(f"Executing Action: '{action}'")
 
-    if action == "prealert":
+    if action in ["prealert", "pre-alert"]:
         run_prealert()
-    elif action == "tracker":
+    elif action in ["tracker", "watch", "order_tracker"]:
         run_tracker_only()
-    elif action == "news":
+    elif action in ["news", "market_news"]:
         run_news_dispatch()
-    elif action == "signal":
+    elif action in ["signal", "engine"]:
         run_signal_dispatch()
     else:
-        print(f"Unknown action '{action}'. Defaulting to tracker execution.")
+        print(f"Action '{action}' unmapped or empty. Defaulting to tracker (watch) execution.")
         run_tracker_only()
