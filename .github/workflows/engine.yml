@@ -28,7 +28,7 @@ jobs:
           TWELVE_DATA_API_KEY: ${{ secrets.TWELVE_DATA_API_KEY }}
           ACTION_TYPE: ${{ github.event.client_payload.action_type }}
         run: |
-          python main.py
+          python main.py "${{ github.event.client_payload.action_type }}"
 
       - name: Commit and Push Updated Trade Logs
         run: |
