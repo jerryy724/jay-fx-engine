@@ -79,54 +79,58 @@ def run_signal_dispatch():
     date_str = now.strftime("%d %b %Y | %H:%M UTC")
     fmt = f".{decimals}f"
 
-    # Evaluate open trades before opening new setups
+    # Evaluate existing open trades first
     tracker.check_open_trades({pair: price})
 
-    # Tightened Scalping Multipliers for Early TP Hits
+    # High-Win Rate Scalping Parameters
     entry = price
+    entry_low = entry - (0.05 * atr)
+    entry_high = entry + (0.05 * atr)
 
     if signal_type == "BUY":
-        sl = entry - (1.00 * atr)
+        sl = entry - (1.20 * atr)
         tp1 = entry + (0.80 * atr)
         tp2 = entry + (1.50 * atr)
         tp3 = entry + (2.20 * atr)
         tp4 = entry + (3.00 * atr)
     else:
-        sl = entry + (1.00 * atr)
+        sl = entry + (1.20 * atr)
         tp1 = entry - (0.80 * atr)
         tp2 = entry - (1.50 * atr)
         tp3 = entry - (2.20 * atr)
         tp4 = entry - (3.00 * atr)
 
-    # Format values based on decimals
-    entry_str = f"{entry:{fmt}}"
+    # Format values based on precision decimals
+    entry_low_str = f"{entry_low:{fmt}}"
+    entry_high_str = f"{entry_high:{fmt}}"
     sl_str = f"{sl:{fmt}}"
     tp1_str = f"{tp1:{fmt}}"
     tp2_str = f"{tp2:{fmt}}"
     tp3_str = f"{tp3:{fmt}}"
     tp4_str = f"{tp4:{fmt}}"
 
-    # Build Signal Message with TAP-TO-COPY (Monospaced Backticks ` `)
+    # Build Signal Message Matching Image 1 Format exactly with Tap-to-Copy
     caption = (
-        f"🚨 *JAY FX PRECISE SIGNAL* 🚨\n\n"
-        f"📌 *Asset:* `{pair}`\n"
-        f"📊 *Type:* *{signal_type}*\n"
-        f"🌐 *Session:* {session_name}\n"
-        f"📅 *Date:* {date_str}\n\n"
-        f"🎯 *Entry Zone:* `{entry_str}`\n"
-        f"🛑 *Stop Loss:* `{sl_str}`\n\n"
+        f"👑 *JAYFX PREMIUM SIGNALS*\n"
+        f"🌐 *Session:* {session_name} | 🔥 *High Conviction*\n"
+        f"🕒 *Date & Time:* {date_str}\n\n"
+        f"📊 *Asset:* `{pair}`\n"
+        f"📈 *Direction:* *{signal_type}*\n"
+        f"🎯 *Entry Zone:* `{entry_low_str} - {entry_high_str}`\n"
+        f"⚖️ *Risk:Reward Ratio:* 1:1.8 (TP4 Max)\n\n"
         f"✅ *Take Profit 1:* `{tp1_str}`\n"
         f"✅ *Take Profit 2:* `{tp2_str}`\n"
         f"✅ *Take Profit 3:* `{tp3_str}`\n"
         f"✅ *Take Profit 4:* `{tp4_str}`\n\n"
-        f"⚠️ _Trade Responsibly. Proper risk management required._"
+        f"🛑 *Stop Loss:* `{sl_str}`\n\n"
+        f"⚠️ _Trade Responsibly. Proper risk management is required._"
     )
 
-    # Generate Image & Send Telegram Alert
+    # Generate Card Image & Dispatch to Telegram Channel
     image_bio = image_generator.generate_signal_card(pair, signal_type, session_text=session_name, is_update=False)
     send_telegram_photo(caption, image_bio)
 
-    # Log Trade in Tracker
+    # Log Trade into Active Tracker State
     tracker.log_new_trade(pair, signal_type, entry, sl, [tp1, tp2, tp3, tp4])
 
 # ==========================================
@@ -142,7 +146,6 @@ def run_news_dispatch():
 # ENTRY POINT ROUTER
 # ==========================================
 if __name__ == "__main__":
-    # Get action_type from command line argument or environment variable
     action = "signal"
     if len(sys.argv) > 1:
         action = sys.argv[1].lower()
