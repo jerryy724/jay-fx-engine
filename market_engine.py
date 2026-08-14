@@ -3,8 +3,9 @@ import requests
 import config
 
 def fetch_live_market_data(item):
-    symbol = item["symbol"]
-    decimals = item["decimals"]
+    symbol = item.get("symbol", item.get("name"))
+    # Safely get decimals, default to 5 if missing in config
+    decimals = item.get("decimals", 5)
     
     url = f"https://api.twelvedata.com/time_series?symbol={symbol}&interval=15min&outputsize=30&apikey={config.TWELVE_DATA_API_KEY}"
     
