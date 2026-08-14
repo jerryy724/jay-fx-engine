@@ -1,4 +1,5 @@
 import os
+import sys
 import json
 import requests
 from datetime import datetime, timezone
@@ -23,6 +24,9 @@ def send_telegram_msg(text):
     except Exception as e:
         print(f"Telegram Error: {e}")
 
+# ==========================================
+# 1. HOURLY PRE-ALERT JOB
+# ==========================================
 def run_prealert():
     now = datetime.now(timezone.utc)
     hour = now.hour
@@ -36,6 +40,30 @@ def run_prealert():
     msg = template.format(pair=pair)
     send_telegram_msg(msg)
 
+# ==========================================
+# 2. STANDALONE TRACKER JOB (Every 10 Mins)
+# ==========================================
+def run_tracker_only():
+    """Runs ONLY trade monitoring on active open positions without generating new signals."""
+    now = datetime.now(timezone.utc)
+    is_weekend = now.weekday() in [5, 6]
+    rotation_list = config.CRYPTO_ROTATION if is_weekend else config.FX_ROTATION
+    
+    price_map = {}
+    for item in rotation_list:
+        try:
+            price, _, _, _, _ = market_engine.fetch_live_market_data(item)
+            if price:
+                price_map[item["name"]] = price
+        except Exception as e:
+            print(f"Error fetching tracker price for {item['name']}: {e}")
+            
+    if price_map:
+        tracker.check_open_trades(price_map)
+
+# ==========================================
+# 3. MAIN SIGNAL DISPATCH JOB
+# ==========================================
 def run_signal_dispatch():
     now = datetime.now(timezone.utc)
     is_weekend = now.weekday() in [5, 6]
@@ -51,7 +79,7 @@ def run_signal_dispatch():
     date_str = now.strftime("%d %b %Y | %H:%M UTC")
     fmt = f".{decimals}f"
 
-    # Evaluate existing open trades first
+    # Evaluate open trades before opening new setups
     tracker.check_open_trades({pair: price})
 
     # Tightened Scalping Multipliers for Early TP Hits
@@ -61,54 +89,78 @@ def run_signal_dispatch():
 
     if signal_type == "BUY":
         sl = entry - (1.00 * atr)
-        tp1 = entry + (0.35 * atr)
-        tp2 = entry + (0.70 * atr)
-        tp3 = entry + (1.20 * atr)
-        tp4 = entry + (1.80 * atr)
+        tp1 = entry + (0.80 * atr)
+        tp2 = entry + (1.50 * atr)
+        tp3 = entry + (2.20 * atr)
+        tp4 = entry + (3.00 * atr)
     else:
         sl = entry + (1.00 * atr)
-        tp1 = entry - (0.35 * atr)
-        tp2 = entry - (0.70 * atr)
-        tp3 = entry - (1.20 * atr)
-        tp4 = entry - (1.80 * atr)
+        tp1 = entry - (0.80 * atr)
+        tp2 = entry - (1.50 * atr)
+        tp3 = entry - (2.20 * atr)
+        tp4 = entry - (3.00 * atr)
 
-    # Save Trade
-    trades = tracker.load_trades()
-    trades.append({
-        "pair": pair, "signal_type": signal_type, "entry": entry,
-        "tp1": tp1, "tp2": tp2, "tp3": tp3, "tp4": tp4, "sl": sl,
-        "tp1_hit": False, "status": "OPEN", "timestamp": date_str
-    })
-    tracker.save_trades(trades)
+    # Format values based on decimals
+    entry_str = f"{entry:{fmt}}"
+    sl_str = f"{sl:{fmt}}"
+    tp1_str = f"{tp1:{fmt}}"
+    tp2_str = f"{tp2:{fmt}}"
+    tp3_str = f"{tp3:{fmt}}"
+    tp4_str = f"{tp4:{fmt}}"
 
-    card = image_generator.generate_signal_card(pair, signal_type, session_text=session_name, is_update=False)
-
+    # Build Signal Message
     caption = (
-        f"👑 *JAYFX PREMIUM SIGNALS*\n"
-        f"🌐 *Session:* `{session_name}` | `{conviction}`\n"
-        f"🕒 *Date & Time:* `{date_str}`\n\n"
-        f"📊 *Asset:* `{pair}`\n"
-        f"📈 *Direction:* `{signal_type}`\n"
-        f"🎯 *Entry Zone:* `{entry_low:{fmt}} - {entry_high:{fmt}}`\n"
-        f"⚖️ *Risk:Reward Ratio:* `1:1.8 (TP4 Max)`\n\n"
-        f"✅ *Take Profit 1:* `{tp1:{fmt}}`\n"
-        f"✅ *Take Profit 2:* `{tp2:{fmt}}`\n"
-        f"✅ *Take Profit 3:* `{tp3:{fmt}}`\n"
-        f"✅ *Take Profit 4:* `{tp4:{fmt}}`\n\n"
-        f"🛑 *Stop Loss:* `{sl:{fmt}}`\n\n"
-        f"⚠️ _Trade Responsibly. Proper risk management is required._"
+        f"🚨 *JAY FX PRECISE SIGNAL* 🚨\n\n"
+        f"📌 *Asset:* {pair}\n"
+        f"📊 *Type:* {signal_type}\n"
+        f"🌐 *Session:* {session_name}\n"
+        f"📅 *Date:* {date_str}\n\n"
+        f"🎯 *Entry Zone:* {entry_str}\n"
+        f"🛑 *Stop Loss:* {sl_str}\n\n"
+        f"✅ *Take Profit 1:* {tp1_str}\n"
+        f"✅ *Take Profit 2:* {tp2_str}\n"
+        f"✅ *Take Profit 3:* {tp3_str}\n"
+        f"✅ *Take Profit 4:* {tp4_str}\n\n"
+        f"⚠️ _Trade Responsibly. Proper risk management required._"
     )
 
-    send_telegram_photo(caption, card)
+    # Generate Image & Send Telegram Alert
+    image_bio = image_generator.generate_signal_card(pair, signal_type, session_text=session_name, is_update=False)
+    send_telegram_photo(caption, image_bio)
 
+    # Log Trade in Tracker
+    tracker.log_new_trade(pair, signal_type, entry, sl, [tp1, tp2, tp3, tp4])
+
+# ==========================================
+# 4. MARKET NEWS DISPATCH JOB
+# ==========================================
+def run_news_dispatch():
+    try:
+        news_engine.run_news_briefing()
+    except Exception as e:
+        print(f"News Briefing Error: {e}")
+
+# ==========================================
+# ENTRY POINT ROUTER
+# ==========================================
 if __name__ == "__main__":
-    action = os.getenv("ACTION_TYPE", "signal").lower()
-    now = datetime.now(timezone.utc)
-    is_weekend = now.weekday() in [5, 6]
+    # Get action_type from command line argument or environment variable
+    action = "signal"
+    if len(sys.argv) > 1:
+        action = sys.argv[1].lower()
+    else:
+        action = os.getenv("ACTION_TYPE", "signal").lower()
+
+    print(f"Executing Action: {action}")
 
     if action == "prealert":
         run_prealert()
+    elif action == "tracker":
+        run_tracker_only()
     elif action == "news":
-        news_engine.run_news_dispatch(is_weekend=is_weekend)
-    else:
+        run_news_dispatch()
+    elif action == "signal":
         run_signal_dispatch()
+    else:
+        print(f"Unknown action '{action}'. Defaulting to tracker execution.")
+        run_tracker_only()
