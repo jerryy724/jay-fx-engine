@@ -84,8 +84,6 @@ def run_signal_dispatch():
 
     # Tightened Scalping Multipliers for Early TP Hits
     entry = price
-    entry_low = entry - (0.10 * atr)
-    entry_high = entry + (0.10 * atr)
 
     if signal_type == "BUY":
         sl = entry - (1.00 * atr)
@@ -108,19 +106,19 @@ def run_signal_dispatch():
     tp3_str = f"{tp3:{fmt}}"
     tp4_str = f"{tp4:{fmt}}"
 
-    # Build Signal Message
+    # Build Signal Message with TAP-TO-COPY (Monospaced Backticks ` `)
     caption = (
         f"🚨 *JAY FX PRECISE SIGNAL* 🚨\n\n"
-        f"📌 *Asset:* {pair}\n"
-        f"📊 *Type:* {signal_type}\n"
+        f"📌 *Asset:* `{pair}`\n"
+        f"📊 *Type:* *{signal_type}*\n"
         f"🌐 *Session:* {session_name}\n"
         f"📅 *Date:* {date_str}\n\n"
-        f"🎯 *Entry Zone:* {entry_str}\n"
-        f"🛑 *Stop Loss:* {sl_str}\n\n"
-        f"✅ *Take Profit 1:* {tp1_str}\n"
-        f"✅ *Take Profit 2:* {tp2_str}\n"
-        f"✅ *Take Profit 3:* {tp3_str}\n"
-        f"✅ *Take Profit 4:* {tp4_str}\n\n"
+        f"🎯 *Entry Zone:* `{entry_str}`\n"
+        f"🛑 *Stop Loss:* `{sl_str}`\n\n"
+        f"✅ *Take Profit 1:* `{tp1_str}`\n"
+        f"✅ *Take Profit 2:* `{tp2_str}`\n"
+        f"✅ *Take Profit 3:* `{tp3_str}`\n"
+        f"✅ *Take Profit 4:* `{tp4_str}`\n\n"
         f"⚠️ _Trade Responsibly. Proper risk management required._"
     )
 
