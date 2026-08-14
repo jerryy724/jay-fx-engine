@@ -21,20 +21,45 @@ def generate_signal_card(pair_or_title, direction_or_sub, session_text="JAY EMPI
         main_text = pair_or_title
         sub_text = direction_or_sub
 
+        # Header Drawing
         bbox_h = draw.textbbox((0, 0), header_text, font=font_header)
         w_h = bbox_h[2] - bbox_h[0]
         draw.text(((W - w_h) // 2, 45), header_text, fill='#FFFFFF', font=font_header)
         draw.line([((W - w_h) // 2 + 30, 95), ((W + w_h) // 2 - 30, 95)], fill='#00B0FF', width=3)
 
-        bbox_m = draw.textbbox((0, 0), main_text, font=font_main)
-        w_m = bbox_m[2] - bbox_m[0]
-        h_m = bbox_m[3] - bbox_m[1]
-        center_y = (H // 2) - (h_m // 2) - 10
-        draw.text(((W - w_m) // 2, center_y), main_text, fill=theme_color, font=font_main)
+        # Handle Long Titles (e.g. "FOREX MARKET INTELLIGENCE") by Splitting into 2 Centered Lines
+        words = main_text.strip().split()
+        if len(words) > 2:
+            line1 = " ".join(words[:2])  # "FOREX MARKET"
+            line2 = " ".join(words[2:])  # "INTELLIGENCE"
+            
+            # Use a slightly scaled font size for double line to fit comfortably
+            try:
+                font_title_stacked = ImageFont.truetype("DejaVuSans-Bold.ttf", 46)
+            except:
+                font_title_stacked = font_main
 
+            bbox_l1 = draw.textbbox((0, 0), line1, font=font_title_stacked)
+            w_l1 = bbox_l1[2] - bbox_l1[0]
+            draw.text(((W - w_l1) // 2, 160), line1, fill=theme_color, font=font_title_stacked)
+
+            bbox_l2 = draw.textbbox((0, 0), line2, font=font_title_stacked)
+            w_l2 = bbox_l2[2] - bbox_l2[0]
+            draw.text(((W - w_l2) // 2, 220), line2, fill=theme_color, font=font_title_stacked)
+
+            sub_y_pos = 320
+        else:
+            bbox_m = draw.textbbox((0, 0), main_text, font=font_main)
+            w_m = bbox_m[2] - bbox_m[0]
+            h_m = bbox_m[3] - bbox_m[1]
+            center_y = (H // 2) - (h_m // 2) - 10
+            draw.text(((W - w_m) // 2, center_y), main_text, fill=theme_color, font=font_main)
+            sub_y_pos = center_y + h_m + 25
+
+        # Subtitle Drawing
         bbox_s = draw.textbbox((0, 0), sub_text, font=font_sub)
         w_s = bbox_s[2] - bbox_s[0]
-        draw.text(((W - w_s) // 2, center_y + h_m + 25), sub_text, fill='#8A99AD', font=font_sub)
+        draw.text(((W - w_s) // 2, sub_y_pos), sub_text, fill='#8A99AD', font=font_sub)
 
     else:
         direction = direction_or_sub.upper()
