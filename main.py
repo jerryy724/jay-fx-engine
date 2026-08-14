@@ -13,16 +13,22 @@ import tracker
 def send_telegram_photo(caption, image_bio):
     try:
         url = f"https://api.telegram.org/bot{config.BOT_TOKEN}/sendPhoto"
-        requests.post(url, data={'chat_id': config.CHAT_ID, 'caption': caption, 'parse_mode': 'Markdown'}, files={'photo': image_bio}, timeout=10)
+        res = requests.post(
+            url, 
+            data={'chat_id': config.CHAT_ID, 'caption': caption, 'parse_mode': 'Markdown'}, 
+            files={'photo': image_bio}, 
+            timeout=12
+        )
+        print(f"Telegram Photo Dispatch Status: {res.status_code}")
     except Exception as e:
-        print(f"Telegram Photo Error: {e}")
+        print(f"Telegram Photo Dispatch Error: {e}")
 
 def send_telegram_msg(text):
     try:
         url = f"https://api.telegram.org/bot{config.BOT_TOKEN}/sendMessage"
         requests.post(url, json={"chat_id": config.CHAT_ID, "text": text, "parse_mode": "Markdown"}, timeout=10)
     except Exception as e:
-        print(f"Telegram Error: {e}")
+        print(f"Telegram Text Error: {e}")
 
 # ==========================================
 # 1. HOURLY PRE-ALERT JOB
@@ -41,7 +47,7 @@ def run_prealert():
     send_telegram_msg(msg)
 
 # ==========================================
-# 2. STANDALONE TRACKER JOB (Every 10 Mins)
+# 2. STANDALONE TRACKER JOB
 # ==========================================
 def run_tracker_only():
     now = datetime.now(timezone.utc)
@@ -52,13 +58,16 @@ def run_tracker_only():
     for item in rotation_list:
         try:
             price, _, _, _, _ = market_engine.fetch_live_market_data(item)
-            if price:
+            if price is not None:
                 price_map[item["name"]] = price
         except Exception as e:
             print(f"Error fetching tracker price for {item['name']}: {e}")
             
     if price_map:
-        tracker.check_open_trades(price_map)
+        try:
+            tracker.check_open_trades(price_map)
+        except Exception as e:
+            print(f"Tracker Execution Error: {e}")
 
 # ==========================================
 # 3. MAIN SIGNAL DISPATCH JOB
@@ -71,10 +80,11 @@ def run_signal_dispatch():
     idx = now.hour % len(rotation_list)
     item = rotation_list[idx]
 
+    # Fetch live price strictly from Twelve Data
     price, decimals, signal_type, atr, conviction = market_engine.fetch_live_market_data(item)
-    
-    if not price:
-        print("Failed to fetch live market price. Aborting signal dispatch.")
+
+    if price is None or atr is None:
+        print(f"ERROR: Could not retrieve valid market price from Twelve Data for {item['name']}. Signal dispatch aborted.")
         return
 
     pair = item["name"]
@@ -83,10 +93,13 @@ def run_signal_dispatch():
     date_str = now.strftime("%d %b %Y | %H:%M UTC")
     fmt = f".{decimals}f"
 
-    # Evaluate existing open trades first
-    tracker.check_open_trades({pair: price})
+    # Safely evaluate existing open trades
+    try:
+        tracker.check_open_trades({pair: price})
+    except Exception as e:
+        print(f"Non-fatal tracker error: {e}")
 
-    # High Win-Rate Multipliers (Tight TPs, Room to Breathe Stop Loss)
+    # Scalping parameters for rapid TP hits
     entry = price
     entry_low = entry - (0.02 * atr)
     entry_high = entry + (0.02 * atr)
@@ -104,7 +117,7 @@ def run_signal_dispatch():
         tp3 = entry - (1.20 * atr)
         tp4 = entry - (1.80 * atr)
 
-    # Format values based on precision decimals
+    # Format numeric values
     entry_low_str = f"{entry_low:{fmt}}"
     entry_high_str = f"{entry_high:{fmt}}"
     sl_str = f"{sl:{fmt}}"
@@ -113,7 +126,7 @@ def run_signal_dispatch():
     tp3_str = f"{tp3:{fmt}}"
     tp4_str = f"{tp4:{fmt}}"
 
-    # Format matching Image 1 exactly with Tap-to-Copy
+    # Format matching Image 1 exactly with Tap-to-Copy backticks
     caption = (
         f"👑 *JAYFX PREMIUM SIGNALS*\n"
         f"🌐 *Session:* {session_name} | 🔥 *High Conviction*\n"
@@ -134,8 +147,11 @@ def run_signal_dispatch():
     image_bio = image_generator.generate_signal_card(pair, signal_type, session_text=session_name, is_update=False)
     send_telegram_photo(caption, image_bio)
 
-    # Log Trade into Active Tracker State
-    tracker.log_new_trade(pair, signal_type, entry, sl, [tp1, tp2, tp3, tp4])
+    # Log Trade State
+    try:
+        tracker.log_new_trade(pair, signal_type, entry, sl, [tp1, tp2, tp3, tp4])
+    except Exception as e:
+        print(f"Non-fatal trade log error: {e}")
 
 # ==========================================
 # 4. MARKET NEWS DISPATCH JOB
