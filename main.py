@@ -44,7 +44,6 @@ def run_prealert():
 # 2. STANDALONE TRACKER JOB (Every 10 Mins)
 # ==========================================
 def run_tracker_only():
-    """Runs ONLY trade monitoring on active open positions without generating new signals."""
     now = datetime.now(timezone.utc)
     is_weekend = now.weekday() in [5, 6]
     rotation_list = config.CRYPTO_ROTATION if is_weekend else config.FX_ROTATION
@@ -73,6 +72,11 @@ def run_signal_dispatch():
     item = rotation_list[idx]
 
     price, decimals, signal_type, atr, conviction = market_engine.fetch_live_market_data(item)
+    
+    if not price:
+        print("Failed to fetch live market price. Aborting signal dispatch.")
+        return
+
     pair = item["name"]
     asset_type = item["type"]
     session_name = market_engine.get_market_session(asset_type == "CRYPTO")
@@ -82,23 +86,23 @@ def run_signal_dispatch():
     # Evaluate existing open trades first
     tracker.check_open_trades({pair: price})
 
-    # High-Win Rate Scalping Parameters
+    # High Win-Rate Multipliers (Tight TPs, Room to Breathe Stop Loss)
     entry = price
-    entry_low = entry - (0.05 * atr)
-    entry_high = entry + (0.05 * atr)
+    entry_low = entry - (0.02 * atr)
+    entry_high = entry + (0.02 * atr)
 
     if signal_type == "BUY":
-        sl = entry - (1.20 * atr)
-        tp1 = entry + (0.80 * atr)
-        tp2 = entry + (1.50 * atr)
-        tp3 = entry + (2.20 * atr)
-        tp4 = entry + (3.00 * atr)
+        sl = entry - (1.80 * atr)
+        tp1 = entry + (0.30 * atr)
+        tp2 = entry + (0.70 * atr)
+        tp3 = entry + (1.20 * atr)
+        tp4 = entry + (1.80 * atr)
     else:
-        sl = entry + (1.20 * atr)
-        tp1 = entry - (0.80 * atr)
-        tp2 = entry - (1.50 * atr)
-        tp3 = entry - (2.20 * atr)
-        tp4 = entry - (3.00 * atr)
+        sl = entry + (1.80 * atr)
+        tp1 = entry - (0.30 * atr)
+        tp2 = entry - (0.70 * atr)
+        tp3 = entry - (1.20 * atr)
+        tp4 = entry - (1.80 * atr)
 
     # Format values based on precision decimals
     entry_low_str = f"{entry_low:{fmt}}"
@@ -109,7 +113,7 @@ def run_signal_dispatch():
     tp3_str = f"{tp3:{fmt}}"
     tp4_str = f"{tp4:{fmt}}"
 
-    # Build Signal Message Matching Image 1 Format exactly with Tap-to-Copy
+    # Format matching Image 1 exactly with Tap-to-Copy
     caption = (
         f"👑 *JAYFX PREMIUM SIGNALS*\n"
         f"🌐 *Session:* {session_name} | 🔥 *High Conviction*\n"
