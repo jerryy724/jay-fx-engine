@@ -1,39 +1,49 @@
-name: Jay Empire Trading Engine
+name: Jay Empire Trading Engine Workflow
 
 on:
   repository_dispatch:
     types: [engine_trigger]
+  workflow_dispatch:
+    inputs:
+      action_type:
+        description: 'Action to execute (signal, prealert, tracker, news)'
+        required: false
+        default: 'signal'
 
 jobs:
   run-engine:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests pillow python-dotenv feedparser
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
       - name: Execute Jay Empire Engine Module
         env:
+          ACTION_TYPE: ${{ github.event.client_payload.action || inputs.action_type || 'signal' }}
+          TWELVE_DATA_API_KEY: ${{ secrets.TWELVE_DATA_API_KEY }}
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
-          TWELVE_DATA_API_KEY: ${{ secrets.TWELVE_DATA_API_KEY }}
-          ACTION_TYPE: ${{ github.event.client_payload.action_type }}
         run: |
-          python main.py "${{ github.event.client_payload.action_type }}"
+          python main.py $ACTION_TYPE
 
       - name: Commit and Push Updated Trade Logs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.name "JayEmpireBot"
           git config --global user.email "bot@jayempire.com"
-          git add trades.json state.json
-          git commit -m "auto: update trade state logs" || exit 0
-          git push
+          touch trades.json
+          git add trades.json
+          git diff-index --quiet HEAD || git commit -m "auto: update trade tracking logs"
+          git push || echo "No new trade logs to commit"
