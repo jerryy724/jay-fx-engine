@@ -80,7 +80,7 @@ def run_signal_dispatch():
     idx = now.hour % len(rotation_list)
     item = rotation_list[idx]
 
-    # Fetch live price strictly from Twelve Data
+    # Fetch real-time live price strictly from Twelve Data
     price, decimals, signal_type, atr, conviction = market_engine.fetch_live_market_data(item)
 
     if price is None or atr is None:
@@ -101,26 +101,28 @@ def run_signal_dispatch():
     except Exception as e:
         print(f"Non-fatal tracker error: {e}")
 
-    # Scalping parameters for rapid TP hits - Strict decimal rounding applied
+    # Anchor entry on current live price
     entry = price
-    # UPDATED: Changed from 0.02 to 0.20 to provide a realistic, tradable entry spread
-    entry_low = round(entry - (0.20 * atr), decimals)
-    entry_high = round(entry + (0.20 * atr), decimals)
+    
+    # Entry zone centered around live market price
+    entry_low = round(entry - (0.25 * atr), decimals)
+    entry_high = round(entry + (0.25 * atr), decimals)
 
+    # Multipliers configured to prevent broker "Invalid SL/TP" distance errors
     if signal_type == "BUY":
-        sl = round(entry - (1.80 * atr), decimals)
-        tp1 = round(entry + (0.30 * atr), decimals)
-        tp2 = round(entry + (0.70 * atr), decimals)
-        tp3 = round(entry + (1.20 * atr), decimals)
-        tp4 = round(entry + (1.80 * atr), decimals)
+        sl = round(entry - (1.50 * atr), decimals)
+        tp1 = round(entry + (1.00 * atr), decimals)
+        tp2 = round(entry + (2.00 * atr), decimals)
+        tp3 = round(entry + (3.20 * atr), decimals)
+        tp4 = round(entry + (4.50 * atr), decimals)
     else:
-        sl = round(entry + (1.80 * atr), decimals)
-        tp1 = round(entry - (0.30 * atr), decimals)
-        tp2 = round(entry - (0.70 * atr), decimals)
-        tp3 = round(entry - (1.20 * atr), decimals)
-        tp4 = round(entry - (1.80 * atr), decimals)
+        sl = round(entry + (1.50 * atr), decimals)
+        tp1 = round(entry - (1.00 * atr), decimals)
+        tp2 = round(entry - (2.00 * atr), decimals)
+        tp3 = round(entry - (3.20 * atr), decimals)
+        tp4 = round(entry - (4.50 * atr), decimals)
 
-    # Format numeric values
+    # Format numeric values strictly to pair decimal precision
     entry_low_str = f"{entry_low:{fmt}}"
     entry_high_str = f"{entry_high:{fmt}}"
     sl_str = f"{sl:{fmt}}"
@@ -136,7 +138,7 @@ def run_signal_dispatch():
         f"📊 *Asset:* `{pair}`\n"
         f"📈 *Direction:* *{signal_type}*\n"
         f"🎯 *Entry Zone:* `{entry_low_str} - {entry_high_str}`\n"
-        f"⚖️ *Risk:Reward Ratio:* 1:1.8 (TP4 Max)\n\n"
+        f"⚖️ *Risk:Reward Ratio:* 1:3.0 (TP4 Max)\n\n"
         f"✅ *Take Profit 1:* `{tp1_str}`\n"
         f"✅ *Take Profit 2:* `{tp2_str}`\n"
         f"✅ *Take Profit 3:* `{tp3_str}`\n"
@@ -175,7 +177,6 @@ if __name__ == "__main__":
 
     print(f"Executing Action: '{action}'")
 
-    # Full mapped dispatch routes
     if action in ["signal", "engine", "engine_trigger"]:
         run_signal_dispatch()
     elif action in ["prealert", "pre-alert"]:
