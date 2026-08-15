@@ -90,7 +90,19 @@ def fetch_live_market_data(item):
         symbol = "BTC/USD"
         decimals = 2
 
-    # 1. Fetch 1h time series data (220 output size for 4h-50EMA math)
+    # 1. Fetch Real-Time Live Price (Direct Ticker)
+    price_url = f"https://api.twelvedata.com/price?symbol={symbol}&apikey={config.TWELVE_DATA_API_KEY}"
+    try:
+        p_res = requests.get(price_url, timeout=10).json()
+        if "price" not in p_res:
+            print(f"Price API error for {symbol}: {p_res}")
+            return None, decimals, "BUY", None, "LOW"
+        current_price = round(float(p_res["price"]), decimals)
+    except Exception as e:
+        print(f"Price Fetch Error ({symbol}): {e}")
+        return None, decimals, "BUY", None, "LOW"
+
+    # 2. Fetch Historical Time Series Data (For Indicator Math Only)
     url = f"https://api.twelvedata.com/time_series?symbol={symbol}&interval=1h&outputsize=220&apikey={config.TWELVE_DATA_API_KEY}"
     try:
         res = requests.get(url, timeout=10).json()
@@ -104,9 +116,7 @@ def fetch_live_market_data(item):
         print(f"Time Series Fetch Error ({symbol}): {e}")
         return None, decimals, "BUY", None, "LOW"
 
-    current_price = round(float(bars[-1]["close"]), decimals)
-
-    # 2. Compute Strategy Indicators Locally
+    # 3. Compute Strategy Indicators Locally
     atr = calculate_atr_1h(bars, period=config.ATR_PERIOD)
     if atr is None or atr == 0:
         atr = current_price * 0.003
@@ -114,7 +124,7 @@ def fetch_live_market_data(item):
     ema_4h_50 = calculate_4h_50_ema(bars)
     rsi_1h = calculate_1h_rsi(bars, period=config.RSI_PERIOD)
 
-    # 3. Apply Trading Rules (Trend + Overbought/Oversold Filter)
+    # 4. Apply Trading Rules Using Exact Real-Time Price
     if current_price > ema_4h_50:
         signal_type = "BUY"
         if rsi_1h > config.RSI_OVERBOUGHT:
