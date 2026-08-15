@@ -17,3 +17,12 @@ CRYPTO_ROTATION = [
     {"name": "BTC/USD", "symbol": "BTC/USD", "type": "CRYPTO", "default_direction": "SELL"},
     {"name": "ETH/USD", "symbol": "ETH/USD", "type": "CRYPTO", "default_direction": "BUY"}
 ]
+
+# ==========================================
+# STRATEGY PARAMETERS
+# ==========================================
+ATR_PERIOD = 14
+EMA_PERIOD = 50
+RSI_PERIOD = 14
+RSI_OVERBOUGHT = 70
+RSI_OVERSOLD = 30
