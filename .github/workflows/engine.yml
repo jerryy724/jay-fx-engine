@@ -30,7 +30,7 @@ jobs:
 
       - name: Execute Jay Empire Engine Module
         env:
-          ACTION_TYPE: ${{ github.event.client_payload.action || inputs.action_type || 'signal' }}
+          ACTION_TYPE: ${{ github.event.client_payload.ACTION_TYPE || github.event.client_payload.action || inputs.action_type || 'watch' }}
           TWELVE_DATA_API_KEY: ${{ secrets.TWELVE_DATA_API_KEY }}
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
