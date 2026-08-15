@@ -103,8 +103,9 @@ def run_signal_dispatch():
 
     # Scalping parameters for rapid TP hits - Strict decimal rounding applied
     entry = price
-    entry_low = round(entry - (0.02 * atr), decimals)
-    entry_high = round(entry + (0.02 * atr), decimals)
+    # UPDATED: Changed from 0.02 to 0.20 to provide a realistic, tradable entry spread
+    entry_low = round(entry - (0.20 * atr), decimals)
+    entry_high = round(entry + (0.20 * atr), decimals)
 
     if signal_type == "BUY":
         sl = round(entry - (1.80 * atr), decimals)
