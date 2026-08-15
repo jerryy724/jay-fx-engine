@@ -84,7 +84,9 @@ def run_signal_dispatch():
     price, decimals, signal_type, atr, conviction = market_engine.fetch_live_market_data(item)
 
     if price is None or atr is None:
-        print(f"ERROR: Could not retrieve valid market price from Twelve Data for {item['name']}. Signal dispatch aborted.")
+        error_msg = f"⚠️ *Execution Error*: Could not retrieve market data from Twelve Data for `{item['name']}`."
+        print(error_msg)
+        send_telegram_msg(error_msg)
         return
 
     pair = item["name"]
@@ -126,7 +128,6 @@ def run_signal_dispatch():
     tp3_str = f"{tp3:{fmt}}"
     tp4_str = f"{tp4:{fmt}}"
 
-    # Format matching Telegram display with Tap-to-Copy backticks
     caption = (
         f"👑 *JAYFX PREMIUM SIGNALS*\n"
         f"🌐 *Session:* {session_name} | 🔥 *High Conviction*\n"
@@ -143,11 +144,9 @@ def run_signal_dispatch():
         f"⚠️ _Trade Responsibly. Proper risk management is required._"
     )
 
-    # Generate Card Image & Dispatch to Telegram Channel
     image_bio = image_generator.generate_signal_card(pair, signal_type, session_text=session_name, is_update=False)
     send_telegram_photo(caption, image_bio)
 
-    # Log Trade State
     try:
         tracker.log_new_trade(pair, signal_type, entry, sl, [tp1, tp2, tp3, tp4])
     except Exception as e:
@@ -168,23 +167,22 @@ def run_news_dispatch():
 if __name__ == "__main__":
     action = ""
 
-    # Check CLI argument first
     if len(sys.argv) > 1 and sys.argv[1].strip():
         action = sys.argv[1].lower().strip()
-    # Otherwise check environment variable
     else:
         action = os.getenv("ACTION_TYPE", "").lower().strip()
 
     print(f"Executing Action: '{action}'")
 
-    if action in ["prealert", "pre-alert"]:
+    # Full mapped dispatch routes
+    if action in ["signal", "engine", "engine_trigger"]:
+        run_signal_dispatch()
+    elif action in ["prealert", "pre-alert"]:
         run_prealert()
     elif action in ["tracker", "watch", "order_tracker"]:
         run_tracker_only()
     elif action in ["news", "market_news"]:
         run_news_dispatch()
-    elif action in ["signal", "engine"]:
-        run_signal_dispatch()
     else:
-        print(f"Action '{action}' unmapped or empty. Defaulting to tracker (watch) execution.")
-        run_tracker_only()
+        print(f"Action '{action}' unmapped or empty. Defaulting to signal dispatch.")
+        run_signal_dispatch()
