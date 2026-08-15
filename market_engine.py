@@ -1,41 +1,78 @@
 import os
-import json
-import time
 import requests
 from datetime import datetime, timezone
+import config
 
-TWELVE_DATA_API_KEY = os.getenv("TWELVE_DATA_API_KEY", "")
-CACHE_FILE = "atr_cache.json"
+# ==========================================
+# LOCAL INDICATOR CALCULATIONS
+# ==========================================
+def calculate_atr_1h(bars, period=14):
+    """Calculates ATR based on True Range across OHLC bars."""
+    if len(bars) < period + 1:
+        return None
+    true_ranges = []
+    for i in range(1, len(bars)):
+        high = float(bars[i]["high"])
+        low = float(bars[i]["low"])
+        prev_close = float(bars[i-1]["close"])
+        tr = max(high - low, abs(high - prev_close), abs(low - prev_close))
+        true_ranges.append(tr)
+    
+    if len(true_ranges) < period:
+        return None
+    
+    recent_tr = true_ranges[-period:]
+    return sum(recent_tr) / period
 
-def get_cached_atr(symbol):
-    if os.path.exists(CACHE_FILE):
-        try:
-            with open(CACHE_FILE, "r") as f:
-                cache = json.load(f)
-            if symbol in cache:
-                data = cache[symbol]
-                # Cache ATR for 2 hours (7200 seconds) to save API credits
-                if time.time() - data['timestamp'] < 7200:
-                    return data['atr']
-        except Exception:
-            pass
-    return None
+def calculate_4h_50_ema(bars):
+    """Resamples 1h data into 4h bars and computes the 50 EMA."""
+    closes_1h = [float(b["close"]) for b in bars]
+    closes_4h = []
+    
+    # Group every 4 1-hour closes
+    for i in range(3, len(closes_1h), 4):
+        closes_4h.append(closes_1h[i])
+        
+    if len(closes_4h) < config.EMA_PERIOD:
+        # Fallback if less than 200 hours of data exists
+        return sum(closes_1h[-50:]) / min(len(closes_1h), 50)
+    
+    k = 2.0 / (config.EMA_PERIOD + 1)
+    ema = sum(closes_4h[:config.EMA_PERIOD]) / float(config.EMA_PERIOD)
+    
+    for price in closes_4h[config.EMA_PERIOD:]:
+        ema = (price * k) + (ema * (1.0 - k))
+    return ema
 
-def save_cached_atr(symbol, atr):
-    cache = {}
-    if os.path.exists(CACHE_FILE):
-        try:
-            with open(CACHE_FILE, "r") as f:
-                cache = json.load(f)
-        except Exception:
-            pass
-    cache[symbol] = {'atr': atr, 'timestamp': time.time()}
-    try:
-        with open(CACHE_FILE, "w") as f:
-            json.dump(cache, f)
-    except Exception:
-        pass
+def calculate_1h_rsi(bars, period=14):
+    """Standard 14-period Relative Strength Index."""
+    closes = [float(b["close"]) for b in bars]
+    if len(closes) < period + 1:
+        return 50.0
+        
+    gains = []
+    losses = []
+    for i in range(len(closes) - period, len(closes)):
+        diff = closes[i] - closes[i-1]
+        if diff >= 0:
+            gains.append(diff)
+            losses.append(0.0)
+        else:
+            gains.append(0.0)
+            losses.append(abs(diff))
+            
+    avg_gain = sum(gains) / period
+    avg_loss = sum(losses) / period
+    
+    if avg_loss == 0:
+        return 100.0
+        
+    rs = avg_gain / avg_loss
+    return 100.0 - (100.0 / (1.0 + rs))
 
+# ==========================================
+# MAIN DATA FETCHING & LOGIC ROUTING
+# ==========================================
 def fetch_live_market_data(item):
     symbol = item["symbol"]
     
@@ -53,37 +90,49 @@ def fetch_live_market_data(item):
         symbol = "BTC/USD"
         decimals = 2
 
-    # 1. Fetch Live Price strictly from API (Costs 1 Credit)
-    price_url = f"https://api.twelvedata.com/price?symbol={symbol}&apikey={TWELVE_DATA_API_KEY}"
+    # 1. Fetch 1h time series data (220 output size for 4h-50EMA math)
+    url = f"https://api.twelvedata.com/time_series?symbol={symbol}&interval=1h&outputsize=220&apikey={config.TWELVE_DATA_API_KEY}"
     try:
-        p_res = requests.get(price_url, timeout=10).json()
-        if "price" not in p_res:
-            print(f"Price API error for {symbol}: {p_res}")
+        res = requests.get(url, timeout=10).json()
+        if "values" not in res or len(res["values"]) == 0:
+            print(f"Time series error for {symbol}: {res}")
             return None, decimals, "BUY", None, "LOW"
-        price = round(float(p_res["price"]), decimals)
+        
+        # Twelve Data returns newest records first -> Reverse to oldest -> newest
+        bars = list(reversed(res["values"]))
     except Exception as e:
-        print(f"Price Fetch Error ({symbol}): {e}")
+        print(f"Time Series Fetch Error ({symbol}): {e}")
         return None, decimals, "BUY", None, "LOW"
 
-    # 2. Fetch 14-period ATR (Checks Cache First!)
-    atr = get_cached_atr(symbol)
-    if atr is None:
-        atr_url = f"https://api.twelvedata.com/atr?symbol={symbol}&interval=15min&time_period=14&apikey={TWELVE_DATA_API_KEY}"
-        try:
-            a_res = requests.get(atr_url, timeout=10).json()
-            if "values" in a_res and len(a_res["values"]) > 0:
-                atr = float(a_res["values"][0]["atr"])
-                save_cached_atr(symbol, atr)
-            else:
-                atr = price * 0.003
-        except Exception as e:
-            print(f"ATR Fetch Error ({symbol}): {e}")
-            atr = price * 0.003
-    
-    signal_type = item.get("default_direction", "SELL")
-    conviction = "HIGH"
+    current_price = round(float(bars[-1]["close"]), decimals)
 
-    return price, decimals, signal_type, atr, conviction
+    # 2. Compute Strategy Indicators Locally
+    atr = calculate_atr_1h(bars, period=config.ATR_PERIOD)
+    if atr is None or atr == 0:
+        atr = current_price * 0.003
+        
+    ema_4h_50 = calculate_4h_50_ema(bars)
+    rsi_1h = calculate_1h_rsi(bars, period=config.RSI_PERIOD)
+
+    # 3. Apply Trading Rules (Trend + Overbought/Oversold Filter)
+    if current_price > ema_4h_50:
+        signal_type = "BUY"
+        if rsi_1h > config.RSI_OVERBOUGHT:
+            conviction = "AVOID_OVERBOUGHT"
+        elif rsi_1h >= 50.0:
+            conviction = "HIGH"
+        else:
+            conviction = "STANDARD"
+    else:
+        signal_type = "SELL"
+        if rsi_1h < config.RSI_OVERSOLD:
+            conviction = "AVOID_OVERSOLD"
+        elif rsi_1h < 50.0:
+            conviction = "HIGH"
+        else:
+            conviction = "STANDARD"
+
+    return current_price, decimals, signal_type, atr, conviction
 
 def get_market_session(is_crypto=False):
     if is_crypto:
