@@ -37,10 +37,35 @@ def log_new_trade(pair, direction, entry, sl, tps):
     save_trades(trades)
     print(f"Logged new trade for {pair}")
 
-def check_open_trades(price_map):
+def check_open_trades(price_map=None):
     trades = load_trades()
-    if not trades:
+    open_trades = [t for t in trades if t.get("status") == "OPEN"]
+    
+    if not open_trades:
         return
+
+    if price_map is None:
+        price_map = {}
+
+    # Identify pairs we need prices for but don't have
+    missing_pairs = [t["pair"] for t in open_trades if t["pair"] not in price_map]
+    
+    # Batch fetch missing prices to bypass API limits
+    if missing_pairs:
+        missing_pairs = list(set(missing_pairs))
+        symbols_str = ",".join(missing_pairs)
+        url = f"https://api.twelvedata.com/price?symbol={symbols_str}&apikey={config.TWELVE_DATA_API_KEY}"
+        try:
+            res = requests.get(url, timeout=10).json()
+            if len(missing_pairs) == 1:
+                if "price" in res:
+                    price_map[missing_pairs[0]] = float(res["price"])
+            else:
+                for sym in missing_pairs:
+                    if sym in res and "price" in res[sym]:
+                        price_map[sym] = float(res[sym]["price"])
+        except Exception as e:
+            print(f"Tracker Batch Price Error: {e}")
 
     updated = False
     for trade in trades:
@@ -61,7 +86,7 @@ def check_open_trades(price_map):
         if (direction == "BUY" and current_price <= sl) or (direction == "SELL" and current_price >= sl):
             trade["status"] = "CLOSED_SL"
             updated = True
-            send_telegram_update(f"🛑 *TRADE UPDATE:* `{pair}` hit Stop Loss at `{current_price}`.")
+            send_telegram_update(f"🛑 *TRADE CLOSED:* `{pair}` hit Stop Loss at `{current_price}`.")
             continue
 
         # Check Take Profits
@@ -71,11 +96,12 @@ def check_open_trades(price_map):
                     hit_tps.append(idx)
                     trade["hit_tps"] = hit_tps
                     updated = True
-                    send_telegram_update(f"🎯 *TRADE UPDATE:* `{pair}` reached *Take Profit {idx}* at `{current_price}`!")
+                    send_telegram_update(f"🎯 *TARGET HIT:* `{pair}` reached *Take Profit {idx}* at `{current_price}`!")
 
         if len(hit_tps) == len(tps):
             trade["status"] = "CLOSED_TP_MAX"
             updated = True
+            send_telegram_update(f"👑 *FULL SEND:* `{pair}` smashed all targets!")
 
     if updated:
         save_trades(trades)
