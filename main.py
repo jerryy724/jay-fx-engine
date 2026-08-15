@@ -101,23 +101,23 @@ def run_signal_dispatch():
     except Exception as e:
         print(f"Non-fatal tracker error: {e}")
 
-    # Scalping parameters for rapid TP hits
+    # Scalping parameters for rapid TP hits - Strict decimal rounding applied
     entry = price
-    entry_low = entry - (0.02 * atr)
-    entry_high = entry + (0.02 * atr)
+    entry_low = round(entry - (0.02 * atr), decimals)
+    entry_high = round(entry + (0.02 * atr), decimals)
 
     if signal_type == "BUY":
-        sl = entry - (1.80 * atr)
-        tp1 = entry + (0.30 * atr)
-        tp2 = entry + (0.70 * atr)
-        tp3 = entry + (1.20 * atr)
-        tp4 = entry + (1.80 * atr)
+        sl = round(entry - (1.80 * atr), decimals)
+        tp1 = round(entry + (0.30 * atr), decimals)
+        tp2 = round(entry + (0.70 * atr), decimals)
+        tp3 = round(entry + (1.20 * atr), decimals)
+        tp4 = round(entry + (1.80 * atr), decimals)
     else:
-        sl = entry + (1.80 * atr)
-        tp1 = entry - (0.30 * atr)
-        tp2 = entry - (0.70 * atr)
-        tp3 = entry - (1.20 * atr)
-        tp4 = entry - (1.80 * atr)
+        sl = round(entry + (1.80 * atr), decimals)
+        tp1 = round(entry - (0.30 * atr), decimals)
+        tp2 = round(entry - (0.70 * atr), decimals)
+        tp3 = round(entry - (1.20 * atr), decimals)
+        tp4 = round(entry - (1.80 * atr), decimals)
 
     # Format numeric values
     entry_low_str = f"{entry_low:{fmt}}"
