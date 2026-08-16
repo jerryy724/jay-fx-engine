@@ -51,29 +51,32 @@ def run_prealert():
 # ==========================================
 def run_tracker_only():
     """
-    Fetches live prices for ALL rotation pairs in a SINGLE batched API call
-    and hands them to the tracker. This avoids burning the free Twelve Data
-    quota on time-series/indicator calls, which the tracker doesn't need at all.
+    Only fetches prices for pairs that actually have an OPEN trade right now.
+    This keeps API credit usage tied to real activity instead of always
+    pulling all 6 rotation pairs every 10 minutes, which alone can exceed
+    the free plan's 800 credits/day cap.
     """
-    now = datetime.now(timezone.utc)
-    is_weekend = now.weekday() in [5, 6]
-    rotation_list = config.CRYPTO_ROTATION if is_weekend else config.FX_ROTATION
+    open_trades = tracker.load_trades()
+    open_pairs = list({t["pair"] for t in open_trades if t.get("status") == "OPEN"})
 
-    symbols = [item["name"] for item in rotation_list]
-    symbols_str = ",".join(symbols)
+    if not open_pairs:
+        print("No open trades — skipping tracker API call.")
+        return
+
+    symbols_str = ",".join(open_pairs)
     price_map = {}
 
     try:
         url = f"https://api.twelvedata.com/price?symbol={symbols_str}&apikey={config.TWELVE_DATA_API_KEY}"
         res = requests.get(url, timeout=10).json()
 
-        if len(symbols) == 1:
+        if len(open_pairs) == 1:
             if "price" in res:
-                price_map[symbols[0]] = float(res["price"])
+                price_map[open_pairs[0]] = float(res["price"])
             else:
-                print(f"Tracker price fetch error for {symbols[0]}: {res}")
+                print(f"Tracker price fetch error for {open_pairs[0]}: {res}")
         else:
-            for sym in symbols:
+            for sym in open_pairs:
                 if sym in res and "price" in res[sym]:
                     price_map[sym] = float(res[sym]["price"])
                 else:
