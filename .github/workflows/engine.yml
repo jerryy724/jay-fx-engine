@@ -10,6 +10,10 @@ on:
         required: false
         default: 'signal'
 
+concurrency:
+  group: jay-empire-trading-engine
+  cancel-in-progress: false
+
 jobs:
   run-engine:
     runs-on: ubuntu-latest
@@ -43,7 +47,14 @@ jobs:
         run: |
           git config --global user.name "JayEmpireBot"
           git config --global user.email "bot@jayempire.com"
-          touch trades.json
           git add trades.json
-          git diff-index --quiet HEAD || git commit -m "auto: update trade tracking logs"
-          git push || echo "No new trade logs to commit"
+          if git diff-index --quiet HEAD; then
+            echo "No new trade logs to commit"
+          else
+            git commit -m "auto: update trade tracking logs"
+            for i in 1 2 3 4 5; do
+              git pull --rebase origin main && git push && break
+              echo "Push rejected, retrying ($i)..."
+              sleep 3
+            done
+          fi
