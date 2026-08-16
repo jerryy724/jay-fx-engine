@@ -50,24 +50,45 @@ def run_prealert():
 # 2. STANDALONE TRACKER JOB
 # ==========================================
 def run_tracker_only():
+    """
+    Fetches live prices for ALL rotation pairs in a SINGLE batched API call
+    and hands them to the tracker. This avoids burning the free Twelve Data
+    quota on time-series/indicator calls, which the tracker doesn't need at all.
+    """
     now = datetime.now(timezone.utc)
     is_weekend = now.weekday() in [5, 6]
     rotation_list = config.CRYPTO_ROTATION if is_weekend else config.FX_ROTATION
-    
+
+    symbols = [item["name"] for item in rotation_list]
+    symbols_str = ",".join(symbols)
     price_map = {}
-    for item in rotation_list:
-        try:
-            price, _, _, _, _ = market_engine.fetch_live_market_data(item)
-            if price is not None:
-                price_map[item["name"]] = price
-        except Exception as e:
-            print(f"Error fetching tracker price for {item['name']}: {e}")
-            
+
+    try:
+        url = f"https://api.twelvedata.com/price?symbol={symbols_str}&apikey={config.TWELVE_DATA_API_KEY}"
+        res = requests.get(url, timeout=10).json()
+
+        if len(symbols) == 1:
+            if "price" in res:
+                price_map[symbols[0]] = float(res["price"])
+            else:
+                print(f"Tracker price fetch error for {symbols[0]}: {res}")
+        else:
+            for sym in symbols:
+                if sym in res and "price" in res[sym]:
+                    price_map[sym] = float(res[sym]["price"])
+                else:
+                    print(f"Tracker missing price for {sym}: {res.get(sym)}")
+
+    except Exception as e:
+        print(f"Tracker batch price fetch error: {e}")
+
     if price_map:
         try:
             tracker.check_open_trades(price_map)
         except Exception as e:
             print(f"Tracker Execution Error: {e}")
+    else:
+        print("Tracker run skipped: no prices retrieved.")
 
 # ==========================================
 # 3. MAIN SIGNAL DISPATCH JOB
@@ -95,7 +116,8 @@ def run_signal_dispatch():
     date_str = now.strftime("%d %b %Y | %H:%M UTC")
     fmt = f".{decimals}f"
 
-    # Safely evaluate existing open trades
+    # Safely evaluate existing open trades (reuse the price we already fetched
+    # above for this pair — no extra API call)
     try:
         tracker.check_open_trades({pair: price})
     except Exception as e:
@@ -103,7 +125,7 @@ def run_signal_dispatch():
 
     # Anchor entry on current live price
     entry = price
-    
+
     # Entry zone centered around live market price
     entry_low = round(entry - (0.25 * atr), decimals)
     entry_high = round(entry + (0.25 * atr), decimals)
