@@ -48,10 +48,8 @@ def check_open_trades(price_map=None):
     if price_map is None:
         price_map = {}
 
-    # Identify pairs we need prices for but don't have
     missing_pairs = [t["pair"] for t in open_trades if t["pair"] not in price_map]
     
-    # Batch fetch missing prices to bypass API limits
     if missing_pairs:
         missing_pairs = list(set(missing_pairs))
         symbols_str = ",".join(missing_pairs)
@@ -85,7 +83,7 @@ def check_open_trades(price_map=None):
         tps = trade.get("tps", [])
         hit_tps = trade.get("hit_tps", [])
 
-        # 1. Check Stop Loss (Initial, Breakeven, or Trailed)
+        # 1. Check Stop Loss
         if (direction == "BUY" and current_price <= current_sl) or (direction == "SELL" and current_price >= current_sl):
             if current_sl == initial_sl:
                 trade["status"] = "CLOSED_SL"
@@ -100,7 +98,7 @@ def check_open_trades(price_map=None):
             updated = True
             continue
 
-        # 2. Check Take Profits and Apply Trailing Logic
+        # 2. Check Take Profits & Trailing SL
         for idx, tp in enumerate(tps, 1):
             if idx not in hit_tps:
                 if (direction == "BUY" and current_price >= tp) or (direction == "SELL" and current_price <= tp):
@@ -109,15 +107,14 @@ def check_open_trades(price_map=None):
                     updated = True
                     send_telegram_update(f"🎯 *TARGET HIT:* `{pair}` reached *Take Profit {idx}* at `{current_price}`!")
                     
-                    # Progressive Stop Loss / Breakeven Logic
                     if idx == 1:
                         trade["current_sl"] = entry
                         send_telegram_update(f"🛡️ *RISK FREE:* `{pair}` Stop Loss moved to Entry (`{entry}`).")
                     elif idx == 2:
-                        trade["current_sl"] = tps[0] # Move SL to TP1
+                        trade["current_sl"] = tps[0]
                         send_telegram_update(f"🔒 *PROFIT LOCKED:* `{pair}` Stop Loss trailed to TP1 (`{tps[0]}`).")
                     elif idx == 3:
-                        trade["current_sl"] = tps[1] # Move SL to TP2
+                        trade["current_sl"] = tps[1]
                         send_telegram_update(f"🔒 *PROFIT LOCKED:* `{pair}` Stop Loss trailed to TP2 (`{tps[1]}`).")
 
         if len(hit_tps) == len(tps):
