@@ -1,6 +1,15 @@
 name: Jay Empire Trading Engine Workflow
 
 on:
+  schedule:
+    # 1. Pre-alert: Runs exactly on the hour (e.g., 01:00, 02:00)
+    - cron: '0 * * * *'
+    # 2. Signal: Runs 5 minutes past the hour (e.g., 01:05, 02:05)
+    - cron: '5 * * * *'
+    # 3. Tracker: Runs at 15, 30, and 45 minutes past the hour
+    - cron: '15,30,45 * * * *'
+    # 4. News Dispatch: Runs twice daily at 07:00 and 13:00 UTC
+    - cron: '0 7,13 * * *'
   repository_dispatch:
     types: [engine_trigger]
   workflow_dispatch:
@@ -13,6 +22,9 @@ on:
 concurrency:
   group: jay-empire-trading-engine
   cancel-in-progress: false
+
+permissions:
+  contents: write
 
 jobs:
   run-engine:
@@ -32,9 +44,28 @@ jobs:
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
+      - name: Determine Action Type
+        id: determine_action
+        run: |
+          if [ "${{ github.event_name }}" == "schedule" ]; then
+            CRON_EXPR="${{ github.event.schedule }}"
+            if [ "$CRON_EXPR" == "0 * * * *" ]; then
+              echo "ACTION=prealert" >> $GITHUB_OUTPUT
+            elif [ "$CRON_EXPR" == "5 * * * *" ]; then
+              echo "ACTION=signal" >> $GITHUB_OUTPUT
+            elif [ "$CRON_EXPR" == "0 7,13 * * *" ]; then
+              echo "ACTION=news" >> $GITHUB_OUTPUT
+            else
+              echo "ACTION=tracker" >> $GITHUB_OUTPUT
+            fi
+          else
+            ACTION="${{ github.event.client_payload.ACTION_TYPE || github.event.client_payload.action || inputs.action_type || 'signal' }}"
+            echo "ACTION=$ACTION" >> $GITHUB_OUTPUT
+          fi
+
       - name: Execute Jay Empire Engine Module
         env:
-          ACTION_TYPE: ${{ github.event.client_payload.ACTION_TYPE || github.event.client_payload.action || inputs.action_type || 'watch' }}
+          ACTION_TYPE: ${{ steps.determine_action.outputs.ACTION }}
           TWELVE_DATA_API_KEY: ${{ secrets.TWELVE_DATA_API_KEY }}
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
