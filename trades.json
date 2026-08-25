@@ -73,5 +73,20 @@
         ],
         "status": "OPEN",
         "hit_tps": []
+    },
+    {
+        "pair": "USD/CHF",
+        "direction": "SELL",
+        "entry": 0.80173,
+        "initial_sl": 0.80273,
+        "current_sl": 0.80273,
+        "tps": [
+            0.80107,
+            0.8004,
+            0.7996,
+            0.79874
+        ],
+        "status": "OPEN",
+        "hit_tps": []
     }
 ]
