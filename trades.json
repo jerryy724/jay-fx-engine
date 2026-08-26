@@ -103,5 +103,20 @@
         ],
         "status": "OPEN",
         "hit_tps": []
+    },
+    {
+        "pair": "GBP/USD",
+        "direction": "BUY",
+        "entry": 1.36461,
+        "initial_sl": 1.3633,
+        "current_sl": 1.3633,
+        "tps": [
+            1.36548,
+            1.36636,
+            1.3674,
+            1.36854
+        ],
+        "status": "OPEN",
+        "hit_tps": []
     }
 ]
