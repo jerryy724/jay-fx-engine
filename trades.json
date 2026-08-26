@@ -34,7 +34,7 @@
         "direction": "BUY",
         "entry": 1.38365,
         "initial_sl": 1.38223,
-        "current_sl": 1.38223,
+        "current_sl": 1.38365,
         "tps": [
             1.3846,
             1.38555,
@@ -42,14 +42,16 @@
             1.38793
         ],
         "status": "OPEN",
-        "hit_tps": []
+        "hit_tps": [
+            1
+        ]
     },
     {
         "pair": "USD/CAD",
         "direction": "BUY",
         "entry": 1.38379,
         "initial_sl": 1.38235,
-        "current_sl": 1.38235,
+        "current_sl": 1.38379,
         "tps": [
             1.38475,
             1.38572,
@@ -57,7 +59,9 @@
             1.38812
         ],
         "status": "OPEN",
-        "hit_tps": []
+        "hit_tps": [
+            1
+        ]
     },
     {
         "pair": "USD/CHF",
