@@ -88,5 +88,20 @@
         ],
         "status": "OPEN",
         "hit_tps": []
+    },
+    {
+        "pair": "EUR/USD",
+        "direction": "BUY",
+        "entry": 1.16742,
+        "initial_sl": 1.16647,
+        "current_sl": 1.16647,
+        "tps": [
+            1.16805,
+            1.16869,
+            1.16945,
+            1.17027
+        ],
+        "status": "OPEN",
+        "hit_tps": []
     }
 ]
