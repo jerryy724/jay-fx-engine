@@ -381,5 +381,20 @@
         ],
         "status": "OPEN",
         "hit_tps": []
+    },
+    {
+        "pair": "USD/CAD",
+        "direction": "BUY",
+        "entry": 1.38657,
+        "initial_sl": 1.3855,
+        "current_sl": 1.3855,
+        "tps": [
+            1.38728,
+            1.38799,
+            1.38884,
+            1.38977
+        ],
+        "status": "OPEN",
+        "hit_tps": []
     }
 ]
