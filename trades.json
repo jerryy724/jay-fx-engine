@@ -260,7 +260,7 @@
         "direction": "BUY",
         "entry": 1.1663,
         "initial_sl": 1.16549,
-        "current_sl": 1.16549,
+        "current_sl": 1.1663,
         "tps": [
             1.16684,
             1.16738,
@@ -268,7 +268,9 @@
             1.16872
         ],
         "status": "OPEN",
-        "hit_tps": []
+        "hit_tps": [
+            1
+        ]
     },
     {
         "pair": "GBP/USD",
@@ -281,6 +283,21 @@
             1.36457,
             1.36532,
             1.36613
+        ],
+        "status": "OPEN",
+        "hit_tps": []
+    },
+    {
+        "pair": "GBP/USD",
+        "direction": "BUY",
+        "entry": 1.36351,
+        "initial_sl": 1.36256,
+        "current_sl": 1.36256,
+        "tps": [
+            1.36414,
+            1.36477,
+            1.36553,
+            1.36635
         ],
         "status": "OPEN",
         "hit_tps": []
