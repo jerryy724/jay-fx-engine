@@ -332,5 +332,20 @@
         ],
         "status": "OPEN",
         "hit_tps": []
+    },
+    {
+        "pair": "USD/JPY",
+        "direction": "SELL",
+        "entry": 158.974,
+        "initial_sl": 159.144,
+        "current_sl": 159.144,
+        "tps": [
+            158.86,
+            158.747,
+            158.61,
+            158.463
+        ],
+        "status": "OPEN",
+        "hit_tps": []
     }
 ]
