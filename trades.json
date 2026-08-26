@@ -350,5 +350,20 @@
         ],
         "status": "OPEN",
         "hit_tps": []
+    },
+    {
+        "pair": "AUD/USD",
+        "direction": "BUY",
+        "entry": 0.71806,
+        "initial_sl": 0.717,
+        "current_sl": 0.717,
+        "tps": [
+            0.71877,
+            0.71947,
+            0.72032,
+            0.72124
+        ],
+        "status": "OPEN",
+        "hit_tps": []
     }
 ]
