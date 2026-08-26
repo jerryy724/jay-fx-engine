@@ -260,7 +260,7 @@
         "direction": "BUY",
         "entry": 1.1663,
         "initial_sl": 1.16549,
-        "current_sl": 1.1663,
+        "current_sl": 1.16684,
         "tps": [
             1.16684,
             1.16738,
@@ -269,7 +269,8 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ]
     },
     {
