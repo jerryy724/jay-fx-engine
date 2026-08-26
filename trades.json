@@ -49,11 +49,12 @@
             1.38669,
             1.38793
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
             2,
-            3
+            3,
+            4
         ]
     },
     {
@@ -68,11 +69,12 @@
             1.38687,
             1.38812
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
             2,
-            3
+            3,
+            4
         ]
     },
     {
@@ -204,7 +206,7 @@
         "direction": "BUY",
         "entry": 1.38588,
         "initial_sl": 1.38471,
-        "current_sl": 1.38666,
+        "current_sl": 1.38745,
         "tps": [
             1.38666,
             1.38745,
@@ -214,7 +216,8 @@
         "status": "OPEN",
         "hit_tps": [
             1,
-            2
+            2,
+            3
         ]
     },
     {
@@ -222,7 +225,7 @@
         "direction": "BUY",
         "entry": 1.38648,
         "initial_sl": 1.38526,
-        "current_sl": 1.38648,
+        "current_sl": 1.38729,
         "tps": [
             1.38729,
             1.38811,
@@ -231,7 +234,8 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ]
     },
     {
@@ -369,7 +373,7 @@
             0.72032,
             0.72124
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": []
     },
     {
@@ -384,7 +388,7 @@
             0.72042,
             0.72136
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": []
     },
     {
@@ -392,7 +396,7 @@
         "direction": "BUY",
         "entry": 1.38657,
         "initial_sl": 1.3855,
-        "current_sl": 1.38657,
+        "current_sl": 1.38728,
         "tps": [
             1.38728,
             1.38799,
@@ -401,7 +405,8 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ]
     },
     {
@@ -409,7 +414,7 @@
         "direction": "BUY",
         "entry": 1.38691,
         "initial_sl": 1.3858,
-        "current_sl": 1.3858,
+        "current_sl": 1.38765,
         "tps": [
             1.38765,
             1.38838,
@@ -417,7 +422,10 @@
             1.39023
         ],
         "status": "OPEN",
-        "hit_tps": []
+        "hit_tps": [
+            1,
+            2
+        ]
     },
     {
         "pair": "USD/CHF",
