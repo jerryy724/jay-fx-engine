@@ -53,8 +53,7 @@ def run_tracker_only():
     """
     Only fetches prices for pairs that actually have an OPEN trade right now.
     This keeps API credit usage tied to real activity instead of always
-    pulling all 6 rotation pairs every 10 minutes, which alone can exceed
-    the free plan's 800 credits/day cap.
+    pulling all rotation pairs every run.
     """
     open_trades = tracker.load_trades()
     open_pairs = list({t["pair"] for t in open_trades if t.get("status") == "OPEN"})
@@ -117,10 +116,12 @@ def run_signal_dispatch():
     asset_type = item["type"]
     session_name = market_engine.get_market_session(asset_type == "CRYPTO")
     date_str = now.strftime("%d %b %Y | %H:%M UTC")
+    
+    # Formatted timestamp to record exact signal dispatch time for trade logging
+    issued_time = now.strftime("%Y-%m-%d %H:%M:%S UTC")
     fmt = f".{decimals}f"
 
-    # Safely evaluate existing open trades (reuse the price we already fetched
-    # above for this pair — no extra API call)
+    # Evaluate existing open trades using current market price
     try:
         tracker.check_open_trades({pair: price})
     except Exception as e:
@@ -133,7 +134,7 @@ def run_signal_dispatch():
     entry_low = round(entry - (0.25 * atr), decimals)
     entry_high = round(entry + (0.25 * atr), decimals)
 
-    # Multipliers configured to prevent broker "Invalid SL/TP" distance errors
+    # Multipliers configured to prevent broker distance errors
     if signal_type == "BUY":
         sl = round(entry - (1.50 * atr), decimals)
         tp1 = round(entry + (1.00 * atr), decimals)
@@ -175,8 +176,9 @@ def run_signal_dispatch():
     image_bio = image_generator.generate_signal_card(pair, signal_type, session_text=session_name, is_update=False)
     send_telegram_photo(caption, image_bio)
 
+    # Log new trade with the updated parameter signature (includes issued_time)
     try:
-        tracker.log_new_trade(pair, signal_type, entry, sl, [tp1, tp2, tp3, tp4])
+        tracker.log_new_trade(pair, signal_type, entry, sl, [tp1, tp2, tp3, tp4], issued_time)
     except Exception as e:
         print(f"Non-fatal trade log error: {e}")
 
