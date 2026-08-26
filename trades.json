@@ -30,7 +30,7 @@
             0.71835,
             0.71923
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2,
@@ -204,7 +204,7 @@
         "direction": "BUY",
         "entry": 1.38588,
         "initial_sl": 1.38471,
-        "current_sl": 1.38588,
+        "current_sl": 1.38666,
         "tps": [
             1.38666,
             1.38745,
@@ -213,7 +213,8 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ]
     },
     {
@@ -221,7 +222,7 @@
         "direction": "BUY",
         "entry": 1.38648,
         "initial_sl": 1.38526,
-        "current_sl": 1.38526,
+        "current_sl": 1.38648,
         "tps": [
             1.38729,
             1.38811,
@@ -229,7 +230,9 @@
             1.39015
         ],
         "status": "OPEN",
-        "hit_tps": []
+        "hit_tps": [
+            1
+        ]
     },
     {
         "pair": "USD/CHF",
@@ -389,7 +392,7 @@
         "direction": "BUY",
         "entry": 1.38657,
         "initial_sl": 1.3855,
-        "current_sl": 1.3855,
+        "current_sl": 1.38657,
         "tps": [
             1.38728,
             1.38799,
@@ -397,7 +400,9 @@
             1.38977
         ],
         "status": "OPEN",
-        "hit_tps": []
+        "hit_tps": [
+            1
+        ]
     },
     {
         "pair": "USD/CAD",
@@ -419,7 +424,7 @@
         "direction": "BUY",
         "entry": 0.80401,
         "initial_sl": 0.80311,
-        "current_sl": 0.80401,
+        "current_sl": 0.80461,
         "tps": [
             0.80461,
             0.80521,
@@ -428,7 +433,8 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ]
     },
     {
@@ -436,7 +442,7 @@
         "direction": "BUY",
         "entry": 0.80416,
         "initial_sl": 0.80321,
-        "current_sl": 0.80321,
+        "current_sl": 0.80416,
         "tps": [
             0.80479,
             0.80542,
@@ -444,7 +450,9 @@
             0.807
         ],
         "status": "OPEN",
-        "hit_tps": []
+        "hit_tps": [
+            1
+        ]
     },
     {
         "pair": "EUR/USD",
