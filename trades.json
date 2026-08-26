@@ -61,7 +61,7 @@
         "direction": "BUY",
         "entry": 1.38379,
         "initial_sl": 1.38235,
-        "current_sl": 1.38475,
+        "current_sl": 1.38572,
         "tps": [
             1.38475,
             1.38572,
@@ -71,7 +71,8 @@
         "status": "OPEN",
         "hit_tps": [
             1,
-            2
+            2,
+            3
         ]
     },
     {
@@ -270,7 +271,7 @@
             1.16802,
             1.16872
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2
@@ -303,7 +304,7 @@
             1.36553,
             1.36635
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": []
     },
     {
