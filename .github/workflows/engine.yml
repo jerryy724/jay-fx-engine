@@ -2,13 +2,9 @@ name: Jay Empire Trading Engine Workflow
 
 on:
   schedule:
-    # 1. Pre-alert: Runs exactly on the hour (e.g., 01:00, 02:00)
-    - cron: '0 * * * *'
-    # 2. Signal: Runs 5 minutes past the hour (e.g., 01:05, 02:05)
-    - cron: '5 * * * *'
-    # 3. Tracker: Runs at 15, 30, and 45 minutes past the hour
+    # 1. Tracker: Runs at 15, 30, and 45 minutes past the hour
     - cron: '15,30,45 * * * *'
-    # 4. News Dispatch: Runs twice daily at 07:00 and 13:00 UTC
+    # 2. News Dispatch: Runs twice daily at 07:00 and 13:00 UTC
     - cron: '0 7,13 * * *'
   repository_dispatch:
     types: [engine_trigger]
@@ -49,11 +45,7 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" == "schedule" ]; then
             CRON_EXPR="${{ github.event.schedule }}"
-            if [ "$CRON_EXPR" == "0 * * * *" ]; then
-              echo "ACTION=prealert" >> $GITHUB_OUTPUT
-            elif [ "$CRON_EXPR" == "5 * * * *" ]; then
-              echo "ACTION=signal" >> $GITHUB_OUTPUT
-            elif [ "$CRON_EXPR" == "0 7,13 * * *" ]; then
+            if [ "$CRON_EXPR" == "0 7,13 * * *" ]; then
               echo "ACTION=news" >> $GITHUB_OUTPUT
             else
               echo "ACTION=tracker" >> $GITHUB_OUTPUT
