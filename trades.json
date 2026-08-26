@@ -513,5 +513,21 @@
         "status": "OPEN",
         "hit_tps": [],
         "issued_time": "2026-08-26 16:25:19 UTC"
+    },
+    {
+        "pair": "USD/CHF",
+        "direction": "BUY",
+        "entry": 0.80551,
+        "initial_sl": 0.8044,
+        "current_sl": 0.8044,
+        "tps": [
+            0.80625,
+            0.80699,
+            0.80787,
+            0.80883
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "issued_time": "2026-08-26 17:13:37 UTC"
     }
 ]
