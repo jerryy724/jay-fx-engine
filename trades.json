@@ -4,7 +4,7 @@
         "direction": "BUY",
         "entry": 0.71634,
         "initial_sl": 0.71533,
-        "current_sl": 0.71634,
+        "current_sl": 0.71701,
         "tps": [
             0.71701,
             0.71768,
@@ -13,7 +13,8 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ]
     },
     {
@@ -21,7 +22,7 @@
         "direction": "BUY",
         "entry": 0.71619,
         "initial_sl": 0.71518,
-        "current_sl": 0.71619,
+        "current_sl": 0.71687,
         "tps": [
             0.71687,
             0.71754,
@@ -30,7 +31,8 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ]
     },
     {
@@ -123,6 +125,21 @@
             1.36636,
             1.3674,
             1.36854
+        ],
+        "status": "OPEN",
+        "hit_tps": []
+    },
+    {
+        "pair": "GBP/USD",
+        "direction": "BUY",
+        "entry": 1.36452,
+        "initial_sl": 1.36319,
+        "current_sl": 1.36319,
+        "tps": [
+            1.3654,
+            1.36629,
+            1.36735,
+            1.3685
         ],
         "status": "OPEN",
         "hit_tps": []
