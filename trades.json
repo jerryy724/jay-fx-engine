@@ -177,7 +177,7 @@
             0.72015,
             0.72101
         ],
-        "status": "OPEN",
+        "status": "CLOSED_BREAKEVEN",
         "hit_tps": [
             1
         ]
@@ -336,7 +336,7 @@
             158.638,
             158.496
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": []
     },
     {
@@ -419,7 +419,7 @@
         "direction": "BUY",
         "entry": 0.80401,
         "initial_sl": 0.80311,
-        "current_sl": 0.80311,
+        "current_sl": 0.80401,
         "tps": [
             0.80461,
             0.80521,
@@ -427,7 +427,9 @@
             0.80671
         ],
         "status": "OPEN",
-        "hit_tps": []
+        "hit_tps": [
+            1
+        ]
     },
     {
         "pair": "USD/CHF",
@@ -456,7 +458,7 @@
             1.16886,
             1.16963
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": []
     }
 ]
