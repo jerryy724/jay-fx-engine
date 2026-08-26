@@ -225,7 +225,7 @@
         "direction": "BUY",
         "entry": 1.38648,
         "initial_sl": 1.38526,
-        "current_sl": 1.38729,
+        "current_sl": 1.38811,
         "tps": [
             1.38729,
             1.38811,
@@ -235,7 +235,8 @@
         "status": "OPEN",
         "hit_tps": [
             1,
-            2
+            2,
+            3
         ]
     },
     {
@@ -396,7 +397,7 @@
         "direction": "BUY",
         "entry": 1.38657,
         "initial_sl": 1.3855,
-        "current_sl": 1.38728,
+        "current_sl": 1.38799,
         "tps": [
             1.38728,
             1.38799,
@@ -406,7 +407,8 @@
         "status": "OPEN",
         "hit_tps": [
             1,
-            2
+            2,
+            3
         ]
     },
     {
@@ -432,7 +434,7 @@
         "direction": "BUY",
         "entry": 0.80401,
         "initial_sl": 0.80311,
-        "current_sl": 0.80461,
+        "current_sl": 0.80521,
         "tps": [
             0.80461,
             0.80521,
@@ -442,7 +444,8 @@
         "status": "OPEN",
         "hit_tps": [
             1,
-            2
+            2,
+            3
         ]
     },
     {
@@ -450,7 +453,7 @@
         "direction": "BUY",
         "entry": 0.80416,
         "initial_sl": 0.80321,
-        "current_sl": 0.80479,
+        "current_sl": 0.80542,
         "tps": [
             0.80479,
             0.80542,
@@ -460,7 +463,8 @@
         "status": "OPEN",
         "hit_tps": [
             1,
-            2
+            2,
+            3
         ]
     },
     {
