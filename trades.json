@@ -713,7 +713,7 @@
             1.39035,
             1.39121
         ],
-        "status": "OPEN",
+        "status": "CLOSED_BREAKEVEN",
         "hit_tps": [
             1
         ],
@@ -768,5 +768,21 @@
             1
         ],
         "issued_time": "2026-08-27 07:05:12 UTC"
+    },
+    {
+        "pair": "USD/JPY",
+        "direction": "BUY",
+        "entry": 159.321,
+        "initial_sl": 159.195,
+        "current_sl": 159.195,
+        "tps": [
+            159.405,
+            159.489,
+            159.589,
+            159.698
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "issued_time": "2026-08-27 08:05:11 UTC"
     }
 ]
