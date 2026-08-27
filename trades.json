@@ -589,7 +589,7 @@
         "direction": "BUY",
         "entry": 0.71681,
         "initial_sl": 0.71592,
-        "current_sl": 0.7174,
+        "current_sl": 0.71799,
         "tps": [
             0.7174,
             0.71799,
@@ -599,7 +599,8 @@
         "status": "OPEN",
         "hit_tps": [
             1,
-            2
+            2,
+            3
         ],
         "issued_time": "2026-08-26 21:05:14 UTC"
     },
@@ -633,7 +634,7 @@
             0.80731,
             0.8082
         ],
-        "status": "OPEN",
+        "status": "CLOSED_BREAKEVEN",
         "hit_tps": [
             1
         ],
@@ -701,7 +702,7 @@
         "direction": "BUY",
         "entry": 0.71821,
         "initial_sl": 0.71738,
-        "current_sl": 0.71738,
+        "current_sl": 0.71821,
         "tps": [
             0.71876,
             0.71931,
@@ -709,7 +710,9 @@
             0.72069
         ],
         "status": "OPEN",
-        "hit_tps": [],
+        "hit_tps": [
+            1
+        ],
         "issued_time": "2026-08-27 03:05:10 UTC"
     },
     {
@@ -856,5 +859,21 @@
         "status": "CLOSED_SL",
         "hit_tps": [],
         "issued_time": "2026-08-27 11:05:15 UTC"
+    },
+    {
+        "pair": "EUR/USD",
+        "direction": "SELL",
+        "entry": 1.16442,
+        "initial_sl": 1.16526,
+        "current_sl": 1.16526,
+        "tps": [
+            1.16386,
+            1.1633,
+            1.16262,
+            1.16189
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "issued_time": "2026-08-27 12:05:11 UTC"
     }
 ]
