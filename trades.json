@@ -753,7 +753,7 @@
         "direction": "SELL",
         "entry": 1.16526,
         "initial_sl": 1.16588,
-        "current_sl": 1.16484,
+        "current_sl": 1.16443,
         "tps": [
             1.16484,
             1.16443,
@@ -763,7 +763,8 @@
         "status": "OPEN",
         "hit_tps": [
             1,
-            2
+            2,
+            3
         ],
         "issued_time": "2026-08-27 06:05:14 UTC"
     },
