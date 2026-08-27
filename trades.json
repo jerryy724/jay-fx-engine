@@ -742,7 +742,7 @@
             0.80693,
             0.80749
         ],
-        "status": "OPEN",
+        "status": "CLOSED_BREAKEVEN",
         "hit_tps": [
             1
         ],
