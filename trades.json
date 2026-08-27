@@ -1009,5 +1009,21 @@
         "status": "OPEN",
         "hit_tps": [],
         "issued_time": "2026-08-27 20:05:13 UTC"
+    },
+    {
+        "pair": "AUD/USD",
+        "direction": "BUY",
+        "entry": 0.71911,
+        "initial_sl": 0.71828,
+        "current_sl": 0.71828,
+        "tps": [
+            0.71966,
+            0.72022,
+            0.72088,
+            0.7216
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "issued_time": "2026-08-27 21:05:15 UTC"
     }
 ]
