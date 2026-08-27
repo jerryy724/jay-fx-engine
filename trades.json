@@ -544,7 +544,7 @@
             1.16263,
             1.16159
         ],
-        "status": "OPEN",
+        "status": "CLOSED_BREAKEVEN",
         "hit_tps": [
             1
         ],
@@ -562,7 +562,7 @@
             1.35578,
             1.35441
         ],
-        "status": "OPEN",
+        "status": "CLOSED_BREAKEVEN",
         "hit_tps": [
             1
         ],
@@ -596,11 +596,12 @@
             0.7187,
             0.71947
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
             2,
-            3
+            3,
+            4
         ],
         "issued_time": "2026-08-26 21:05:14 UTC"
     },
@@ -652,7 +653,7 @@
             1.16354,
             1.16268
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2
@@ -690,7 +691,7 @@
             159.572,
             159.687
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2
@@ -702,7 +703,7 @@
         "direction": "BUY",
         "entry": 0.71821,
         "initial_sl": 0.71738,
-        "current_sl": 0.71821,
+        "current_sl": 0.71876,
         "tps": [
             0.71876,
             0.71931,
@@ -711,7 +712,8 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ],
         "issued_time": "2026-08-27 03:05:10 UTC"
     },
@@ -873,7 +875,7 @@
             1.16262,
             1.16189
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
         "issued_time": "2026-08-27 12:05:11 UTC"
     },
@@ -889,7 +891,7 @@
             1.35552,
             1.35447
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
         "issued_time": "2026-08-27 13:05:13 UTC"
     }
