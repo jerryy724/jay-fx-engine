@@ -993,5 +993,21 @@
         "status": "OPEN",
         "hit_tps": [],
         "issued_time": "2026-08-27 19:05:12 UTC"
+    },
+    {
+        "pair": "USD/JPY",
+        "direction": "BUY",
+        "entry": 159.413,
+        "initial_sl": 159.276,
+        "current_sl": 159.276,
+        "tps": [
+            159.504,
+            159.595,
+            159.705,
+            159.823
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "issued_time": "2026-08-27 20:05:13 UTC"
     }
 ]
