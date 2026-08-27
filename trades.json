@@ -977,5 +977,21 @@
         "status": "OPEN",
         "hit_tps": [],
         "issued_time": "2026-08-27 18:05:15 UTC"
+    },
+    {
+        "pair": "GBP/USD",
+        "direction": "SELL",
+        "entry": 1.35888,
+        "initial_sl": 1.36062,
+        "current_sl": 1.36062,
+        "tps": [
+            1.35772,
+            1.35656,
+            1.35516,
+            1.35365
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "issued_time": "2026-08-27 19:05:12 UTC"
     }
 ]
