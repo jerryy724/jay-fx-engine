@@ -553,7 +553,7 @@
         "direction": "SELL",
         "entry": 1.35916,
         "initial_sl": 1.36074,
-        "current_sl": 1.36074,
+        "current_sl": 1.35916,
         "tps": [
             1.3581,
             1.35705,
@@ -561,7 +561,9 @@
             1.35441
         ],
         "status": "OPEN",
-        "hit_tps": [],
+        "hit_tps": [
+            1
+        ],
         "issued_time": "2026-08-26 19:05:16 UTC"
     },
     {
@@ -658,7 +660,7 @@
         "direction": "SELL",
         "entry": 1.35927,
         "initial_sl": 1.36057,
-        "current_sl": 1.35927,
+        "current_sl": 1.3584,
         "tps": [
             1.3584,
             1.35754,
@@ -667,7 +669,8 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ],
         "issued_time": "2026-08-27 01:05:16 UTC"
     },
@@ -746,7 +749,7 @@
         "direction": "SELL",
         "entry": 1.16526,
         "initial_sl": 1.16588,
-        "current_sl": 1.16588,
+        "current_sl": 1.16526,
         "tps": [
             1.16484,
             1.16443,
@@ -754,7 +757,9 @@
             1.16339
         ],
         "status": "OPEN",
-        "hit_tps": [],
+        "hit_tps": [
+            1
+        ],
         "issued_time": "2026-08-27 06:05:14 UTC"
     },
     {
@@ -762,7 +767,7 @@
         "direction": "SELL",
         "entry": 1.35929,
         "initial_sl": 1.36009,
-        "current_sl": 1.35875,
+        "current_sl": 1.35822,
         "tps": [
             1.35875,
             1.35822,
@@ -772,7 +777,8 @@
         "status": "OPEN",
         "hit_tps": [
             1,
-            2
+            2,
+            3
         ],
         "issued_time": "2026-08-27 07:05:12 UTC"
     },
@@ -791,5 +797,21 @@
         "status": "OPEN",
         "hit_tps": [],
         "issued_time": "2026-08-27 08:05:11 UTC"
+    },
+    {
+        "pair": "AUD/USD",
+        "direction": "BUY",
+        "entry": 0.71783,
+        "initial_sl": 0.71703,
+        "current_sl": 0.71703,
+        "tps": [
+            0.71836,
+            0.7189,
+            0.71954,
+            0.72023
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "issued_time": "2026-08-27 09:05:12 UTC"
     }
 ]
