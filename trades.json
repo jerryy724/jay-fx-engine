@@ -528,7 +528,7 @@
             0.80787,
             0.80883
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
         "issued_time": "2026-08-26 17:13:37 UTC"
     },
@@ -763,7 +763,7 @@
             1.16393,
             1.16339
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2,
@@ -803,7 +803,7 @@
             159.589,
             159.698
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2
@@ -876,5 +876,21 @@
         "status": "OPEN",
         "hit_tps": [],
         "issued_time": "2026-08-27 12:05:11 UTC"
+    },
+    {
+        "pair": "GBP/USD",
+        "direction": "SELL",
+        "entry": 1.35811,
+        "initial_sl": 1.35932,
+        "current_sl": 1.35932,
+        "tps": [
+            1.3573,
+            1.35649,
+            1.35552,
+            1.35447
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "issued_time": "2026-08-27 13:05:13 UTC"
     }
 ]
