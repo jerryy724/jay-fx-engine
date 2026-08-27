@@ -666,7 +666,7 @@
         "direction": "BUY",
         "entry": 159.288,
         "initial_sl": 159.155,
-        "current_sl": 159.155,
+        "current_sl": 159.288,
         "tps": [
             159.377,
             159.465,
@@ -674,7 +674,9 @@
             159.687
         ],
         "status": "OPEN",
-        "hit_tps": [],
+        "hit_tps": [
+            1
+        ],
         "issued_time": "2026-08-27 02:05:11 UTC"
     }
 ]
