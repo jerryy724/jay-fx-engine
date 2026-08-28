@@ -928,7 +928,7 @@
             0.72119,
             0.72196
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2
@@ -1006,7 +1006,7 @@
         "direction": "BUY",
         "entry": 159.413,
         "initial_sl": 159.276,
-        "current_sl": 159.276,
+        "current_sl": 159.413,
         "tps": [
             159.504,
             159.595,
@@ -1014,7 +1014,9 @@
             159.823
         ],
         "status": "OPEN",
-        "hit_tps": [],
+        "hit_tps": [
+            1
+        ],
         "issued_time": "2026-08-27 20:05:13 UTC"
     },
     {
