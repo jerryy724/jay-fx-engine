@@ -1158,7 +1158,7 @@
             1.38697,
             1.38774
         ],
-        "status": "OPEN",
+        "status": "CLOSED_BREAKEVEN",
         "hit_tps": [
             1
         ],
@@ -1192,7 +1192,7 @@
             1.16308,
             1.16249
         ],
-        "status": "OPEN",
+        "status": "CLOSED_BREAKEVEN",
         "hit_tps": [
             1
         ],
@@ -1210,7 +1210,7 @@
             1.3571,
             1.35635
         ],
-        "status": "OPEN",
+        "status": "CLOSED_BREAKEVEN",
         "hit_tps": [
             1
         ],
@@ -1265,7 +1265,7 @@
             1.38756,
             1.38825
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
         "issued_time": "2026-08-28 10:05:10 UTC"
     }
