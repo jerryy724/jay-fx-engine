@@ -703,7 +703,7 @@
         "direction": "BUY",
         "entry": 0.71821,
         "initial_sl": 0.71738,
-        "current_sl": 0.71876,
+        "current_sl": 0.71931,
         "tps": [
             0.71876,
             0.71931,
@@ -713,7 +713,8 @@
         "status": "OPEN",
         "hit_tps": [
             1,
-            2
+            2,
+            3
         ],
         "issued_time": "2026-08-27 03:05:10 UTC"
     },
