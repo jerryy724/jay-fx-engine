@@ -901,7 +901,7 @@
         "direction": "BUY",
         "entry": 159.353,
         "initial_sl": 159.213,
-        "current_sl": 159.213,
+        "current_sl": 159.353,
         "tps": [
             159.446,
             159.54,
@@ -909,7 +909,9 @@
             159.773
         ],
         "status": "OPEN",
-        "hit_tps": [],
+        "hit_tps": [
+            1
+        ],
         "issued_time": "2026-08-27 14:05:24 UTC"
     },
     {
@@ -1093,5 +1095,21 @@
         "status": "OPEN",
         "hit_tps": [],
         "issued_time": "2026-08-28 01:05:10 UTC"
+    },
+    {
+        "pair": "USD/JPY",
+        "direction": "BUY",
+        "entry": 159.446,
+        "initial_sl": 159.329,
+        "current_sl": 159.329,
+        "tps": [
+            159.524,
+            159.602,
+            159.696,
+            159.797
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "issued_time": "2026-08-28 02:05:11 UTC"
     }
 ]
