@@ -903,7 +903,7 @@
         "direction": "BUY",
         "entry": 159.353,
         "initial_sl": 159.213,
-        "current_sl": 159.353,
+        "current_sl": 159.446,
         "tps": [
             159.446,
             159.54,
@@ -912,7 +912,8 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ],
         "issued_time": "2026-08-27 14:05:24 UTC"
     },
@@ -1031,7 +1032,7 @@
             0.72088,
             0.7216
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2
@@ -1111,7 +1112,7 @@
         "direction": "BUY",
         "entry": 159.446,
         "initial_sl": 159.329,
-        "current_sl": 159.329,
+        "current_sl": 159.446,
         "tps": [
             159.524,
             159.602,
@@ -1119,7 +1120,9 @@
             159.797
         ],
         "status": "OPEN",
-        "hit_tps": [],
+        "hit_tps": [
+            1
+        ],
         "issued_time": "2026-08-28 02:05:11 UTC"
     },
     {
@@ -1134,7 +1137,7 @@
             0.72173,
             0.72226
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
         "issued_time": "2026-08-28 03:05:11 UTC"
     },
