@@ -1174,5 +1174,21 @@
         "status": "OPEN",
         "hit_tps": [],
         "issued_time": "2026-08-28 05:05:15 UTC"
+    },
+    {
+        "pair": "EUR/USD",
+        "direction": "SELL",
+        "entry": 1.16451,
+        "initial_sl": 1.16518,
+        "current_sl": 1.16518,
+        "tps": [
+            1.16406,
+            1.16361,
+            1.16308,
+            1.16249
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "issued_time": "2026-08-28 06:05:10 UTC"
     }
 ]
