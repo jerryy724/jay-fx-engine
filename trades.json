@@ -1069,11 +1069,12 @@
             1.38843,
             1.38964
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
             2,
-            3
+            3,
+            4
         ],
         "issued_time": "2026-08-27 22:05:17 UTC"
     },
