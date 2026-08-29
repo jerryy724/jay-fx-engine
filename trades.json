@@ -1636,9 +1636,10 @@
             76641.99,
             76263.2
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "issued_time": "2026-08-29 06:05:11 UTC"
+        "issued_time": "2026-08-29 06:05:11 UTC",
+        "secured_pips": -4476200.0
     },
     {
         "pair": "ETH/USD",
