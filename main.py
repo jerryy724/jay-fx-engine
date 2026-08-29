@@ -1,6 +1,5 @@
 import os
 import sys
-import json
 import requests
 from datetime import datetime, timezone
 import config
@@ -9,6 +8,13 @@ import image_generator
 import news_engine
 import prealerts
 import tracker
+
+def is_channel_quiet_time():
+    """
+    Checks if the current time falls within the 10:00 PM to 12:00 AM UTC quiet window.
+    """
+    now = datetime.now(timezone.utc)
+    return 22 <= now.hour < 24
 
 def send_telegram_photo(caption, image_bio):
     try:
@@ -34,6 +40,10 @@ def send_telegram_msg(text):
 # 1. HOURLY PRE-ALERT JOB
 # ==========================================
 def run_prealert():
+    if is_channel_quiet_time():
+        print("Channel is in Quiet Mode (22:00 UTC - 00:00 UTC). Skipping pre-alert dispatch.")
+        return
+
     now = datetime.now(timezone.utc)
     hour = now.hour
     is_weekend = now.weekday() in [5, 6]
@@ -50,11 +60,6 @@ def run_prealert():
 # 2. STANDALONE TRACKER JOB
 # ==========================================
 def run_tracker_only():
-    """
-    Only fetches prices for pairs that actually have an OPEN trade right now.
-    This keeps API credit usage tied to real activity instead of always
-    pulling all rotation pairs every run.
-    """
     open_trades = tracker.load_trades()
     open_pairs = list({t["pair"] for t in open_trades if t.get("status") == "OPEN"})
 
@@ -96,6 +101,10 @@ def run_tracker_only():
 # 3. MAIN SIGNAL DISPATCH JOB
 # ==========================================
 def run_signal_dispatch():
+    if is_channel_quiet_time():
+        print("Channel is in Quiet Mode (22:00 UTC - 00:00 UTC). Skipping signal dispatch.")
+        return
+
     now = datetime.now(timezone.utc)
     is_weekend = now.weekday() in [5, 6]
 
@@ -103,7 +112,6 @@ def run_signal_dispatch():
     idx = now.hour % len(rotation_list)
     item = rotation_list[idx]
 
-    # Fetch real-time live price strictly from Twelve Data
     price, decimals, signal_type, atr, conviction = market_engine.fetch_live_market_data(item)
 
     if price is None or atr is None:
@@ -116,25 +124,18 @@ def run_signal_dispatch():
     asset_type = item["type"]
     session_name = market_engine.get_market_session(asset_type == "CRYPTO")
     date_str = now.strftime("%d %b %Y | %H:%M UTC")
-    
-    # Formatted timestamp to record exact signal dispatch time for trade logging
     issued_time = now.strftime("%Y-%m-%d %H:%M:%S UTC")
     fmt = f".{decimals}f"
 
-    # Evaluate existing open trades using current market price
     try:
         tracker.check_open_trades({pair: price})
     except Exception as e:
         print(f"Non-fatal tracker error: {e}")
 
-    # Anchor entry on current live price
     entry = price
-
-    # Entry zone centered around live market price
     entry_low = round(entry - (0.25 * atr), decimals)
     entry_high = round(entry + (0.25 * atr), decimals)
 
-    # Multipliers configured to prevent broker distance errors
     if signal_type == "BUY":
         sl = round(entry - (1.50 * atr), decimals)
         tp1 = round(entry + (1.00 * atr), decimals)
@@ -148,7 +149,6 @@ def run_signal_dispatch():
         tp3 = round(entry - (3.20 * atr), decimals)
         tp4 = round(entry - (4.50 * atr), decimals)
 
-    # Format numeric values strictly to pair decimal precision
     entry_low_str = f"{entry_low:{fmt}}"
     entry_high_str = f"{entry_high:{fmt}}"
     sl_str = f"{sl:{fmt}}"
@@ -176,16 +176,37 @@ def run_signal_dispatch():
     image_bio = image_generator.generate_signal_card(pair, signal_type, session_text=session_name, is_update=False)
     send_telegram_photo(caption, image_bio)
 
-    # Log new trade with the updated parameter signature (includes issued_time)
     try:
         tracker.log_new_trade(pair, signal_type, entry, sl, [tp1, tp2, tp3, tp4], issued_time)
     except Exception as e:
         print(f"Non-fatal trade log error: {e}")
 
 # ==========================================
-# 4. MARKET NEWS DISPATCH JOB
+# 4. FRIDAY ROTATION ALERT JOB (BLUE ON BLACK)
+# ==========================================
+def run_friday_rotation_alert():
+    title = "WEEKEND CRYPTO ROTATION"
+    sub_text = "FOREX CLOSED — SWITCHING TO CRYPTO SIGNALS"
+    
+    caption = (
+        f"🔄 *JAYFX MARKET ROTATION NOTICE*\n\n"
+        f"The Forex market is closing for the weekend.\n"
+        f"The system has officially transitioned to **Cryptocurrency Market Scanning**.\n\n"
+        f"⚡ *24/7 Coverage Active:* Bitcoin & Major Altcoins\n"
+        f"📊 *Forex Operations Resume:* Sunday 22:00 UTC\n\n"
+        f"🌐 _Stay tuned for weekend high-conviction setups._"
+    )
+
+    card_bio = image_generator.generate_signal_card(title, sub_text, session_text="CRYPTO MARKET ACTIVE", is_update=True)
+    send_telegram_photo(caption, card_bio)
+
+# ==========================================
+# 5. MARKET NEWS DISPATCH JOB
 # ==========================================
 def run_news_dispatch():
+    if is_channel_quiet_time():
+        print("Channel is in Quiet Mode. Skipping news briefing.")
+        return
     try:
         news_engine.run_news_briefing()
     except Exception as e:
@@ -212,6 +233,16 @@ if __name__ == "__main__":
         run_tracker_only()
     elif action in ["news", "market_news"]:
         run_news_dispatch()
+    elif action in ["rotation_alert", "friday_alert"]:
+        run_friday_rotation_alert()
+    elif action in ["report_daily", "daily_report"]:
+        tracker.generate_performance_report("daily")
+    elif action in ["report_weekly", "weekly_report"]:
+        tracker.generate_performance_report("weekly")
+    elif action in ["report_monthly", "monthly_report"]:
+        tracker.generate_performance_report("monthly")
+    elif action in ["report_annual", "annual_report"]:
+        tracker.generate_performance_report("annual")
     else:
         print(f"Action '{action}' unmapped or empty. Defaulting to signal dispatch.")
         run_signal_dispatch()
