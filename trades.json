@@ -1687,5 +1687,21 @@
         "status": "OPEN",
         "hit_tps": [],
         "issued_time": "2026-08-29 09:05:11 UTC"
+    },
+    {
+        "pair": "BTC/USD",
+        "direction": "SELL",
+        "entry": 77588.38,
+        "initial_sl": 77907.97,
+        "current_sl": 77907.97,
+        "tps": [
+            77375.32,
+            77162.27,
+            76906.6,
+            76629.62
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "issued_time": "2026-08-29 10:05:12 UTC"
     }
 ]
