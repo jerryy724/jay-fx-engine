@@ -1653,9 +1653,10 @@
             2404.18,
             2390.94
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "issued_time": "2026-08-29 07:05:13 UTC"
+        "issued_time": "2026-08-29 07:05:13 UTC",
+        "secured_pips": -168400.0
     },
     {
         "pair": "BTC/USD",
@@ -1809,5 +1810,22 @@
         "hit_tps": [],
         "secured_pips": 0.0,
         "issued_time": "2026-08-29 16:05:13 UTC"
+    },
+    {
+        "pair": "ETH/USD",
+        "direction": "BUY",
+        "entry": 2453.6,
+        "initial_sl": 2443.34,
+        "current_sl": 2443.34,
+        "tps": [
+            2460.44,
+            2467.28,
+            2475.49,
+            2484.38
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-08-29 17:05:14 UTC"
     }
 ]
