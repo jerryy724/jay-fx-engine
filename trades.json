@@ -1559,7 +1559,7 @@
         "direction": "BUY",
         "entry": 2442.01,
         "initial_sl": 2407.38,
-        "current_sl": 2465.1,
+        "current_sl": 2488.19,
         "tps": [
             2465.1,
             2488.19,
@@ -1569,10 +1569,11 @@
         "status": "OPEN",
         "hit_tps": [
             1,
-            2
+            2,
+            3
         ],
         "issued_time": "2026-08-29 01:05:10 UTC",
-        "secured_pips": 461800.0
+        "secured_pips": 738900.0
     },
     {
         "pair": "BTC/USD",
@@ -2149,7 +2150,7 @@
         "direction": "BUY",
         "entry": 78894.91,
         "initial_sl": 78569.38,
-        "current_sl": 78569.38,
+        "current_sl": 78894.91,
         "tps": [
             79111.93,
             79328.95,
@@ -2157,8 +2158,10 @@
             79871.51
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 2170200.0,
         "issued_time": "2026-08-30 14:05:14 UTC"
     },
     {
