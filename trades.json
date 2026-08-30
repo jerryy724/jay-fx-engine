@@ -2173,13 +2173,14 @@
             2499.42,
             2509.21
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
             2,
-            3
+            3,
+            4
         ],
-        "secured_pips": 240800.0,
+        "secured_pips": 338700.0,
         "issued_time": "2026-08-30 15:05:12 UTC"
     },
     {
