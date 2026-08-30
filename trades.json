@@ -1620,9 +1620,10 @@
             2392.81,
             2373.35
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "issued_time": "2026-08-29 05:05:10 UTC"
+        "issued_time": "2026-08-29 05:05:10 UTC",
+        "secured_pips": -234600.0
     },
     {
         "pair": "BTC/USD",
