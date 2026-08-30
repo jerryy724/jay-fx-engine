@@ -1437,7 +1437,7 @@
         "direction": "SELL",
         "entry": 1.15794,
         "initial_sl": 1.15979,
-        "current_sl": 1.15671,
+        "current_sl": 1.15548,
         "tps": [
             1.15671,
             1.15548,
@@ -1447,10 +1447,11 @@
         "status": "OPEN",
         "hit_tps": [
             1,
-            2
+            2,
+            3
         ],
         "issued_time": "2026-08-28 18:05:14 UTC",
-        "secured_pips": 24.6
+        "secured_pips": 39.4
     },
     {
         "pair": "GBP/USD",
