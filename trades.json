@@ -2157,7 +2157,7 @@
             79589.38,
             79871.51
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2
@@ -2199,7 +2199,7 @@
             79709.96,
             80005.98
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1
         ],
@@ -2218,9 +2218,9 @@
             2561.12,
             2576.46
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -265000.0,
         "issued_time": "2026-08-30 17:05:09 UTC"
     }
 ]
