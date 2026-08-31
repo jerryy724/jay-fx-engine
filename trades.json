@@ -1517,9 +1517,10 @@
             1.39472,
             1.3964
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "issued_time": "2026-08-28 22:05:19 UTC"
+        "issued_time": "2026-08-28 22:05:19 UTC",
+        "secured_pips": -20.3
     },
     {
         "pair": "USD/CHF",
