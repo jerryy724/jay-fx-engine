@@ -1482,9 +1482,10 @@
             160.494,
             160.661
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "issued_time": "2026-08-28 20:05:16 UTC"
+        "issued_time": "2026-08-28 20:05:16 UTC",
+        "secured_pips": -26.1
     },
     {
         "pair": "AUD/USD",
