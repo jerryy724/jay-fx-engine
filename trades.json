@@ -2403,13 +2403,14 @@
             160.018,
             160.229
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
             2,
-            3
+            3,
+            4
         ],
-        "secured_pips": 51.9,
+        "secured_pips": 73.0,
         "issued_time": "2026-08-31 08:05:12 UTC"
     },
     {
