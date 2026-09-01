@@ -2580,7 +2580,7 @@
             1.15879,
             1.15765
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2
@@ -2620,7 +2620,7 @@
             160.178,
             160.357
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2,
@@ -2658,7 +2658,7 @@
             1.15961,
             1.15877
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2,
@@ -2798,7 +2798,7 @@
             160.312,
             160.43
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1
         ],
