@@ -1501,9 +1501,10 @@
             0.71315,
             0.71186
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "issued_time": "2026-08-28 21:05:15 UTC"
+        "issued_time": "2026-08-28 21:05:15 UTC",
+        "secured_pips": -16.4
     },
     {
         "pair": "USD/CAD",
@@ -2533,9 +2534,9 @@
             1.38893,
             1.39011
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -14.0,
         "issued_time": "2026-08-31 16:05:10 UTC"
     },
     {
