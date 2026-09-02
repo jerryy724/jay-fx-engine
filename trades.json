@@ -1535,14 +1535,15 @@
             0.81297,
             0.81464
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
             2,
-            3
+            3,
+            4
         ],
         "issued_time": "2026-08-28 23:05:13 UTC",
-        "secured_pips": 41.1
+        "secured_pips": 57.8
     },
     {
         "pair": "BTC/USD",
