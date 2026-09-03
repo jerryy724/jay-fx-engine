@@ -182,7 +182,7 @@ def run_signal_dispatch():
         print(f"Non-fatal trade log error: {e}")
 
 # ==========================================
-# 4. FRIDAY ROTATION ALERT JOB (BLUE ON BLACK)
+# 4. ROTATION ALERTS (FRIDAY & SUNDAY)
 # ==========================================
 def run_friday_rotation_alert():
     title = "WEEKEND CRYPTO ROTATION"
@@ -198,6 +198,22 @@ def run_friday_rotation_alert():
     )
 
     card_bio = image_generator.generate_signal_card(title, sub_text, session_text="CRYPTO MARKET ACTIVE", is_update=True)
+    send_telegram_photo(caption, card_bio)
+
+def run_sunday_rotation_alert():
+    title = "FOREX MARKET RESUMPTION"
+    sub_text = "CRYPTO PAUSED — RESUMING FOREX SIGNALS"
+    
+    caption = (
+        f"🔄 *JAYFX MARKET ROTATION NOTICE*\n\n"
+        f"Weekend Crypto Market Scanning is now on hold.\n"
+        f"The system has officially transitioned back to **Forex & Commodities Market Scanning**.\n\n"
+        f"🌐 *Sydney & Asian Sessions:* Live\n"
+        f"📊 *Active Coverage:* Major & Minor FX Pairs\n\n"
+        f"⚡ _Get ready for high-conviction market setups for the week ahead._"
+    )
+
+    card_bio = image_generator.generate_signal_card(title, sub_text, session_text="FOREX MARKET ACTIVE", is_update=True)
     send_telegram_photo(caption, card_bio)
 
 # ==========================================
@@ -235,6 +251,8 @@ if __name__ == "__main__":
         run_news_dispatch()
     elif action in ["rotation_alert", "friday_alert"]:
         run_friday_rotation_alert()
+    elif action in ["sunday_alert", "sunday_rotation"]:
+        run_sunday_rotation_alert()
     elif action in ["report_daily", "daily_report"]:
         tracker.generate_performance_report("daily")
     elif action in ["report_weekly", "weekly_report"]:
