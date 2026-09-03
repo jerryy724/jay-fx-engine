@@ -3538,9 +3538,9 @@
             0.7146,
             0.71386
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -9.0,
         "issued_time": "2026-09-03 03:05:13 UTC"
     },
     {
@@ -3548,7 +3548,7 @@
         "direction": "SELL",
         "entry": 1.38305,
         "initial_sl": 1.3843,
-        "current_sl": 1.3843,
+        "current_sl": 1.38305,
         "tps": [
             1.38222,
             1.38138,
@@ -3556,8 +3556,10 @@
             1.3793
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 8.3,
         "issued_time": "2026-09-03 04:05:18 UTC"
     },
     {
