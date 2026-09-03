@@ -25,11 +25,30 @@ def save_trades(trades):
         print(f"Error saving {TRADES_FILE}: {e}")
 
 def calculate_pips(pair, entry, exit_price, direction):
-    multiplier = 100 if "JPY" in pair.upper() else 10000
+    """
+    Calculates pips dynamically based on asset type:
+    - Forex JPY Pairs: Multiplier = 100
+    - Forex Standard Pairs: Multiplier = 10,000
+    - Crypto / Index Pairs (BTC/USD, ETH/USD, SOL/USD, etc.): Multiplier = 1 (1 point/dollar = 1 pip)
+    """
+    pair_upper = pair.upper()
+    
+    # Identify Crypto/Index symbols
+    crypto_keywords = ["BTC", "ETH", "SOL", "XRP", "BNB", "ADA", "DOGE", "AVAX", "LINK", "LTC"]
+    is_crypto = any(coin in pair_upper for coin in crypto_keywords) or "/" not in pair_upper
+
+    if is_crypto:
+        multiplier = 1.0
+    elif "JPY" in pair_upper:
+        multiplier = 100.0
+    else:
+        multiplier = 10000.0
+
     if direction == "BUY":
         pips = (exit_price - entry) * multiplier
     else:
         pips = (entry - exit_price) * multiplier
+        
     return round(pips, 1)
 
 def log_new_trade(pair, direction, entry, sl, tps, issued_time):
