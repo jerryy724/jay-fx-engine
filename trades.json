@@ -3442,13 +3442,14 @@
             157.824,
             157.465
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
             2,
-            3
+            3,
+            4
         ],
-        "secured_pips": 88.2,
+        "secured_pips": 124.1,
         "issued_time": "2026-09-02 20:05:13 UTC"
     },
     {
@@ -3507,7 +3508,7 @@
         "direction": "SELL",
         "entry": 158.437,
         "initial_sl": 158.902,
-        "current_sl": 158.127,
+        "current_sl": 157.817,
         "tps": [
             158.127,
             157.817,
@@ -3517,9 +3518,10 @@
         "status": "OPEN",
         "hit_tps": [
             1,
-            2
+            2,
+            3
         ],
-        "secured_pips": 62.0,
+        "secured_pips": 99.2,
         "issued_time": "2026-09-03 02:05:13 UTC"
     },
     {
