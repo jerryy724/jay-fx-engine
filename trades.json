@@ -3639,13 +3639,14 @@
             155.824,
             155.338
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
             2,
-            3
+            3,
+            4
         ],
-        "secured_pips": 119.4,
+        "secured_pips": 168.0,
         "issued_time": "2026-09-03 08:05:12 UTC"
     },
     {
