@@ -3471,13 +3471,14 @@
             0.71988,
             0.72117
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
             2,
-            3
+            3,
+            4
         ],
-        "secured_pips": 31.8,
+        "secured_pips": 44.7,
         "issued_time": "2026-09-02 21:05:12 UTC"
     },
     {
