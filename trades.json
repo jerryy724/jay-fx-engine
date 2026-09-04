@@ -4005,9 +4005,9 @@
             1.16484,
             1.16558
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -10.2,
         "issued_time": "2026-09-04 06:05:11 UTC"
     },
     {
