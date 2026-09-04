@@ -3920,7 +3920,7 @@
             1.34888,
             1.3472
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2
@@ -4139,9 +4139,9 @@
             1.34629,
             1.34476
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -20.8,
         "issued_time": "2026-09-04 13:05:14 UTC"
     },
     {
