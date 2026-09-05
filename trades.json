@@ -4319,7 +4319,7 @@
         "direction": "BUY",
         "entry": 79517.56,
         "initial_sl": 79003.97,
-        "current_sl": 79003.97,
+        "current_sl": 79517.56,
         "tps": [
             79859.96,
             80202.35,
@@ -4327,8 +4327,10 @@
             81058.34
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 342.4,
         "issued_time": "2026-09-05 02:05:11 UTC"
     },
     {
@@ -4415,9 +4417,9 @@
             2437.15,
             2430.19
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -9.4,
         "issued_time": "2026-09-05 07:05:10 UTC"
     },
     {
@@ -4444,7 +4446,7 @@
         "direction": "BUY",
         "entry": 2458.35,
         "initial_sl": 2450.59,
-        "current_sl": 2450.59,
+        "current_sl": 2458.35,
         "tps": [
             2463.52,
             2468.7,
@@ -4452,8 +4454,10 @@
             2481.63
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 5.2,
         "issued_time": "2026-09-05 09:05:13 UTC"
     },
     {
@@ -4487,9 +4491,9 @@
             2439.85,
             2433.91
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -9.2,
         "issued_time": "2026-09-05 11:05:12 UTC"
     },
     {
@@ -4552,7 +4556,7 @@
         "direction": "BUY",
         "entry": 2457.49,
         "initial_sl": 2449.48,
-        "current_sl": 2449.48,
+        "current_sl": 2457.49,
         "tps": [
             2462.83,
             2468.16,
@@ -4560,8 +4564,10 @@
             2481.51
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 5.3,
         "issued_time": "2026-09-05 15:05:13 UTC"
     },
     {
