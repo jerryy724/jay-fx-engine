@@ -4353,7 +4353,7 @@
         "direction": "BUY",
         "entry": 79583.39,
         "initial_sl": 79215.18,
-        "current_sl": 79215.18,
+        "current_sl": 79583.39,
         "tps": [
             79828.86,
             80074.33,
@@ -4361,8 +4361,10 @@
             80688.01
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 245.5,
         "issued_time": "2026-09-05 04:05:13 UTC"
     },
     {
@@ -4387,7 +4389,7 @@
         "direction": "BUY",
         "entry": 79609.08,
         "initial_sl": 79350.57,
-        "current_sl": 79350.57,
+        "current_sl": 79609.08,
         "tps": [
             79781.42,
             79953.76,
@@ -4395,8 +4397,10 @@
             80384.6
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 172.3,
         "issued_time": "2026-09-05 06:05:10 UTC"
     },
     {
@@ -4421,7 +4425,7 @@
         "direction": "BUY",
         "entry": 79645.87,
         "initial_sl": 79415.07,
-        "current_sl": 79415.07,
+        "current_sl": 79645.87,
         "tps": [
             79799.73,
             79953.6,
@@ -4429,8 +4433,10 @@
             80338.26
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 153.9,
         "issued_time": "2026-09-05 08:05:47 UTC"
     },
     {
@@ -4455,7 +4461,7 @@
         "direction": "BUY",
         "entry": 79630.93,
         "initial_sl": 79418.41,
-        "current_sl": 79418.41,
+        "current_sl": 79630.93,
         "tps": [
             79772.61,
             79914.29,
@@ -4463,8 +4469,10 @@
             80268.5
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 141.7,
         "issued_time": "2026-09-05 10:05:14 UTC"
     },
     {
@@ -4489,7 +4497,7 @@
         "direction": "BUY",
         "entry": 79654.2,
         "initial_sl": 79467.78,
-        "current_sl": 79467.78,
+        "current_sl": 79654.2,
         "tps": [
             79778.48,
             79902.76,
@@ -4497,8 +4505,10 @@
             80213.47
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 124.3,
         "issued_time": "2026-09-05 12:05:13 UTC"
     },
     {
@@ -4523,7 +4533,7 @@
         "direction": "BUY",
         "entry": 79647.64,
         "initial_sl": 79452.76,
-        "current_sl": 79452.76,
+        "current_sl": 79647.64,
         "tps": [
             79777.56,
             79907.49,
@@ -4531,8 +4541,10 @@
             80232.29
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 129.9,
         "issued_time": "2026-09-05 14:05:11 UTC"
     },
     {
@@ -4551,5 +4563,22 @@
         "hit_tps": [],
         "secured_pips": 0.0,
         "issued_time": "2026-09-05 15:05:13 UTC"
+    },
+    {
+        "pair": "BTC/USD",
+        "direction": "BUY",
+        "entry": 79837.81,
+        "initial_sl": 79649.87,
+        "current_sl": 79649.87,
+        "tps": [
+            79963.11,
+            80088.4,
+            80238.76,
+            80401.64
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-09-05 16:05:11 UTC"
     }
 ]
