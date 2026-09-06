@@ -4438,7 +4438,7 @@
             80138.23,
             80338.26
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2,
@@ -4480,7 +4480,7 @@
             80084.31,
             80268.5
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2,
@@ -4518,7 +4518,7 @@
             80051.9,
             80213.47
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2,
@@ -4560,7 +4560,7 @@
             80063.39,
             80232.29
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2,
@@ -4602,7 +4602,7 @@
             80238.76,
             80401.64
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2
