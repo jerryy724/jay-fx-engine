@@ -4401,7 +4401,7 @@
             80160.56,
             80384.6
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2
@@ -4647,9 +4647,9 @@
             80544.07,
             80748.85
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -261.6,
         "issued_time": "2026-09-05 18:05:13 UTC"
     },
     {
