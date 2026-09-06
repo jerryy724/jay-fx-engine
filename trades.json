@@ -4913,5 +4913,22 @@
         "hit_tps": [],
         "secured_pips": -293.9,
         "issued_time": "2026-09-06 14:05:14 UTC"
+    },
+    {
+        "pair": "ETH/USD",
+        "direction": "BUY",
+        "entry": 2477.81,
+        "initial_sl": 2457.74,
+        "current_sl": 2457.74,
+        "tps": [
+            2491.19,
+            2504.57,
+            2520.63,
+            2538.03
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-09-06 15:05:13 UTC"
     }
 ]
