@@ -4581,13 +4581,14 @@
             2474.57,
             2481.51
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
             2,
-            3
+            3,
+            4
         ],
-        "secured_pips": 17.1,
+        "secured_pips": 24.0,
         "issued_time": "2026-09-05 15:05:13 UTC"
     },
     {
