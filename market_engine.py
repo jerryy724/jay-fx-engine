@@ -1,7 +1,6 @@
-import os
-import requests
 from datetime import datetime, timezone
 import config
+import data_client
 
 # ==========================================
 # LOCAL INDICATOR CALCULATIONS
@@ -91,30 +90,24 @@ def fetch_live_market_data(item):
         decimals = 2
 
     # 1. Fetch Real-Time Live Price (Direct Ticker)
-    price_url = f"https://api.twelvedata.com/price?symbol={symbol}&apikey={config.TWELVE_DATA_API_KEY}"
+    p_res = data_client.twelvedata_get("price", {"symbol": symbol})
+    if "price" not in p_res:
+        print(f"Price API error for {symbol}: {p_res}")
+        return None, decimals, "BUY", None, "LOW"
     try:
-        p_res = requests.get(price_url, timeout=10).json()
-        if "price" not in p_res:
-            print(f"Price API error for {symbol}: {p_res}")
-            return None, decimals, "BUY", None, "LOW"
         current_price = round(float(p_res["price"]), decimals)
-    except Exception as e:
-        print(f"Price Fetch Error ({symbol}): {e}")
+    except (TypeError, ValueError) as e:
+        print(f"Price parse error for {symbol}: {e} — raw: {p_res}")
         return None, decimals, "BUY", None, "LOW"
 
     # 2. Fetch Historical Time Series Data (For Indicator Math Only)
-    url = f"https://api.twelvedata.com/time_series?symbol={symbol}&interval=1h&outputsize=220&apikey={config.TWELVE_DATA_API_KEY}"
-    try:
-        res = requests.get(url, timeout=10).json()
-        if "values" not in res or len(res["values"]) == 0:
-            print(f"Time series error for {symbol}: {res}")
-            return None, decimals, "BUY", None, "LOW"
-        
-        # Twelve Data returns newest records first -> Reverse to oldest -> newest
-        bars = list(reversed(res["values"]))
-    except Exception as e:
-        print(f"Time Series Fetch Error ({symbol}): {e}")
+    res = data_client.twelvedata_get("time_series", {"symbol": symbol, "interval": "1h", "outputsize": 220})
+    if "values" not in res or len(res["values"]) == 0:
+        print(f"Time series error for {symbol}: {res}")
         return None, decimals, "BUY", None, "LOW"
+
+    # Twelve Data returns newest records first -> Reverse to oldest -> newest
+    bars = list(reversed(res["values"]))
 
     # 3. Compute Strategy Indicators Locally
     atr = calculate_atr_1h(bars, period=config.ATR_PERIOD)
@@ -125,6 +118,11 @@ def fetch_live_market_data(item):
     rsi_1h = calculate_1h_rsi(bars, period=config.RSI_PERIOD)
 
     # 4. Apply Trading Rules Using Exact Real-Time Price
+    # Conviction reflects whether trend (4H EMA) and momentum (1H RSI) AGREE:
+    #   - HIGH: trend direction and RSI momentum both point the same way
+    #   - STANDARD: trend says one thing, RSI hasn't confirmed it yet
+    #   - AVOID_OVERBOUGHT / AVOID_OVERSOLD: trend and momentum agree, but
+    #     RSI is stretched past 70/30 — the move may be due for a pullback
     if current_price > ema_4h_50:
         signal_type = "BUY"
         if rsi_1h > config.RSI_OVERBOUGHT:
