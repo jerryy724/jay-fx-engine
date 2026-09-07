@@ -1,20 +1,21 @@
 import os
 import sys
 import requests
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 import config
 import market_engine
 import image_generator
 import news_engine
 import prealerts
 import tracker
+import data_client
 
 def is_channel_quiet_time():
     """
     Checks if the current time falls within the 10:00 PM to 12:00 AM UTC quiet window.
     """
     now = datetime.now(timezone.utc)
-    return 22 <= now.hour < 24
+    return config.QUIET_HOUR_START <= now.hour < config.QUIET_HOUR_END
 
 def send_telegram_photo(caption, image_bio):
     try:
@@ -70,24 +71,18 @@ def run_tracker_only():
     symbols_str = ",".join(open_pairs)
     price_map = {}
 
-    try:
-        url = f"https://api.twelvedata.com/price?symbol={symbols_str}&apikey={config.TWELVE_DATA_API_KEY}"
-        res = requests.get(url, timeout=10).json()
-
-        if len(open_pairs) == 1:
-            if "price" in res:
-                price_map[open_pairs[0]] = float(res["price"])
-            else:
-                print(f"Tracker price fetch error for {open_pairs[0]}: {res}")
+    res = data_client.twelvedata_get("price", {"symbol": symbols_str})
+    if len(open_pairs) == 1:
+        if "price" in res:
+            price_map[open_pairs[0]] = float(res["price"])
         else:
-            for sym in open_pairs:
-                if sym in res and "price" in res[sym]:
-                    price_map[sym] = float(res[sym]["price"])
-                else:
-                    print(f"Tracker missing price for {sym}: {res.get(sym)}")
-
-    except Exception as e:
-        print(f"Tracker batch price fetch error: {e}")
+            print(f"Tracker price fetch error for {open_pairs[0]}: {res}")
+    else:
+        for sym in open_pairs:
+            if sym in res and "price" in res[sym]:
+                price_map[sym] = float(res[sym]["price"])
+            else:
+                print(f"Tracker missing price for {sym}: {res.get(sym)}")
 
     if price_map:
         try:
@@ -118,6 +113,17 @@ def run_signal_dispatch():
         error_msg = f"⚠️ *Execution Error*: Could not retrieve market data from Twelve Data for `{item['name']}`."
         print(error_msg)
         send_telegram_msg(error_msg)
+        return
+
+    # Trend + momentum agree -> High Conviction. Trend confirmed but RSI hasn't
+    # crossed the midline yet, or RSI is extended past 70/30 -> Standard Setup.
+    if conviction == "HIGH":
+        conviction_tag = "🔥 *High Conviction*"
+    else:
+        conviction_tag = "⚙️ *Standard Setup*"
+
+    if config.SKIP_EXTENDED_RSI_SETUPS and conviction in ("AVOID_OVERBOUGHT", "AVOID_OVERSOLD"):
+        print(f"Skipping {item['name']}: RSI extended past threshold ({conviction}).")
         return
 
     pair = item["name"]
@@ -159,7 +165,7 @@ def run_signal_dispatch():
 
     caption = (
         f"👑 *JAYFX PREMIUM SIGNALS*\n"
-        f"🌐 *Session:* {session_name} | 🔥 *High Conviction*\n"
+        f"🌐 *Session:* {session_name} | {conviction_tag}\n"
         f"🕒 *Date & Time:* {date_str}\n\n"
         f"📊 *Asset:* `{pair}`\n"
         f"📈 *Direction:* *{signal_type}*\n"
@@ -193,7 +199,7 @@ def run_friday_rotation_alert():
         f"The Forex market is closing for the weekend.\n"
         f"The system has officially transitioned to **Cryptocurrency Market Scanning**.\n\n"
         f"⚡ *24/7 Coverage Active:* Bitcoin & Major Altcoins\n"
-        f"📊 *Forex Operations Resume:* Sunday 22:00 UTC\n\n"
+        f"📊 *Forex Operations Resume:* Monday 00:00 UTC\n\n"
         f"🌐 _Stay tuned for weekend high-conviction setups._"
     )
 
@@ -229,6 +235,75 @@ def run_news_dispatch():
         print(f"News Briefing Error: {e}")
 
 # ==========================================
+# 6. CHANNEL CLOSE / RESUME (QUIET HOURS)
+# ==========================================
+def run_close_channel():
+    """
+    Fires at 22:00 UTC daily. Posts an explicit closing card so the
+    channel going quiet reads as an intentional pause, not the bot
+    breaking. On Fridays this doubles as the weekend crypto-rotation
+    notice, since Sat/Sun both run the crypto rotation.
+    """
+    now = datetime.now(timezone.utc)
+    if now.weekday() == 4:  # Friday -> weekend crypto handoff
+        run_friday_rotation_alert()
+        return
+
+    title = "JAYFX SIGNAL SYSTEM"
+    sub_text = "CLOSED FOR NOW — RESUMES 00:00 UTC"
+    caption = (
+        f"🌙 *JAYFX SIGNAL SYSTEM — CLOSING FOR NOW*\n\n"
+        f"New signals are paused for the next couple of hours — this window "
+        f"tends to be low-liquidity and unreliable for clean setups.\n\n"
+        f"🕛 *Signals Resume:* 00:00 UTC\n"
+        f"📊 *Daily performance tracker drops shortly.*\n\n"
+        f"⚡ _Open trades stay monitored — SL/TP updates still post as normal._"
+    )
+    card_bio = image_generator.generate_signal_card(title, sub_text, session_text="OFFLINE", is_update=True)
+    send_telegram_photo(caption, card_bio)
+
+def run_resume_channel():
+    """
+    Fires at 00:00 UTC daily. On Mondays this doubles as the forex
+    resumption notice, since the weekend crypto rotation just ended.
+    """
+    now = datetime.now(timezone.utc)
+    if now.weekday() == 0:  # Monday -> forex resumption
+        run_sunday_rotation_alert()
+        return
+
+    title = "JAYFX SIGNAL SYSTEM"
+    sub_text = "BACK ONLINE — SIGNALS RESUMING"
+    caption = (
+        f"🌅 *JAYFX SIGNAL SYSTEM — BACK ONLINE*\n\n"
+        f"The channel is live again and signal scanning has resumed.\n\n"
+        f"⚡ _First setup of the new cycle drops on the next scheduled run._"
+    )
+    card_bio = image_generator.generate_signal_card(title, sub_text, session_text="LIVE", is_update=True)
+    send_telegram_photo(caption, card_bio)
+
+# ==========================================
+# 7. SCHEDULED PERFORMANCE REPORTS
+# ==========================================
+def run_scheduled_reports():
+    """
+    Fires at 22:05 UTC daily (right after the channel closes). Always
+    posts the daily tracker. Also posts the weekly tracker on Sundays
+    (end of the calendar week) and the monthly tracker when today is
+    the last day of the month — so one cron entry covers all three
+    cadences without needing separate schedules for each.
+    """
+    now = datetime.now(timezone.utc)
+    tracker.generate_performance_report("daily")
+
+    if now.weekday() == 6:  # Sunday = end of week
+        tracker.generate_performance_report("weekly")
+
+    tomorrow = now + timedelta(days=1)
+    if tomorrow.month != now.month:
+        tracker.generate_performance_report("monthly")
+
+# ==========================================
 # ENTRY POINT ROUTER
 # ==========================================
 if __name__ == "__main__":
@@ -253,6 +328,12 @@ if __name__ == "__main__":
         run_friday_rotation_alert()
     elif action in ["sunday_alert", "sunday_rotation"]:
         run_sunday_rotation_alert()
+    elif action in ["close_channel", "channel_close"]:
+        run_close_channel()
+    elif action in ["resume_channel", "channel_resume"]:
+        run_resume_channel()
+    elif action in ["scheduled_reports"]:
+        run_scheduled_reports()
     elif action in ["report_daily", "daily_report"]:
         tracker.generate_performance_report("daily")
     elif action in ["report_weekly", "weekly_report"]:
