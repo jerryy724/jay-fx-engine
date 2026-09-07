@@ -1,9 +1,10 @@
 import os
 import json
 import requests
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 import config
 import image_generator
+import data_client
 
 TRADES_FILE = "trades.json"
 
@@ -84,18 +85,14 @@ def check_open_trades(price_map=None):
     if missing_pairs:
         missing_pairs = list(set(missing_pairs))
         symbols_str = ",".join(missing_pairs)
-        url = f"https://api.twelvedata.com/price?symbol={symbols_str}&apikey={config.TWELVE_DATA_API_KEY}"
-        try:
-            res = requests.get(url, timeout=10).json()
-            if len(missing_pairs) == 1:
-                if "price" in res:
-                    price_map[missing_pairs[0]] = float(res["price"])
-            else:
-                for sym in missing_pairs:
-                    if sym in res and "price" in res[sym]:
-                        price_map[sym] = float(res[sym]["price"])
-        except Exception as e:
-            print(f"Tracker Batch Price Error: {e}")
+        res = data_client.twelvedata_get("price", {"symbol": symbols_str})
+        if len(missing_pairs) == 1:
+            if "price" in res:
+                price_map[missing_pairs[0]] = float(res["price"])
+        else:
+            for sym in missing_pairs:
+                if sym in res and "price" in res[sym]:
+                    price_map[sym] = float(res[sym]["price"])
 
     updated = False
     for trade in trades:
@@ -203,6 +200,25 @@ def check_open_trades(price_map=None):
     if updated:
         save_trades(trades)
 
+def _period_date_label(timeframe, now):
+    """Builds a human-readable label for the reporting period, shown on
+    both the card image and the caption. Weekly uses the Mon-Sun range
+    of the current ISO week; monthly uses the full month name."""
+    if timeframe == "daily":
+        return now.strftime("%d %b %Y")
+    elif timeframe == "weekly":
+        monday = now - timedelta(days=now.weekday())
+        sunday = monday + timedelta(days=6)
+        week_no = now.isocalendar()[1]
+        if monday.month == sunday.month:
+            return f"{monday.strftime('%d')}–{sunday.strftime('%d %b %Y')} (Week {week_no})"
+        return f"{monday.strftime('%d %b')}–{sunday.strftime('%d %b %Y')} (Week {week_no})"
+    elif timeframe == "monthly":
+        return now.strftime("%B %Y")
+    elif timeframe == "annual":
+        return str(now.year)
+    return now.strftime("%d %b %Y")
+
 def generate_performance_report(timeframe="daily"):
     """
     Generates performance metrics and posts a high-contrast Yellow-on-Black card.
@@ -256,6 +272,7 @@ def generate_performance_report(timeframe="daily"):
         "annual": "ANNUAL PERFORMANCE TRACKER"
     }
     period_title = title_map.get(timeframe, "PERFORMANCE TRACKER")
+    date_label = _period_date_label(timeframe, now)
 
     # Generate Yellow-on-Black Card
     card_bio = image_generator.generate_performance_card(
@@ -264,12 +281,13 @@ def generate_performance_report(timeframe="daily"):
         total_pips=f"{pip_str} PIPS",
         total_trades=str(total_trades),
         wins=str(wins),
-        losses=str(losses)
+        losses=str(losses),
+        date_label=date_label
     )
 
     caption = (
-        f"📊 *JAYFX {period_title}*\n"
-        f"🗓️ *Period:* {now.strftime('%d %b %Y')}\n\n"
+        f"📊 *JAY FX {period_title}*\n"
+        f"🗓️ *Period:* {date_label}\n\n"
         f"🎯 *Total Signals Issued:* `{total_trades}`\n"
         f"✅ *Take Profit Wins:* `{wins}`\n"
         f"🛑 *Stop Losses Hit:* `{losses}`\n"
