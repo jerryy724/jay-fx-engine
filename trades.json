@@ -5413,7 +5413,7 @@
         "direction": "SELL",
         "entry": 154.365,
         "initial_sl": 154.836,
-        "current_sl": 154.836,
+        "current_sl": 154.365,
         "tps": [
             154.051,
             153.736,
@@ -5421,8 +5421,10 @@
             152.951
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 31.4,
         "issued_time": "2026-09-07 20:05:16 UTC"
     },
     {
