@@ -6,12 +6,19 @@ on:
     - cron: '15,30,45 * * * *'
     # 2. News Dispatch: Runs twice daily at 07:00 and 13:00 UTC
     - cron: '0 7,13 * * *'
+    # 3. Channel Close: 22:00 UTC daily (Friday doubles as weekend crypto rotation notice)
+    - cron: '0 22 * * *'
+    # 4. Scheduled Reports: 22:05 UTC daily — always posts the daily tracker,
+    #    and auto-adds the weekly tracker on Sundays / monthly on month-end
+    - cron: '5 22 * * *'
+    # 5. Channel Resume: 00:00 UTC daily (Monday doubles as forex resumption notice)
+    - cron: '0 0 * * *'
   repository_dispatch:
     types: [engine_trigger]
   workflow_dispatch:
     inputs:
       action_type:
-        description: 'Action to execute (signal, prealert, tracker, news)'
+        description: 'Action to execute (signal, prealert, tracker, news, close_channel, resume_channel, scheduled_reports)'
         required: false
         default: 'signal'
 
@@ -45,11 +52,23 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" == "schedule" ]; then
             CRON_EXPR="${{ github.event.schedule }}"
-            if [ "$CRON_EXPR" == "0 7,13 * * *" ]; then
-              echo "ACTION=news" >> $GITHUB_OUTPUT
-            else
-              echo "ACTION=tracker" >> $GITHUB_OUTPUT
-            fi
+            case "$CRON_EXPR" in
+              "0 7,13 * * *")
+                echo "ACTION=news" >> $GITHUB_OUTPUT
+                ;;
+              "0 22 * * *")
+                echo "ACTION=close_channel" >> $GITHUB_OUTPUT
+                ;;
+              "5 22 * * *")
+                echo "ACTION=scheduled_reports" >> $GITHUB_OUTPUT
+                ;;
+              "0 0 * * *")
+                echo "ACTION=resume_channel" >> $GITHUB_OUTPUT
+                ;;
+              *)
+                echo "ACTION=tracker" >> $GITHUB_OUTPUT
+                ;;
+            esac
           else
             ACTION="${{ github.event.client_payload.ACTION_TYPE || github.event.client_payload.action || inputs.action_type || 'signal' }}"
             echo "ACTION=$ACTION" >> $GITHUB_OUTPUT
@@ -59,6 +78,7 @@ jobs:
         env:
           ACTION_TYPE: ${{ steps.determine_action.outputs.ACTION }}
           TWELVE_DATA_API_KEY: ${{ secrets.TWELVE_DATA_API_KEY }}
+          TWELVE_DATA_API_KEY_2: ${{ secrets.TWELVE_DATA_API_KEY_2 }}
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
         run: |
