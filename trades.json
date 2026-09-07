@@ -4952,7 +4952,7 @@
             80348.78,
             80650.51
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2
@@ -4972,7 +4972,7 @@
             2524.47,
             2541.16
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2,
