@@ -4168,7 +4168,7 @@
         "direction": "BUY",
         "entry": 0.72042,
         "initial_sl": 0.71909,
-        "current_sl": 0.72042,
+        "current_sl": 0.72131,
         "tps": [
             0.72131,
             0.72219,
@@ -4177,9 +4177,10 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ],
-        "secured_pips": 8.9,
+        "secured_pips": 17.7,
         "issued_time": "2026-09-04 15:05:12 UTC"
     },
     {
@@ -4221,7 +4222,7 @@
         "direction": "BUY",
         "entry": 1.16129,
         "initial_sl": 1.15965,
-        "current_sl": 1.15965,
+        "current_sl": 1.16129,
         "tps": [
             1.16238,
             1.16347,
@@ -4229,8 +4230,10 @@
             1.1662
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 10.9,
         "issued_time": "2026-09-04 18:05:13 UTC"
     },
     {
@@ -5066,7 +5069,7 @@
         "direction": "SELL",
         "entry": 156.038,
         "initial_sl": 156.279,
-        "current_sl": 155.877,
+        "current_sl": 155.716,
         "tps": [
             155.877,
             155.716,
@@ -5076,9 +5079,10 @@
         "status": "OPEN",
         "hit_tps": [
             1,
-            2
+            2,
+            3
         ],
-        "secured_pips": 32.2,
+        "secured_pips": 51.5,
         "issued_time": "2026-09-07 02:05:14 UTC"
     },
     {
@@ -5171,5 +5175,22 @@
         "hit_tps": [],
         "secured_pips": 0.0,
         "issued_time": "2026-09-07 07:05:12 UTC"
+    },
+    {
+        "pair": "USD/JPY",
+        "direction": "SELL",
+        "entry": 155.396,
+        "initial_sl": 155.778,
+        "current_sl": 155.778,
+        "tps": [
+            155.141,
+            154.887,
+            154.581,
+            154.25
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-09-07 08:05:47 UTC"
     }
 ]
