@@ -103,9 +103,11 @@ def generate_signal_card(pair_or_title, direction_or_sub, session_text="JAY EMPI
     return bio
 
 
-def generate_performance_card(title, win_rate, total_pips, total_trades, wins, losses):
+def generate_performance_card(title, win_rate, total_pips, total_trades, wins, losses, date_label=""):
     """
     Generates high-impact Performance Tracker Cards with Yellow Text on a Black Background.
+    date_label shows the reporting period (e.g. "07 Sep 2026" for daily,
+    "September 2026" for monthly) directly under the title.
     """
     W, H = 1000, 562
     img = Image.new('RGB', (W, H), color='#050505')
@@ -120,9 +122,10 @@ def generate_performance_card(title, win_rate, total_pips, total_trades, wins, l
         font_header = ImageFont.truetype("DejaVuSans-Bold.ttf", 34)
         font_big_stat = ImageFont.truetype("DejaVuSans-Bold.ttf", 54)
         font_label = ImageFont.truetype("DejaVuSans-Bold.ttf", 22)
+        font_date = ImageFont.truetype("DejaVuSans-Bold.ttf", 20)
         font_footer = ImageFont.truetype("DejaVuSans-Bold.ttf", 24)
     except Exception:
-        font_header = font_big_stat = font_label = font_footer = ImageFont.load_default()
+        font_header = font_big_stat = font_label = font_date = font_footer = ImageFont.load_default()
 
     # Outer Double Borders
     draw.rectangle([12, 12, W - 12, H - 12], outline=YELLOW, width=3)
@@ -131,24 +134,30 @@ def generate_performance_card(title, win_rate, total_pips, total_trades, wins, l
     # Title Banner
     bbox_h = draw.textbbox((0, 0), title, font=font_header)
     w_h = bbox_h[2] - bbox_h[0]
-    draw.text(((W - w_h) // 2, 40), title, fill=YELLOW, font=font_header)
-    draw.line([((W - w_h) // 2 + 20, 90), ((W + w_h) // 2 - 20, 90)], fill=DARK_YELLOW, width=3)
+    draw.text(((W - w_h) // 2, 38), title, fill=YELLOW, font=font_header)
+    draw.line([((W - w_h) // 2 + 20, 85), ((W + w_h) // 2 - 20, 85)], fill=DARK_YELLOW, width=3)
+
+    # Date / Period Label
+    if date_label:
+        bbox_d = draw.textbbox((0, 0), date_label, font=font_date)
+        w_d = bbox_d[2] - bbox_d[0]
+        draw.text(((W - w_d) // 2, 95), date_label, fill=GRAY, font=font_date)
 
     # Core Metric Boxes (Win Rate & Total Pips)
-    draw.rectangle([80, 120, 460, 260], outline=YELLOW, width=2, fill='#0F0F0F')
-    draw.text((100, 135), "WIN RATE", fill=GRAY, font=font_label)
+    draw.rectangle([80, 135, 460, 275], outline=YELLOW, width=2, fill='#0F0F0F')
+    draw.text((100, 150), "WIN RATE", fill=GRAY, font=font_label)
     bbox_wr = draw.textbbox((0, 0), win_rate, font=font_big_stat)
     w_wr = bbox_wr[2] - bbox_wr[0]
-    draw.text((270 - (w_wr // 2), 175), win_rate, fill=YELLOW, font=font_big_stat)
+    draw.text((270 - (w_wr // 2), 190), win_rate, fill=YELLOW, font=font_big_stat)
 
-    draw.rectangle([540, 120, 920, 260], outline=YELLOW, width=2, fill='#0F0F0F')
-    draw.text((560, 135), "TOTAL NET PIPS", fill=GRAY, font=font_label)
+    draw.rectangle([540, 135, 920, 275], outline=YELLOW, width=2, fill='#0F0F0F')
+    draw.text((560, 150), "TOTAL NET PIPS", fill=GRAY, font=font_label)
     bbox_tp = draw.textbbox((0, 0), total_pips, font=font_big_stat)
     w_tp = bbox_tp[2] - bbox_tp[0]
-    draw.text((730 - (w_tp // 2), 175), total_pips, fill=YELLOW, font=font_big_stat)
+    draw.text((730 - (w_tp // 2), 190), total_pips, fill=YELLOW, font=font_big_stat)
 
     # Detailed Stats Rows
-    stats_y = 300
+    stats_y = 310
     row_height = 45
 
     stats = [
