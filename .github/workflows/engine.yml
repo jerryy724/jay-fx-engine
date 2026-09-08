@@ -1,24 +1,18 @@
 name: Jay Empire Trading Engine Workflow
 
+# No native GitHub `schedule:` trigger. GitHub's own cron scheduler can
+# drift by several minutes (sometimes more under load), which is exactly
+# what was causing timing problems here. Every action — prealert, signal,
+# tracker, news, close_channel, scheduled_reports, resume_channel — is
+# now triggered externally by cron-job.org via repository_dispatch, the
+# same reliable mechanism already used for prealert/signal/tracker/news.
 on:
-  schedule:
-    # 1. Tracker: Runs at 15, 30, and 45 minutes past the hour
-    - cron: '15,30,45 * * * *'
-    # 2. News Dispatch: Runs twice daily at 07:00 and 13:00 UTC
-    - cron: '0 7,13 * * *'
-    # 3. Channel Close: 22:00 UTC daily (Friday doubles as weekend crypto rotation notice)
-    - cron: '0 22 * * *'
-    # 4. Scheduled Reports: 22:05 UTC daily — always posts the daily tracker,
-    #    and auto-adds the weekly tracker on Sundays / monthly on month-end
-    - cron: '5 22 * * *'
-    # 5. Channel Resume: 00:00 UTC daily (Monday doubles as forex resumption notice)
-    - cron: '0 0 * * *'
   repository_dispatch:
     types: [engine_trigger]
   workflow_dispatch:
     inputs:
       action_type:
-        description: 'Action to execute (signal, prealert, tracker, news, close_channel, resume_channel, scheduled_reports)'
+        description: 'Action to execute (signal, prealert, tracker, news, close_channel, scheduled_reports, resume_channel)'
         required: false
         default: 'signal'
 
@@ -50,29 +44,8 @@ jobs:
       - name: Determine Action Type
         id: determine_action
         run: |
-          if [ "${{ github.event_name }}" == "schedule" ]; then
-            CRON_EXPR="${{ github.event.schedule }}"
-            case "$CRON_EXPR" in
-              "0 7,13 * * *")
-                echo "ACTION=news" >> $GITHUB_OUTPUT
-                ;;
-              "0 22 * * *")
-                echo "ACTION=close_channel" >> $GITHUB_OUTPUT
-                ;;
-              "5 22 * * *")
-                echo "ACTION=scheduled_reports" >> $GITHUB_OUTPUT
-                ;;
-              "0 0 * * *")
-                echo "ACTION=resume_channel" >> $GITHUB_OUTPUT
-                ;;
-              *)
-                echo "ACTION=tracker" >> $GITHUB_OUTPUT
-                ;;
-            esac
-          else
-            ACTION="${{ github.event.client_payload.ACTION_TYPE || github.event.client_payload.action || inputs.action_type || 'signal' }}"
-            echo "ACTION=$ACTION" >> $GITHUB_OUTPUT
-          fi
+          ACTION="${{ github.event.client_payload.ACTION_TYPE || github.event.client_payload.action || inputs.action_type || 'signal' }}"
+          echo "ACTION=$ACTION" >> $GITHUB_OUTPUT
 
       - name: Execute Jay Empire Engine Module
         env:
@@ -95,9 +68,17 @@ jobs:
             echo "No new trade logs to commit"
           else
             git commit -m "auto: update trade tracking logs"
+            SUCCESS=0
             for i in 1 2 3 4 5; do
-              git pull --rebase origin main && git push && break
+              if git pull --rebase origin main && git push; then
+                SUCCESS=1
+                break
+              fi
               echo "Push rejected, retrying ($i)..."
               sleep 3
             done
+            if [ "$SUCCESS" -ne 1 ]; then
+              echo "::error::Failed to push trade log updates after 5 attempts — trade data was NOT saved!"
+              exit 1
+            fi
           fi
