@@ -274,15 +274,14 @@ def generate_performance_report(timeframe="daily"):
     period_title = title_map.get(timeframe, "PERFORMANCE TRACKER")
     date_label = _period_date_label(timeframe, now)
 
-    # Generate Yellow-on-Black Card
+    # Generate Yellow-on-Black Card (minimal — title + stats only, no extra text baked in)
     card_bio = image_generator.generate_performance_card(
         title=period_title,
         win_rate=f"{win_rate}%",
         total_pips=f"{pip_str} PIPS",
         total_trades=str(total_trades),
         wins=str(wins),
-        losses=str(losses),
-        date_label=date_label
+        losses=str(losses)
     )
 
     caption = (
