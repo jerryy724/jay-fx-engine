@@ -168,7 +168,7 @@ def run_signal_dispatch():
     tp4_str = f"{tp4:{fmt}}"
 
     caption = (
-        f"👑 *JAYFX PREMIUM SIGNALS*\n"
+        f"👑 *JAY FX PREMIUM SIGNALS*\n"
         f"🌐 *Session:* {session_name} | {conviction_tag}\n"
         f"🕒 *Date & Time:* {date_str}\n\n"
         f"📊 *Asset:* `{pair}`\n"
@@ -199,7 +199,7 @@ def run_friday_rotation_alert():
     sub_text = "FOREX CLOSED — SWITCHING TO CRYPTO SIGNALS"
     
     caption = (
-        f"🔄 *JAYFX MARKET ROTATION NOTICE*\n\n"
+        f"🔄 *JAY FX MARKET ROTATION NOTICE*\n\n"
         f"The Forex market is closing for the weekend.\n"
         f"The system has officially transitioned to **Cryptocurrency Market Scanning**.\n\n"
         f"⚡ *24/7 Coverage Active:* Bitcoin & Major Altcoins\n"
@@ -215,7 +215,7 @@ def run_sunday_rotation_alert():
     sub_text = "CRYPTO PAUSED — RESUMING FOREX SIGNALS"
     
     caption = (
-        f"🔄 *JAYFX MARKET ROTATION NOTICE*\n\n"
+        f"🔄 *JAY FX MARKET ROTATION NOTICE*\n\n"
         f"Weekend Crypto Market Scanning is now on hold.\n"
         f"The system has officially transitioned back to **Forex & Commodities Market Scanning**.\n\n"
         f"🌐 *Sydney & Asian Sessions:* Live\n"
@@ -256,7 +256,7 @@ def run_close_channel():
     title = "JAYFX SIGNAL SYSTEM"
     sub_text = "CLOSED FOR NOW — RESUMES 00:00 UTC"
     caption = (
-        f"🌙 *JAYFX SIGNAL SYSTEM — CLOSING FOR NOW*\n\n"
+        f"🌙 *JAY FX SIGNAL SYSTEM — CLOSING FOR NOW*\n\n"
         f"New signals are paused for the next couple of hours — this window "
         f"tends to be low-liquidity and unreliable for clean setups.\n\n"
         f"🕛 *Signals Resume:* 00:00 UTC\n"
@@ -279,7 +279,7 @@ def run_resume_channel():
     title = "JAYFX SIGNAL SYSTEM"
     sub_text = "BACK ONLINE — SIGNALS RESUMING"
     caption = (
-        f"🌅 *JAYFX SIGNAL SYSTEM — BACK ONLINE*\n\n"
+        f"🌅 *JAY FX SIGNAL SYSTEM — BACK ONLINE*\n\n"
         f"The channel is live again and signal scanning has resumed.\n\n"
         f"⚡ _First setup of the new cycle drops on the next scheduled run._"
     )
