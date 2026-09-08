@@ -5049,7 +5049,7 @@
             1.16453,
             1.16579
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2
@@ -5511,5 +5511,22 @@
         "hit_tps": [],
         "secured_pips": 0.0,
         "issued_time": "2026-09-08 02:05:14 UTC"
+    },
+    {
+        "pair": "AUD/USD",
+        "direction": "BUY",
+        "entry": 0.7208,
+        "initial_sl": 0.72019,
+        "current_sl": 0.72019,
+        "tps": [
+            0.72121,
+            0.72162,
+            0.72211,
+            0.72264
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-09-08 03:05:11 UTC"
     }
 ]
