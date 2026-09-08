@@ -5513,9 +5513,9 @@
             152.538,
             152.252
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -46.4,
         "issued_time": "2026-09-08 02:05:14 UTC"
     },
     {
@@ -5571,7 +5571,7 @@
             0.80781,
             0.80723
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2
@@ -5591,9 +5591,9 @@
             1.16483,
             1.16546
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -7.4,
         "issued_time": "2026-09-08 06:05:13 UTC"
     }
 ]
