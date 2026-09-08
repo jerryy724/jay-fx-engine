@@ -53,7 +53,7 @@ def run_news_briefing():
     card = image_generator.generate_signal_card(title_header, sub_header, is_update=True)
 
     msg = (
-        f"📰 *JAYFX {title_header}*\n"
+        f"📰 *JAY FX {title_header}*\n"
         f"🌐 *Coverage:* Active Currency & Crypto Drivers\n\n"
         f"{news_body}\n\n"
         f"💡 *Trading Advice:* Use these market-moving drivers to evaluate position risk alongside automated signals."
