@@ -5042,7 +5042,7 @@
         "direction": "BUY",
         "entry": 1.16143,
         "initial_sl": 1.15998,
-        "current_sl": 1.16143,
+        "current_sl": 1.1624,
         "tps": [
             1.1624,
             1.16337,
@@ -5051,9 +5051,10 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ],
-        "secured_pips": 9.7,
+        "secured_pips": 19.4,
         "issued_time": "2026-09-07 00:05:09 UTC"
     },
     {
@@ -5387,7 +5388,7 @@
         "direction": "BUY",
         "entry": 1.1626,
         "initial_sl": 1.16161,
-        "current_sl": 1.16161,
+        "current_sl": 1.1626,
         "tps": [
             1.16326,
             1.16392,
@@ -5395,8 +5396,10 @@
             1.16558
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 6.6,
         "issued_time": "2026-09-07 18:05:11 UTC"
     },
     {
@@ -5421,7 +5424,7 @@
         "direction": "SELL",
         "entry": 154.365,
         "initial_sl": 154.836,
-        "current_sl": 154.051,
+        "current_sl": 153.736,
         "tps": [
             154.051,
             153.736,
@@ -5431,9 +5434,10 @@
         "status": "OPEN",
         "hit_tps": [
             1,
-            2
+            2,
+            3
         ],
-        "secured_pips": 62.9,
+        "secured_pips": 100.6,
         "issued_time": "2026-09-07 20:05:16 UTC"
     },
     {
@@ -5490,5 +5494,22 @@
         ],
         "secured_pips": 5.6,
         "issued_time": "2026-09-08 01:05:17 UTC"
+    },
+    {
+        "pair": "USD/JPY",
+        "direction": "SELL",
+        "entry": 153.242,
+        "initial_sl": 153.572,
+        "current_sl": 153.572,
+        "tps": [
+            153.022,
+            152.802,
+            152.538,
+            152.252
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-09-08 02:05:14 UTC"
     }
 ]
