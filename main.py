@@ -61,6 +61,10 @@ def run_prealert():
 # 2. STANDALONE TRACKER JOB
 # ==========================================
 def run_tracker_only():
+    if is_channel_quiet_time():
+        print("Channel is in Quiet Mode (22:00 UTC - 00:00 UTC). Skipping tracker check.")
+        return
+
     open_trades = tracker.load_trades()
     open_pairs = list({t["pair"] for t in open_trades if t.get("status") == "OPEN"})
 
