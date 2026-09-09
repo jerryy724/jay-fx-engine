@@ -5861,7 +5861,7 @@
         "direction": "BUY",
         "entry": 0.7219,
         "initial_sl": 0.72087,
-        "current_sl": 0.7219,
+        "current_sl": 0.72259,
         "tps": [
             0.72259,
             0.72327,
@@ -5870,9 +5870,10 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ],
-        "secured_pips": 6.9,
+        "secured_pips": 13.7,
         "issued_time": "2026-09-08 21:05:22 UTC"
     },
     {
@@ -5971,7 +5972,7 @@
         "direction": "SELL",
         "entry": 0.80871,
         "initial_sl": 0.80952,
-        "current_sl": 0.80952,
+        "current_sl": 0.80871,
         "tps": [
             0.80817,
             0.80763,
@@ -5979,8 +5980,27 @@
             0.80628
         ],
         "status": "OPEN",
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 5.4,
+        "issued_time": "2026-09-09 05:05:15 UTC"
+    },
+    {
+        "pair": "EUR/USD",
+        "direction": "BUY",
+        "entry": 1.16383,
+        "initial_sl": 1.16307,
+        "current_sl": 1.16307,
+        "tps": [
+            1.16434,
+            1.16484,
+            1.16545,
+            1.16611
+        ],
+        "status": "OPEN",
         "hit_tps": [],
         "secured_pips": 0.0,
-        "issued_time": "2026-09-09 05:05:15 UTC"
+        "issued_time": "2026-09-09 06:05:13 UTC"
     }
 ]
