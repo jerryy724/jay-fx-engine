@@ -4198,7 +4198,7 @@
             1.3777,
             1.37534
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2,
@@ -5798,7 +5798,7 @@
             0.80545,
             0.80398
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1
         ],
@@ -6100,7 +6100,7 @@
             0.80694,
             0.80602
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2
@@ -6158,5 +6158,22 @@
         "hit_tps": [],
         "secured_pips": 0.0,
         "issued_time": "2026-09-09 14:05:12 UTC"
+    },
+    {
+        "pair": "AUD/USD",
+        "direction": "BUY",
+        "entry": 0.72217,
+        "initial_sl": 0.72111,
+        "current_sl": 0.72111,
+        "tps": [
+            0.72287,
+            0.72358,
+            0.72442,
+            0.72534
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-09-09 15:05:13 UTC"
     }
 ]
