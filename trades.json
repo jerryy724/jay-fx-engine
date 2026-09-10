@@ -6137,9 +6137,9 @@
             1.35905,
             1.36051
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -16.9,
         "issued_time": "2026-09-09 13:05:18 UTC"
     },
     {
@@ -6188,9 +6188,9 @@
             1.37708,
             1.3758
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -15.0,
         "issued_time": "2026-09-09 16:05:13 UTC"
     },
     {
@@ -6466,9 +6466,26 @@
             1.37879,
             1.37798
         ],
+        "status": "CLOSED_SL",
+        "hit_tps": [],
+        "secured_pips": -9.8,
+        "issued_time": "2026-09-10 10:05:12 UTC"
+    },
+    {
+        "pair": "USD/CHF",
+        "direction": "BUY",
+        "entry": 0.8112,
+        "initial_sl": 0.81001,
+        "current_sl": 0.81001,
+        "tps": [
+            0.81199,
+            0.81279,
+            0.81374,
+            0.81477
+        ],
         "status": "OPEN",
         "hit_tps": [],
         "secured_pips": 0.0,
-        "issued_time": "2026-09-10 10:05:12 UTC"
+        "issued_time": "2026-09-10 11:05:16 UTC"
     }
 ]
