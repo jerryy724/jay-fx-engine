@@ -6294,5 +6294,22 @@
         "hit_tps": [],
         "secured_pips": 0.0,
         "issued_time": "2026-09-10 00:05:12 UTC"
+    },
+    {
+        "pair": "GBP/USD",
+        "direction": "BUY",
+        "entry": 1.35474,
+        "initial_sl": 1.35294,
+        "current_sl": 1.35294,
+        "tps": [
+            1.35594,
+            1.35714,
+            1.35858,
+            1.36014
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-09-10 01:05:12 UTC"
     }
 ]
