@@ -6643,7 +6643,7 @@
         "direction": "SELL",
         "entry": 154.357,
         "initial_sl": 154.748,
-        "current_sl": 154.097,
+        "current_sl": 153.836,
         "tps": [
             154.097,
             153.836,
@@ -6653,9 +6653,10 @@
         "status": "OPEN",
         "hit_tps": [
             1,
-            2
+            2,
+            3
         ],
-        "secured_pips": 52.1,
+        "secured_pips": 83.3,
         "issued_time": "2026-09-10 20:05:10 UTC"
     },
     {
@@ -6718,7 +6719,7 @@
         "direction": "SELL",
         "entry": 154.4,
         "initial_sl": 154.734,
-        "current_sl": 154.177,
+        "current_sl": 153.954,
         "tps": [
             154.177,
             153.954,
@@ -6728,9 +6729,10 @@
         "status": "OPEN",
         "hit_tps": [
             1,
-            2
+            2,
+            3
         ],
-        "secured_pips": 44.6,
+        "secured_pips": 71.3,
         "issued_time": "2026-09-11 02:05:13 UTC"
     },
     {
@@ -6782,7 +6784,7 @@
             0.81545,
             0.81632
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2,
@@ -6823,7 +6825,7 @@
             1.34918,
             1.34806
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1
         ],
@@ -6835,7 +6837,7 @@
         "direction": "SELL",
         "entry": 154.266,
         "initial_sl": 154.571,
-        "current_sl": 154.063,
+        "current_sl": 153.859,
         "tps": [
             154.063,
             153.859,
@@ -6845,9 +6847,10 @@
         "status": "OPEN",
         "hit_tps": [
             1,
-            2
+            2,
+            3
         ],
-        "secured_pips": 40.7,
+        "secured_pips": 65.1,
         "issued_time": "2026-09-11 08:05:14 UTC"
     },
     {
@@ -6862,9 +6865,9 @@
             0.71447,
             0.71348
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -16.9,
         "issued_time": "2026-09-11 09:05:09 UTC"
     },
     {
