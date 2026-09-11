@@ -6765,13 +6765,14 @@
             1.38658,
             1.38751
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
             2,
-            3
+            3,
+            4
         ],
-        "secured_pips": 22.7,
+        "secured_pips": 32.0,
         "issued_time": "2026-09-11 04:05:13 UTC"
     },
     {
@@ -6885,13 +6886,14 @@
             1.38667,
             1.38743
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
             2,
-            3
+            3,
+            4
         ],
-        "secured_pips": 18.8,
+        "secured_pips": 26.4,
         "issued_time": "2026-09-11 10:05:11 UTC"
     },
     {
