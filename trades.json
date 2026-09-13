@@ -7457,7 +7457,7 @@
         "direction": "SELL",
         "entry": 77175.0,
         "initial_sl": 77328.53,
-        "current_sl": 77328.53,
+        "current_sl": 77175.0,
         "tps": [
             77072.65,
             76970.3,
@@ -7465,8 +7465,10 @@
             76714.42
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 102.4,
         "issued_time": "2026-09-12 20:05:13 UTC"
     },
     {
@@ -7491,7 +7493,7 @@
         "direction": "SELL",
         "entry": 77282.04,
         "initial_sl": 77440.67,
-        "current_sl": 77282.04,
+        "current_sl": 77176.29,
         "tps": [
             77176.29,
             77070.54,
@@ -7500,9 +7502,10 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ],
-        "secured_pips": 105.8,
+        "secured_pips": 211.5,
         "issued_time": "2026-09-13 00:05:13 UTC"
     },
     {
@@ -7527,7 +7530,7 @@
         "direction": "SELL",
         "entry": 77300.01,
         "initial_sl": 77470.06,
-        "current_sl": 77300.01,
+        "current_sl": 77186.64,
         "tps": [
             77186.64,
             77073.28,
@@ -7536,9 +7539,10 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ],
-        "secured_pips": 113.4,
+        "secured_pips": 226.7,
         "issued_time": "2026-09-13 02:05:10 UTC"
     },
     {
@@ -7563,7 +7567,7 @@
         "direction": "SELL",
         "entry": 77204.8,
         "initial_sl": 77365.53,
-        "current_sl": 77365.53,
+        "current_sl": 77204.8,
         "tps": [
             77097.64,
             76990.49,
@@ -7571,8 +7575,10 @@
             76722.6
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 107.2,
         "issued_time": "2026-09-13 04:05:14 UTC"
     },
     {
