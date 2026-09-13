@@ -7630,7 +7630,7 @@
             2532.15,
             2539.64
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1
         ],
@@ -7642,7 +7642,7 @@
         "direction": "SELL",
         "entry": 77155.61,
         "initial_sl": 77324.12,
-        "current_sl": 77324.12,
+        "current_sl": 77155.61,
         "tps": [
             77043.27,
             76930.93,
@@ -7650,8 +7650,10 @@
             76650.08
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 112.3,
         "issued_time": "2026-09-13 08:05:14 UTC"
     }
 ]
