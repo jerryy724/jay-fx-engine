@@ -7123,7 +7123,7 @@
         "direction": "SELL",
         "entry": 77292.01,
         "initial_sl": 78199.75,
-        "current_sl": 78199.75,
+        "current_sl": 77292.01,
         "tps": [
             76686.85,
             76081.69,
@@ -7131,8 +7131,10 @@
             74568.8
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 605.2,
         "issued_time": "2026-09-12 02:05:15 UTC"
     },
     {
@@ -7198,7 +7200,7 @@
         "direction": "SELL",
         "entry": 77215.13,
         "initial_sl": 77555.11,
-        "current_sl": 77215.13,
+        "current_sl": 76988.48,
         "tps": [
             76988.48,
             76761.83,
@@ -7207,9 +7209,10 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ],
-        "secured_pips": 226.7,
+        "secured_pips": 453.3,
         "issued_time": "2026-09-12 06:05:12 UTC"
     },
     {
@@ -7468,13 +7471,14 @@
             76847.48,
             76714.42
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
             2,
-            3
+            3,
+            4
         ],
-        "secured_pips": 327.5,
+        "secured_pips": 460.6,
         "issued_time": "2026-09-12 20:05:13 UTC"
     },
     {
@@ -7584,13 +7588,14 @@
             76861.9,
             76722.6
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
             2,
-            3
+            3,
+            4
         ],
-        "secured_pips": 342.9,
+        "secured_pips": 482.2,
         "issued_time": "2026-09-13 04:05:14 UTC"
     },
     {
@@ -7684,9 +7689,9 @@
             2520.59,
             2530.42
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -13.7,
         "issued_time": "2026-09-13 09:05:15 UTC"
     }
 ]
