@@ -7031,7 +7031,7 @@
         "direction": "SELL",
         "entry": 1.15999,
         "initial_sl": 1.16149,
-        "current_sl": 1.15999,
+        "current_sl": 1.15899,
         "tps": [
             1.15899,
             1.15799,
@@ -7040,9 +7040,10 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ],
-        "secured_pips": 10.0,
+        "secured_pips": 20.0,
         "issued_time": "2026-09-11 18:05:11 UTC"
     },
     {
@@ -7942,7 +7943,7 @@
         "direction": "SELL",
         "entry": 1.1595,
         "initial_sl": 1.16056,
-        "current_sl": 1.1595,
+        "current_sl": 1.15879,
         "tps": [
             1.15879,
             1.15808,
@@ -7951,9 +7952,10 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ],
-        "secured_pips": 7.1,
+        "secured_pips": 14.2,
         "issued_time": "2026-09-14 00:05:13 UTC"
     },
     {
@@ -7961,7 +7963,7 @@
         "direction": "SELL",
         "entry": 1.35164,
         "initial_sl": 1.35248,
-        "current_sl": 1.35248,
+        "current_sl": 1.35164,
         "tps": [
             1.35108,
             1.35052,
@@ -7969,8 +7971,10 @@
             1.34913
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 5.6,
         "issued_time": "2026-09-14 01:05:14 UTC"
     },
     {
@@ -7989,5 +7993,22 @@
         "hit_tps": [],
         "secured_pips": 0.0,
         "issued_time": "2026-09-14 02:05:16 UTC"
+    },
+    {
+        "pair": "AUD/USD",
+        "direction": "SELL",
+        "entry": 0.71518,
+        "initial_sl": 0.71648,
+        "current_sl": 0.71648,
+        "tps": [
+            0.71431,
+            0.71344,
+            0.7124,
+            0.71127
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-09-14 03:05:12 UTC"
     }
 ]
