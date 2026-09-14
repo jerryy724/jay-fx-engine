@@ -8098,7 +8098,7 @@
             1.3467,
             1.34574
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1
         ],
@@ -8155,5 +8155,22 @@
         "hit_tps": [],
         "secured_pips": 0.0,
         "issued_time": "2026-09-14 10:05:16 UTC"
+    },
+    {
+        "pair": "USD/CHF",
+        "direction": "BUY",
+        "entry": 0.81736,
+        "initial_sl": 0.81605,
+        "current_sl": 0.81605,
+        "tps": [
+            0.81823,
+            0.8191,
+            0.82015,
+            0.82128
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-09-14 11:05:16 UTC"
     }
 ]
