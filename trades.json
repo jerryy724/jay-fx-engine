@@ -7951,13 +7951,14 @@
             1.15723,
             1.15631
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
             2,
-            3
+            3,
+            4
         ],
-        "secured_pips": 22.7,
+        "secured_pips": 31.9,
         "issued_time": "2026-09-14 00:05:13 UTC"
     },
     {
