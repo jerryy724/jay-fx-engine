@@ -8523,5 +8523,22 @@
         "hit_tps": [],
         "secured_pips": -11.5,
         "issued_time": "2026-09-15 07:05:12 UTC"
+    },
+    {
+        "pair": "USD/JPY",
+        "direction": "BUY",
+        "entry": 154.977,
+        "initial_sl": 154.721,
+        "current_sl": 154.721,
+        "tps": [
+            155.148,
+            155.318,
+            155.523,
+            155.744
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-09-15 08:05:13 UTC"
     }
 ]
