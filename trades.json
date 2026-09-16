@@ -8971,7 +8971,7 @@
         "direction": "SELL",
         "entry": 0.71305,
         "initial_sl": 0.71392,
-        "current_sl": 0.71392,
+        "current_sl": 0.71305,
         "tps": [
             0.71247,
             0.7119,
@@ -8979,8 +8979,10 @@
             0.71045
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 5.8,
         "issued_time": "2026-09-16 09:05:11 UTC"
     },
     {
@@ -9052,5 +9054,22 @@
         "hit_tps": [],
         "secured_pips": 0.0,
         "issued_time": "2026-09-16 13:05:12 UTC"
+    },
+    {
+        "pair": "USD/JPY",
+        "direction": "BUY",
+        "entry": 155.311,
+        "initial_sl": 155.068,
+        "current_sl": 155.068,
+        "tps": [
+            155.473,
+            155.634,
+            155.829,
+            156.039
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-09-16 14:05:11 UTC"
     }
 ]
