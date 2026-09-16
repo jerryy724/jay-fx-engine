@@ -8622,7 +8622,7 @@
             1.1522,
             1.15141
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1
         ],
@@ -8641,7 +8641,7 @@
             1.34569,
             1.34449
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2
