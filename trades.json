@@ -9715,13 +9715,14 @@
             1.39977,
             1.40062
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
             2,
-            3
+            3,
+            4
         ],
-        "secured_pips": 20.8,
+        "secured_pips": 29.3,
         "issued_time": "2026-09-18 04:05:11 UTC"
     },
     {
