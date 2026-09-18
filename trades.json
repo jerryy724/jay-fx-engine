@@ -9394,7 +9394,7 @@
         "direction": "BUY",
         "entry": 155.733,
         "initial_sl": 155.385,
-        "current_sl": 155.965,
+        "current_sl": 156.197,
         "tps": [
             155.965,
             156.197,
@@ -9404,9 +9404,10 @@
         "status": "OPEN",
         "hit_tps": [
             1,
-            2
+            2,
+            3
         ],
-        "secured_pips": 46.4,
+        "secured_pips": 74.2,
         "issued_time": "2026-09-17 08:05:17 UTC"
     },
     {
@@ -9504,7 +9505,7 @@
         "direction": "BUY",
         "entry": 155.614,
         "initial_sl": 155.258,
-        "current_sl": 155.851,
+        "current_sl": 156.088,
         "tps": [
             155.851,
             156.088,
@@ -9514,9 +9515,10 @@
         "status": "OPEN",
         "hit_tps": [
             1,
-            2
+            2,
+            3
         ],
-        "secured_pips": 47.4,
+        "secured_pips": 75.9,
         "issued_time": "2026-09-17 14:05:14 UTC"
     },
     {
@@ -9592,7 +9594,7 @@
         "direction": "BUY",
         "entry": 155.977,
         "initial_sl": 155.672,
-        "current_sl": 155.977,
+        "current_sl": 156.383,
         "tps": [
             156.18,
             156.383,
@@ -9601,9 +9603,11 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2,
+            3
         ],
-        "secured_pips": 20.3,
+        "secured_pips": 65.0,
         "issued_time": "2026-09-17 20:05:11 UTC"
     },
     {
@@ -9662,7 +9666,7 @@
         "direction": "BUY",
         "entry": 156.248,
         "initial_sl": 156.037,
-        "current_sl": 156.037,
+        "current_sl": 156.389,
         "tps": [
             156.389,
             156.53,
@@ -9670,8 +9674,11 @@
             156.882
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1,
+            2
+        ],
+        "secured_pips": 28.2,
         "issued_time": "2026-09-18 02:05:20 UTC"
     }
 ]
