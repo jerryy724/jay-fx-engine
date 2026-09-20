@@ -10258,9 +10258,9 @@
             2693.5,
             2714.97
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -25.8,
         "issued_time": "2026-09-19 11:05:12 UTC"
     },
     {
@@ -10435,9 +10435,9 @@
             2682.77,
             2701.39
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -22.1,
         "issued_time": "2026-09-19 21:05:11 UTC"
     },
     {
