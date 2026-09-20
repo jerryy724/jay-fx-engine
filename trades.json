@@ -10528,7 +10528,7 @@
             81536.37,
             81952.6
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2
@@ -10653,7 +10653,7 @@
             81447.57,
             81832.23
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2
@@ -10797,9 +10797,9 @@
             2691.98,
             2711.83
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -22.9,
         "issued_time": "2026-09-20 17:05:16 UTC"
     },
     {
@@ -10848,9 +10848,9 @@
             82127.54,
             82495.41
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -452.4,
         "issued_time": "2026-09-20 20:05:49 UTC"
     },
     {
