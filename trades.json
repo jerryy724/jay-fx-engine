@@ -10090,9 +10090,9 @@
             83257.98,
             84063.93
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -966.4,
         "issued_time": "2026-09-19 02:05:10 UTC"
     },
     {
