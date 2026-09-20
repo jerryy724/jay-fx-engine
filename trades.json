@@ -10569,7 +10569,7 @@
             81399.41,
             81785.11
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2,
@@ -10611,7 +10611,7 @@
             81379.36,
             81760.97
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2,
@@ -10695,7 +10695,7 @@
             81395.19,
             81764.31
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2,
@@ -10737,7 +10737,7 @@
             81656.59,
             82055.36
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2
@@ -10852,5 +10852,22 @@
         "hit_tps": [],
         "secured_pips": 0.0,
         "issued_time": "2026-09-20 20:05:49 UTC"
+    },
+    {
+        "pair": "ETH/USD",
+        "direction": "BUY",
+        "entry": 2621.77,
+        "initial_sl": 2594.25,
+        "current_sl": 2594.25,
+        "tps": [
+            2640.12,
+            2658.47,
+            2680.49,
+            2704.34
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-09-20 21:05:09 UTC"
     }
 ]
