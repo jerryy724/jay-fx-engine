@@ -9960,7 +9960,7 @@
         "direction": "BUY",
         "entry": 0.82246,
         "initial_sl": 0.82095,
-        "current_sl": 0.82095,
+        "current_sl": 0.82246,
         "tps": [
             0.82346,
             0.82447,
@@ -9968,8 +9968,10 @@
             0.82698
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 10.0,
         "issued_time": "2026-09-18 17:05:26 UTC"
     },
     {
@@ -10912,7 +10914,7 @@
         "direction": "SELL",
         "entry": 1.33889,
         "initial_sl": 1.33962,
-        "current_sl": 1.3384,
+        "current_sl": 1.33791,
         "tps": [
             1.3384,
             1.33791,
@@ -10922,9 +10924,10 @@
         "status": "OPEN",
         "hit_tps": [
             1,
-            2
+            2,
+            3
         ],
-        "secured_pips": 9.8,
+        "secured_pips": 15.7,
         "issued_time": "2026-09-21 01:05:12 UTC"
     },
     {
@@ -10932,7 +10935,7 @@
         "direction": "BUY",
         "entry": 156.745,
         "initial_sl": 156.48,
-        "current_sl": 156.745,
+        "current_sl": 156.922,
         "tps": [
             156.922,
             157.098,
@@ -10941,9 +10944,10 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ],
-        "secured_pips": 17.7,
+        "secured_pips": 35.3,
         "issued_time": "2026-09-21 02:05:10 UTC"
     },
     {
@@ -11016,5 +11020,22 @@
         "hit_tps": [],
         "secured_pips": 0.0,
         "issued_time": "2026-09-21 06:05:10 UTC"
+    },
+    {
+        "pair": "GBP/USD",
+        "direction": "SELL",
+        "entry": 1.3372,
+        "initial_sl": 1.33836,
+        "current_sl": 1.33836,
+        "tps": [
+            1.33643,
+            1.33565,
+            1.33473,
+            1.33372
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-09-21 07:05:12 UTC"
     }
 ]
