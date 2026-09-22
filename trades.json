@@ -11210,7 +11210,7 @@
         "direction": "BUY",
         "entry": 1.40231,
         "initial_sl": 1.40087,
-        "current_sl": 1.40231,
+        "current_sl": 1.40327,
         "tps": [
             1.40327,
             1.40423,
@@ -11219,9 +11219,10 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ],
-        "secured_pips": 9.6,
+        "secured_pips": 19.2,
         "issued_time": "2026-09-21 16:05:15 UTC"
     },
     {
