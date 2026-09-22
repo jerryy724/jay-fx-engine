@@ -11059,7 +11059,7 @@
             157.903,
             158.175
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2
@@ -11177,7 +11177,7 @@
             157.962,
             158.164
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1
         ],
@@ -11237,7 +11237,7 @@
             0.824,
             0.82516
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1
         ],
@@ -11256,7 +11256,7 @@
             1.14418,
             1.14317
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2,
@@ -11294,7 +11294,7 @@
             157.882,
             158.063
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2
@@ -11370,7 +11370,7 @@
             157.925,
             158.092
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1
         ],
@@ -11389,7 +11389,7 @@
             0.70983,
             0.709
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2,
@@ -11469,7 +11469,7 @@
             1.33408,
             1.33298
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2,
@@ -11490,9 +11490,9 @@
             158.139,
             158.306
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -56.5,
         "issued_time": "2026-09-22 08:05:13 UTC"
     }
 ]
