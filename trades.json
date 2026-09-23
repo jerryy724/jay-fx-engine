@@ -11718,7 +11718,7 @@
         "direction": "SELL",
         "entry": 0.71182,
         "initial_sl": 0.71327,
-        "current_sl": 0.71327,
+        "current_sl": 0.71182,
         "tps": [
             0.71085,
             0.70989,
@@ -11726,8 +11726,10 @@
             0.70747
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 9.7,
         "issued_time": "2026-09-22 21:05:12 UTC"
     },
     {
