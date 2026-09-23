@@ -11689,7 +11689,7 @@
         "direction": "SELL",
         "entry": 1.33351,
         "initial_sl": 1.33584,
-        "current_sl": 1.33351,
+        "current_sl": 1.33195,
         "tps": [
             1.33195,
             1.3304,
@@ -11698,9 +11698,10 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ],
-        "secured_pips": 15.6,
+        "secured_pips": 31.1,
         "issued_time": "2026-09-22 19:05:13 UTC"
     },
     {
@@ -11748,7 +11749,7 @@
         "direction": "SELL",
         "entry": 1.14465,
         "initial_sl": 1.1459,
-        "current_sl": 1.14381,
+        "current_sl": 1.14298,
         "tps": [
             1.14381,
             1.14298,
@@ -11758,9 +11759,10 @@
         "status": "OPEN",
         "hit_tps": [
             1,
-            2
+            2,
+            3
         ],
-        "secured_pips": 16.7,
+        "secured_pips": 26.7,
         "issued_time": "2026-09-23 00:05:14 UTC"
     },
     {
@@ -11863,7 +11865,7 @@
         "direction": "SELL",
         "entry": 1.14273,
         "initial_sl": 1.14367,
-        "current_sl": 1.14367,
+        "current_sl": 1.14273,
         "tps": [
             1.1421,
             1.14148,
@@ -11871,8 +11873,10 @@
             1.13991
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 6.3,
         "issued_time": "2026-09-23 06:05:14 UTC"
     },
     {
@@ -11880,7 +11884,7 @@
         "direction": "SELL",
         "entry": 1.33142,
         "initial_sl": 1.33258,
-        "current_sl": 1.33258,
+        "current_sl": 1.33142,
         "tps": [
             1.33065,
             1.32987,
@@ -11888,8 +11892,10 @@
             1.32794
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 7.7,
         "issued_time": "2026-09-23 07:05:10 UTC"
     }
 ]
