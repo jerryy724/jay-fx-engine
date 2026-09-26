@@ -13113,9 +13113,9 @@
             2719.61,
             2731.88
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -15.9,
         "issued_time": "2026-09-26 05:05:10 UTC"
     },
     {
@@ -13149,9 +13149,9 @@
             2714.83,
             2725.2
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -15.8,
         "issued_time": "2026-09-26 07:05:12 UTC"
     },
     {
@@ -13185,9 +13185,9 @@
             2715.07,
             2724.95
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -17.2,
         "issued_time": "2026-09-26 09:05:11 UTC"
     },
     {
@@ -13255,9 +13255,9 @@
             2712.25,
             2721.59
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -15.7,
         "issued_time": "2026-09-26 13:05:10 UTC"
     },
     {
@@ -13272,7 +13272,7 @@
             84467.96,
             84685.36
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1
         ],
@@ -13291,9 +13291,9 @@
             2710.25,
             2718.59
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -16.2,
         "issued_time": "2026-09-26 15:05:11 UTC"
     },
     {
@@ -13325,9 +13325,9 @@
             2710.58,
             2718.96
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -16.4,
         "issued_time": "2026-09-26 17:05:11 UTC"
     },
     {
@@ -13359,9 +13359,9 @@
             2707.1,
             2715.56
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -12.8,
         "issued_time": "2026-09-26 19:05:12 UTC"
     },
     {
