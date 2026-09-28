@@ -13928,7 +13928,7 @@
         "direction": "BUY",
         "entry": 1.41498,
         "initial_sl": 1.41349,
-        "current_sl": 1.41349,
+        "current_sl": 1.41498,
         "tps": [
             1.41597,
             1.41697,
@@ -13936,8 +13936,10 @@
             1.41945
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 9.9,
         "issued_time": "2026-09-28 04:05:13 UTC"
     },
     {
@@ -13976,5 +13978,22 @@
         "hit_tps": [],
         "secured_pips": 0.0,
         "issued_time": "2026-09-28 06:05:12 UTC"
+    },
+    {
+        "pair": "GBP/USD",
+        "direction": "SELL",
+        "entry": 1.32373,
+        "initial_sl": 1.32543,
+        "current_sl": 1.32543,
+        "tps": [
+            1.3226,
+            1.32146,
+            1.3201,
+            1.31863
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-09-28 07:05:12 UTC"
     }
 ]
