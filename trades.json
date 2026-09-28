@@ -13983,7 +13983,7 @@
             1.13465,
             1.13332
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2
@@ -14092,7 +14092,7 @@
             1.13534,
             1.13438
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2
