@@ -12889,9 +12889,9 @@
             156.256,
             155.9
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -42.1,
         "issued_time": "2026-09-25 14:05:14 UTC"
     },
     {
@@ -13849,5 +13849,22 @@
         "hit_tps": [],
         "secured_pips": 0.0,
         "issued_time": "2026-09-27 21:05:13 UTC"
+    },
+    {
+        "pair": "EUR/USD",
+        "direction": "SELL",
+        "entry": 1.1382,
+        "initial_sl": 1.14056,
+        "current_sl": 1.14056,
+        "tps": [
+            1.13663,
+            1.13505,
+            1.13316,
+            1.13112
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-09-28 00:05:09 UTC"
     }
 ]
