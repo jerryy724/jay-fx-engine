@@ -14473,9 +14473,9 @@
             1.42223,
             1.42314
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -11.6,
         "issued_time": "2026-09-29 10:05:12 UTC"
     },
     {
