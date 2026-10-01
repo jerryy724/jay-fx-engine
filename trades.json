@@ -15336,13 +15336,14 @@
             1.12551,
             1.12358
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
             2,
-            3
+            3,
+            4
         ],
-        "secured_pips": 47.4,
+        "secured_pips": 66.7,
         "issued_time": "2026-10-01 12:05:48 UTC"
     },
     {
