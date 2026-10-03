@@ -16093,7 +16093,7 @@
             84987.24,
             85140.09
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2,
@@ -16204,7 +16204,7 @@
             85249.81,
             85410.4
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1
         ],
@@ -16240,9 +16240,9 @@
             85383.02,
             85533.65
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -184.1,
         "issued_time": "2026-10-03 18:05:12 UTC"
     },
     {
