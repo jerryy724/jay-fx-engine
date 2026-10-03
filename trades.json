@@ -15794,7 +15794,7 @@
             0.693,
             0.69166
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2
@@ -15903,5 +15903,22 @@
         "hit_tps": [],
         "secured_pips": 0.0,
         "issued_time": "2026-10-02 21:05:14 UTC"
+    },
+    {
+        "pair": "BTC/USD",
+        "direction": "BUY",
+        "entry": 84475.79,
+        "initial_sl": 83681.22,
+        "current_sl": 83681.22,
+        "tps": [
+            85005.5,
+            85535.22,
+            86170.88,
+            86859.51
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-10-03 00:05:12 UTC"
     }
 ]
