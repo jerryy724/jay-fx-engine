@@ -16305,7 +16305,7 @@
         "direction": "BUY",
         "entry": 84819.39,
         "initial_sl": 84591.15,
-        "current_sl": 84971.55,
+        "current_sl": 85123.72,
         "tps": [
             84971.55,
             85123.72,
@@ -16315,9 +16315,10 @@
         "status": "OPEN",
         "hit_tps": [
             1,
-            2
+            2,
+            3
         ],
-        "secured_pips": 304.3,
+        "secured_pips": 486.9,
         "issued_time": "2026-10-04 00:05:12 UTC"
     },
     {
@@ -16345,7 +16346,7 @@
         "direction": "BUY",
         "entry": 84846.01,
         "initial_sl": 84636.75,
-        "current_sl": 84985.52,
+        "current_sl": 85125.03,
         "tps": [
             84985.52,
             85125.03,
@@ -16355,9 +16356,10 @@
         "status": "OPEN",
         "hit_tps": [
             1,
-            2
+            2,
+            3
         ],
-        "secured_pips": 279.0,
+        "secured_pips": 446.4,
         "issued_time": "2026-10-04 02:05:12 UTC"
     },
     {
@@ -16426,7 +16428,7 @@
         "direction": "BUY",
         "entry": 84916.01,
         "initial_sl": 84730.22,
-        "current_sl": 85039.87,
+        "current_sl": 85163.73,
         "tps": [
             85039.87,
             85163.73,
@@ -16436,9 +16438,10 @@
         "status": "OPEN",
         "hit_tps": [
             1,
-            2
+            2,
+            3
         ],
-        "secured_pips": 247.7,
+        "secured_pips": 396.4,
         "issued_time": "2026-10-04 06:05:10 UTC"
     },
     {
@@ -16485,7 +16488,7 @@
         "direction": "BUY",
         "entry": 2698.12,
         "initial_sl": 2689.18,
-        "current_sl": 2689.18,
+        "current_sl": 2698.12,
         "tps": [
             2704.08,
             2710.04,
@@ -16493,8 +16496,10 @@
             2724.94
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 6.0,
         "issued_time": "2026-10-04 09:05:48 UTC"
     },
     {
