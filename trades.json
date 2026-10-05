@@ -16719,13 +16719,14 @@
             2725.73,
             2735.0
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
             2,
-            3
+            3,
+            4
         ],
-        "secured_pips": 22.8,
+        "secured_pips": 32.1,
         "issued_time": "2026-10-04 19:05:10 UTC"
     },
     {
@@ -16762,13 +16763,14 @@
             2726.39,
             2734.82
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
             2,
-            3
+            3,
+            4
         ],
-        "secured_pips": 20.7,
+        "secured_pips": 29.2,
         "issued_time": "2026-10-04 21:05:11 UTC"
     },
     {
