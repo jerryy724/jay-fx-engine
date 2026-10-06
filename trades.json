@@ -17193,7 +17193,7 @@
         "direction": "BUY",
         "entry": 157.891,
         "initial_sl": 157.704,
-        "current_sl": 157.704,
+        "current_sl": 157.891,
         "tps": [
             158.015,
             158.14,
@@ -17201,8 +17201,27 @@
             158.451
         ],
         "status": "OPEN",
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 12.4,
+        "issued_time": "2026-10-06 02:05:11 UTC"
+    },
+    {
+        "pair": "AUD/USD",
+        "direction": "SELL",
+        "entry": 0.69696,
+        "initial_sl": 0.69781,
+        "current_sl": 0.69781,
+        "tps": [
+            0.6964,
+            0.69583,
+            0.69515,
+            0.69442
+        ],
+        "status": "OPEN",
         "hit_tps": [],
         "secured_pips": 0.0,
-        "issued_time": "2026-10-06 02:05:11 UTC"
+        "issued_time": "2026-10-06 03:05:12 UTC"
     }
 ]
