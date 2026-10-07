@@ -17633,5 +17633,22 @@
         "hit_tps": [],
         "secured_pips": 0.0,
         "issued_time": "2026-10-07 03:05:11 UTC"
+    },
+    {
+        "pair": "USD/CAD",
+        "direction": "SELL",
+        "entry": 1.42217,
+        "initial_sl": 1.42326,
+        "current_sl": 1.42326,
+        "tps": [
+            1.42144,
+            1.42072,
+            1.41985,
+            1.4189
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-10-07 04:05:46 UTC"
     }
 ]
