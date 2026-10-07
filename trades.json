@@ -17464,7 +17464,7 @@
             1.41783,
             1.41613
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1
         ],
@@ -17521,9 +17521,9 @@
             1.33231,
             1.33424
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -24.6,
         "issued_time": "2026-10-06 19:05:18 UTC"
     },
     {
