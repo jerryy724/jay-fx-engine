@@ -17665,9 +17665,9 @@
             0.83509,
             0.83572
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -7.8,
         "issued_time": "2026-10-07 05:05:10 UTC"
     },
     {
