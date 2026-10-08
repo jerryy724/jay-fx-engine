@@ -18023,5 +18023,22 @@
         "hit_tps": [],
         "secured_pips": 0.0,
         "issued_time": "2026-10-08 03:05:13 UTC"
+    },
+    {
+        "pair": "USD/CAD",
+        "direction": "BUY",
+        "entry": 1.42601,
+        "initial_sl": 1.42484,
+        "current_sl": 1.42484,
+        "tps": [
+            1.42679,
+            1.42757,
+            1.4285,
+            1.42951
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-10-08 04:05:14 UTC"
     }
 ]
