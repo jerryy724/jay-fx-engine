@@ -19285,5 +19285,22 @@
         "hit_tps": [],
         "secured_pips": 0.0,
         "issued_time": "2026-10-11 07:05:11 UTC"
+    },
+    {
+        "pair": "BTC/USD",
+        "direction": "SELL",
+        "entry": 83038.48,
+        "initial_sl": 83237.94,
+        "current_sl": 83237.94,
+        "tps": [
+            82905.5,
+            82772.53,
+            82612.96,
+            82440.09
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-10-11 08:05:10 UTC"
     }
 ]
