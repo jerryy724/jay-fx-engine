@@ -19092,7 +19092,7 @@
             2494.49,
             2487.16
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1
         ],
@@ -19111,7 +19111,7 @@
             82691.36,
             82525.34
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1
         ],
