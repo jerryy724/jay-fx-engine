@@ -19137,7 +19137,7 @@
             2490.71,
             2482.81
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1
         ],
@@ -19175,9 +19175,9 @@
             2485.02,
             2476.51
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -21.3,
         "issued_time": "2026-10-11 01:05:10 UTC"
     },
     {
@@ -19211,7 +19211,7 @@
             2488.39,
             2479.57
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1
         ],
@@ -19247,7 +19247,7 @@
             2488.87,
             2480.32
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1
         ],
@@ -19266,9 +19266,9 @@
             82656.22,
             82492.93
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -367.6,
         "issued_time": "2026-10-11 06:05:15 UTC"
     },
     {
@@ -19283,9 +19283,9 @@
             2485.94,
             2477.71
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -21.1,
         "issued_time": "2026-10-11 07:05:11 UTC"
     },
     {
@@ -19300,9 +19300,9 @@
             82612.96,
             82440.09
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -387.4,
         "issued_time": "2026-10-11 08:05:10 UTC"
     },
     {
@@ -19317,9 +19317,9 @@
             2483.01,
             2474.85
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -24.2,
         "issued_time": "2026-10-11 09:05:12 UTC"
     },
     {
@@ -19334,9 +19334,9 @@
             82594.93,
             82414.11
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -385.8,
         "issued_time": "2026-10-11 10:05:11 UTC"
     },
     {
@@ -19351,9 +19351,9 @@
             2481.55,
             2473.27
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -25.4,
         "issued_time": "2026-10-11 11:05:12 UTC"
     },
     {
@@ -19368,9 +19368,9 @@
             82734.55,
             82543.83
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -221.8,
         "issued_time": "2026-10-11 12:05:10 UTC"
     },
     {
@@ -19385,9 +19385,9 @@
             2483.21,
             2474.85
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -23.5,
         "issued_time": "2026-10-11 13:05:11 UTC"
     },
     {
@@ -19402,9 +19402,9 @@
             82617.27,
             82426.98
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -340.2,
         "issued_time": "2026-10-11 14:05:11 UTC"
     },
     {
@@ -19419,9 +19419,9 @@
             2485.24,
             2476.77
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -21.2,
         "issued_time": "2026-10-11 15:05:16 UTC"
     }
 ]
