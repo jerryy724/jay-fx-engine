@@ -18409,7 +18409,7 @@
             158.481,
             158.717
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2,
@@ -18734,7 +18734,7 @@
             158.672,
             158.842
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1
         ],
@@ -19464,7 +19464,7 @@
         "direction": "SELL",
         "entry": 83848.01,
         "initial_sl": 84180.16,
-        "current_sl": 84180.16,
+        "current_sl": 83848.01,
         "tps": [
             83626.58,
             83405.14,
@@ -19472,8 +19472,10 @@
             82851.56
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 221.4,
         "issued_time": "2026-10-11 18:05:19 UTC"
     },
     {
@@ -19509,5 +19511,22 @@
         "hit_tps": [],
         "secured_pips": 0.0,
         "issued_time": "2026-10-11 20:05:12 UTC"
+    },
+    {
+        "pair": "ETH/USD",
+        "direction": "SELL",
+        "entry": 2534.23,
+        "initial_sl": 2549.88,
+        "current_sl": 2549.88,
+        "tps": [
+            2523.8,
+            2513.37,
+            2500.85,
+            2487.29
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-10-11 21:05:13 UTC"
     }
 ]
