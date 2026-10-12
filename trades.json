@@ -19619,7 +19619,7 @@
         "direction": "BUY",
         "entry": 1.42582,
         "initial_sl": 1.42407,
-        "current_sl": 1.42582,
+        "current_sl": 1.42699,
         "tps": [
             1.42699,
             1.42816,
@@ -19628,9 +19628,10 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ],
-        "secured_pips": 11.7,
+        "secured_pips": 23.4,
         "issued_time": "2026-10-12 04:05:11 UTC"
     },
     {
@@ -19732,7 +19733,7 @@
         "direction": "BUY",
         "entry": 1.4264,
         "initial_sl": 1.42503,
-        "current_sl": 1.4264,
+        "current_sl": 1.42731,
         "tps": [
             1.42731,
             1.42822,
@@ -19741,9 +19742,10 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ],
-        "secured_pips": 9.1,
+        "secured_pips": 18.2,
         "issued_time": "2026-10-12 10:05:10 UTC"
     },
     {
@@ -19836,5 +19838,22 @@
         "hit_tps": [],
         "secured_pips": 0.0,
         "issued_time": "2026-10-12 15:05:12 UTC"
+    },
+    {
+        "pair": "USD/CAD",
+        "direction": "BUY",
+        "entry": 1.42836,
+        "initial_sl": 1.4271,
+        "current_sl": 1.4271,
+        "tps": [
+            1.4292,
+            1.43003,
+            1.43104,
+            1.43213
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-10-12 16:05:14 UTC"
     }
 ]
