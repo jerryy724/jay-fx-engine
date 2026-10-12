@@ -19532,9 +19532,9 @@
             2500.85,
             2487.29
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -17.3,
         "issued_time": "2026-10-11 21:05:13 UTC"
     },
     {
