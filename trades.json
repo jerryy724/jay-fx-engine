@@ -20077,9 +20077,9 @@
             1.32062,
             1.3197
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -11.4,
         "issued_time": "2026-10-13 07:05:14 UTC"
     },
     {
