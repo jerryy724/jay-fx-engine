@@ -20450,13 +20450,14 @@
             0.83306,
             0.83354
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
             2,
-            3
+            3,
+            4
         ],
-        "secured_pips": 11.8,
+        "secured_pips": 16.6,
         "issued_time": "2026-10-14 05:05:10 UTC"
     },
     {
@@ -20471,9 +20472,9 @@
             1.12238,
             1.12312
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -9.9,
         "issued_time": "2026-10-14 06:05:11 UTC"
     },
     {
