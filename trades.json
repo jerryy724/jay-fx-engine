@@ -20224,13 +20224,14 @@
             0.70009,
             0.7008
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
             2,
-            3
+            3,
+            4
         ],
-        "secured_pips": 17.6,
+        "secured_pips": 24.7,
         "issued_time": "2026-10-13 15:05:21 UTC"
     },
     {
