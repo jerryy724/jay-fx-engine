@@ -20826,13 +20826,14 @@
             0.69255,
             0.6913
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
             2,
-            3
+            3,
+            4
         ],
-        "secured_pips": 30.8,
+        "secured_pips": 43.3,
         "issued_time": "2026-10-15 03:05:09 UTC"
     },
     {
