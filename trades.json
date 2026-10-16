@@ -21369,7 +21369,7 @@
             157.631,
             157.453
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2
@@ -21442,9 +21442,9 @@
             1.12935,
             1.13088
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -23.8,
         "issued_time": "2026-10-16 12:05:12 UTC"
     },
     {
@@ -21489,7 +21489,7 @@
         "direction": "SELL",
         "entry": 0.69652,
         "initial_sl": 0.69793,
-        "current_sl": 0.69793,
+        "current_sl": 0.69652,
         "tps": [
             0.69558,
             0.69464,
@@ -21497,8 +21497,10 @@
             0.6923
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 9.4,
         "issued_time": "2026-10-16 15:05:13 UTC"
     }
 ]
