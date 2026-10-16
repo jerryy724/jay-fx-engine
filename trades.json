@@ -21347,13 +21347,14 @@
             1.3348,
             1.33616
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
             2,
-            3
+            3,
+            4
         ],
-        "secured_pips": 33.3,
+        "secured_pips": 46.9,
         "issued_time": "2026-10-16 07:05:11 UTC"
     },
     {
