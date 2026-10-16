@@ -21270,7 +21270,7 @@
         "direction": "SELL",
         "entry": 1.41748,
         "initial_sl": 1.41883,
-        "current_sl": 1.41748,
+        "current_sl": 1.41658,
         "tps": [
             1.41658,
             1.41568,
@@ -21279,9 +21279,10 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ],
-        "secured_pips": 9.0,
+        "secured_pips": 18.0,
         "issued_time": "2026-10-16 04:05:14 UTC"
     },
     {
@@ -21310,7 +21311,7 @@
         "direction": "BUY",
         "entry": 1.12259,
         "initial_sl": 1.12111,
-        "current_sl": 1.12358,
+        "current_sl": 1.12457,
         "tps": [
             1.12358,
             1.12457,
@@ -21320,9 +21321,10 @@
         "status": "OPEN",
         "hit_tps": [
             1,
-            2
+            2,
+            3
         ],
-        "secured_pips": 19.8,
+        "secured_pips": 31.6,
         "issued_time": "2026-10-16 06:05:12 UTC"
     },
     {
@@ -21350,7 +21352,7 @@
         "direction": "SELL",
         "entry": 158.068,
         "initial_sl": 158.273,
-        "current_sl": 158.273,
+        "current_sl": 158.068,
         "tps": [
             157.931,
             157.795,
@@ -21358,8 +21360,10 @@
             157.453
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 13.7,
         "issued_time": "2026-10-16 08:05:12 UTC"
     },
     {
@@ -21378,5 +21382,22 @@
         "hit_tps": [],
         "secured_pips": 0.0,
         "issued_time": "2026-10-16 09:05:12 UTC"
+    },
+    {
+        "pair": "USD/CAD",
+        "direction": "SELL",
+        "entry": 1.41554,
+        "initial_sl": 1.41691,
+        "current_sl": 1.41691,
+        "tps": [
+            1.41463,
+            1.41372,
+            1.41263,
+            1.41144
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-10-16 10:05:14 UTC"
     }
 ]
