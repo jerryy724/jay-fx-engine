@@ -21751,7 +21751,7 @@
             2402.98,
             2390.16
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2,
@@ -21814,7 +21814,7 @@
             81130.27,
             80934.56
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2
@@ -21856,7 +21856,7 @@
             81145.4,
             80965.44
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2
@@ -21876,7 +21876,7 @@
             2405.67,
             2396.39
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2,
@@ -21938,7 +21938,7 @@
             80980.34,
             80799.75
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1
         ],
@@ -21957,9 +21957,26 @@
             2374.92,
             2363.86
         ],
+        "status": "CLOSED_SL",
+        "hit_tps": [],
+        "secured_pips": -14.1,
+        "issued_time": "2026-10-17 17:05:10 UTC"
+    },
+    {
+        "pair": "BTC/USD",
+        "direction": "SELL",
+        "entry": 81506.17,
+        "initial_sl": 81735.91,
+        "current_sl": 81735.91,
+        "tps": [
+            81353.01,
+            81199.85,
+            81016.06,
+            80816.95
+        ],
         "status": "OPEN",
         "hit_tps": [],
         "secured_pips": 0.0,
-        "issued_time": "2026-10-17 17:05:10 UTC"
+        "issued_time": "2026-10-17 18:05:12 UTC"
     }
 ]
