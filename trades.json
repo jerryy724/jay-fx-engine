@@ -21823,13 +21823,14 @@
             2416.85,
             2407.63
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
             2,
-            3
+            3,
+            4
         ],
-        "secured_pips": 22.7,
+        "secured_pips": 31.9,
         "issued_time": "2026-10-17 11:05:12 UTC"
     },
     {
