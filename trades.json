@@ -21732,7 +21732,7 @@
             80619.96,
             80238.7
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1
         ],
@@ -21772,7 +21772,7 @@
             81081.65,
             80819.07
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2
