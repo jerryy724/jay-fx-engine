@@ -22095,9 +22095,9 @@
             80865.34,
             80530.98
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -497.3,
         "issued_time": "2026-10-18 02:05:11 UTC"
     },
     {
@@ -22163,9 +22163,9 @@
             80914.05,
             80574.83
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -436.6,
         "issued_time": "2026-10-18 06:05:14 UTC"
     },
     {
