@@ -22390,7 +22390,7 @@
         "direction": "SELL",
         "entry": 81113.22,
         "initial_sl": 81509.55,
-        "current_sl": 81509.55,
+        "current_sl": 81113.22,
         "tps": [
             80849.0,
             80584.78,
@@ -22398,8 +22398,10 @@
             79924.24
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 264.2,
         "issued_time": "2026-10-18 16:05:11 UTC"
     },
     {
