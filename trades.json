@@ -22683,7 +22683,7 @@
         "direction": "SELL",
         "entry": 1.40944,
         "initial_sl": 1.41098,
-        "current_sl": 1.41098,
+        "current_sl": 1.40944,
         "tps": [
             1.40842,
             1.40739,
@@ -22691,8 +22691,27 @@
             1.40483
         ],
         "status": "OPEN",
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 10.2,
+        "issued_time": "2026-10-19 10:05:14 UTC"
+    },
+    {
+        "pair": "USD/CHF",
+        "direction": "SELL",
+        "entry": 0.82518,
+        "initial_sl": 0.82675,
+        "current_sl": 0.82675,
+        "tps": [
+            0.82413,
+            0.82309,
+            0.82183,
+            0.82047
+        ],
+        "status": "OPEN",
         "hit_tps": [],
         "secured_pips": 0.0,
-        "issued_time": "2026-10-19 10:05:14 UTC"
+        "issued_time": "2026-10-19 11:05:14 UTC"
     }
 ]
