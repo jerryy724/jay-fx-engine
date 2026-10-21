@@ -23489,7 +23489,7 @@
         "direction": "SELL",
         "entry": 158.149,
         "initial_sl": 158.31,
-        "current_sl": 158.149,
+        "current_sl": 158.042,
         "tps": [
             158.042,
             157.935,
@@ -23498,9 +23498,10 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ],
-        "secured_pips": 10.7,
+        "secured_pips": 21.4,
         "issued_time": "2026-10-21 08:05:16 UTC"
     },
     {
@@ -23534,7 +23535,7 @@
             1.40332,
             1.40255
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2
