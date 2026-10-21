@@ -23359,7 +23359,7 @@
             1.34151,
             1.34319
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2
@@ -23476,7 +23476,7 @@
             1.33962,
             1.34043
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2,
@@ -23497,7 +23497,7 @@
             157.806,
             157.667
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2
@@ -23596,5 +23596,22 @@
         "hit_tps": [],
         "secured_pips": 0.0,
         "issued_time": "2026-10-21 13:05:17 UTC"
+    },
+    {
+        "pair": "USD/JPY",
+        "direction": "SELL",
+        "entry": 158.049,
+        "initial_sl": 158.23,
+        "current_sl": 158.23,
+        "tps": [
+            157.928,
+            157.807,
+            157.662,
+            157.505
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-10-21 14:05:18 UTC"
     }
 ]
