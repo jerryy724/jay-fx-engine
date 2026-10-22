@@ -23649,13 +23649,14 @@
             1.40318,
             1.40182
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
             2,
-            3
+            3,
+            4
         ],
-        "secured_pips": 33.5,
+        "secured_pips": 47.1,
         "issued_time": "2026-10-21 16:05:16 UTC"
     },
     {
