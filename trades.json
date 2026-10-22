@@ -23711,7 +23711,7 @@
             1.34231,
             1.34402
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2
@@ -23903,9 +23903,9 @@
             1.34354,
             1.34478
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -16.1,
         "issued_time": "2026-10-22 07:05:14 UTC"
     },
     {
@@ -23944,5 +23944,22 @@
         "hit_tps": [],
         "secured_pips": 0.0,
         "issued_time": "2026-10-22 09:05:19 UTC"
+    },
+    {
+        "pair": "USD/CAD",
+        "direction": "SELL",
+        "entry": 1.40235,
+        "initial_sl": 1.40352,
+        "current_sl": 1.40352,
+        "tps": [
+            1.40157,
+            1.4008,
+            1.39986,
+            1.39885
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-10-22 10:05:21 UTC"
     }
 ]
