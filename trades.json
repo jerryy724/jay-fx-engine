@@ -24329,7 +24329,7 @@
             156.189,
             155.871
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2
@@ -24430,5 +24430,22 @@
         "hit_tps": [],
         "secured_pips": 0.0,
         "issued_time": "2026-10-23 13:05:12 UTC"
+    },
+    {
+        "pair": "USD/JPY",
+        "direction": "SELL",
+        "entry": 156.775,
+        "initial_sl": 157.203,
+        "current_sl": 157.203,
+        "tps": [
+            156.489,
+            156.204,
+            155.861,
+            155.49
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-10-23 14:05:19 UTC"
     }
 ]
