@@ -24021,7 +24021,7 @@
         "direction": "SELL",
         "entry": 157.329,
         "initial_sl": 157.759,
-        "current_sl": 157.042,
+        "current_sl": 156.756,
         "tps": [
             157.042,
             156.756,
@@ -24031,9 +24031,10 @@
         "status": "OPEN",
         "hit_tps": [
             1,
-            2
+            2,
+            3
         ],
-        "secured_pips": 57.3,
+        "secured_pips": 91.7,
         "issued_time": "2026-10-22 14:05:15 UTC"
     },
     {
@@ -24048,7 +24049,7 @@
             0.70429,
             0.7055
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1
         ],
@@ -24163,5 +24164,22 @@
         "hit_tps": [],
         "secured_pips": 0.0,
         "issued_time": "2026-10-22 21:05:20 UTC"
+    },
+    {
+        "pair": "EUR/USD",
+        "direction": "BUY",
+        "entry": 1.12233,
+        "initial_sl": 1.12085,
+        "current_sl": 1.12085,
+        "tps": [
+            1.12332,
+            1.12431,
+            1.12549,
+            1.12678
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-10-23 00:05:17 UTC"
     }
 ]
