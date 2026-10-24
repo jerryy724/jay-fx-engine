@@ -24655,5 +24655,22 @@
         "hit_tps": [],
         "secured_pips": 0.0,
         "issued_time": "2026-10-24 04:05:13 UTC"
+    },
+    {
+        "pair": "ETH/USD",
+        "direction": "SELL",
+        "entry": 2380.64,
+        "initial_sl": 2402.01,
+        "current_sl": 2402.01,
+        "tps": [
+            2366.4,
+            2352.15,
+            2335.06,
+            2316.54
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-10-24 05:05:14 UTC"
     }
 ]
