@@ -24610,7 +24610,7 @@
         "direction": "SELL",
         "entry": 80925.98,
         "initial_sl": 81554.85,
-        "current_sl": 81554.85,
+        "current_sl": 80925.98,
         "tps": [
             80506.74,
             80087.49,
@@ -24618,8 +24618,10 @@
             79039.38
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 419.2,
         "issued_time": "2026-10-24 02:05:10 UTC"
     },
     {
