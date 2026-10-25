@@ -25252,7 +25252,7 @@
         "direction": "SELL",
         "entry": 80542.0,
         "initial_sl": 80898.72,
-        "current_sl": 80898.72,
+        "current_sl": 80542.0,
         "tps": [
             80304.18,
             80066.37,
@@ -25260,8 +25260,10 @@
             79471.83
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 237.8,
         "issued_time": "2026-10-25 12:05:15 UTC"
     },
     {
