@@ -25012,9 +25012,9 @@
             2288.89,
             2266.89
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -25.7,
         "issued_time": "2026-10-24 21:05:16 UTC"
     },
     {
