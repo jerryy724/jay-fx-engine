@@ -25833,5 +25833,22 @@
         "hit_tps": [],
         "secured_pips": 0.0,
         "issued_time": "2026-10-26 20:05:19 UTC"
+    },
+    {
+        "pair": "AUD/USD",
+        "direction": "BUY",
+        "entry": 0.70163,
+        "initial_sl": 0.70067,
+        "current_sl": 0.70067,
+        "tps": [
+            0.70227,
+            0.70292,
+            0.70369,
+            0.70452
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-10-26 21:05:16 UTC"
     }
 ]
