@@ -25574,13 +25574,14 @@
             1.11693,
             1.11497
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
             2,
-            3
+            3,
+            4
         ],
-        "secured_pips": 48.3,
+        "secured_pips": 67.9,
         "issued_time": "2026-10-26 06:05:12 UTC"
     },
     {
@@ -25810,7 +25811,7 @@
         "direction": "SELL",
         "entry": 1.3347,
         "initial_sl": 1.33665,
-        "current_sl": 1.3347,
+        "current_sl": 1.3334,
         "tps": [
             1.3334,
             1.3321,
@@ -25819,9 +25820,10 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ],
-        "secured_pips": 13.0,
+        "secured_pips": 26.0,
         "issued_time": "2026-10-26 19:05:14 UTC"
     },
     {
@@ -25869,7 +25871,7 @@
         "direction": "SELL",
         "entry": 1.11747,
         "initial_sl": 1.11873,
-        "current_sl": 1.11663,
+        "current_sl": 1.11579,
         "tps": [
             1.11663,
             1.11579,
@@ -25879,9 +25881,10 @@
         "status": "OPEN",
         "hit_tps": [
             1,
-            2
+            2,
+            3
         ],
-        "secured_pips": 16.8,
+        "secured_pips": 26.8,
         "issued_time": "2026-10-27 00:05:15 UTC"
     },
     {
@@ -25889,7 +25892,7 @@
         "direction": "SELL",
         "entry": 1.33387,
         "initial_sl": 1.3353,
-        "current_sl": 1.33387,
+        "current_sl": 1.33292,
         "tps": [
             1.33292,
             1.33196,
@@ -25898,9 +25901,10 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ],
-        "secured_pips": 9.5,
+        "secured_pips": 19.1,
         "issued_time": "2026-10-27 01:05:12 UTC"
     },
     {
@@ -25982,7 +25986,7 @@
         "direction": "SELL",
         "entry": 1.11667,
         "initial_sl": 1.11762,
-        "current_sl": 1.11604,
+        "current_sl": 1.1154,
         "tps": [
             1.11604,
             1.1154,
@@ -25992,9 +25996,10 @@
         "status": "OPEN",
         "hit_tps": [
             1,
-            2
+            2,
+            3
         ],
-        "secured_pips": 12.7,
+        "secured_pips": 20.3,
         "issued_time": "2026-10-27 06:05:12 UTC"
     },
     {
