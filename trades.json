@@ -25567,7 +25567,7 @@
         "direction": "SELL",
         "entry": 1.12176,
         "initial_sl": 1.12402,
-        "current_sl": 1.12025,
+        "current_sl": 1.11874,
         "tps": [
             1.12025,
             1.11874,
@@ -25577,9 +25577,10 @@
         "status": "OPEN",
         "hit_tps": [
             1,
-            2
+            2,
+            3
         ],
-        "secured_pips": 30.2,
+        "secured_pips": 48.3,
         "issued_time": "2026-10-26 06:05:12 UTC"
     },
     {
@@ -25786,7 +25787,7 @@
         "direction": "SELL",
         "entry": 1.11896,
         "initial_sl": 1.12045,
-        "current_sl": 1.11896,
+        "current_sl": 1.11797,
         "tps": [
             1.11797,
             1.11697,
@@ -25795,9 +25796,10 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ],
-        "secured_pips": 9.9,
+        "secured_pips": 19.9,
         "issued_time": "2026-10-26 18:05:17 UTC"
     },
     {
@@ -25822,7 +25824,7 @@
         "direction": "BUY",
         "entry": 157.517,
         "initial_sl": 157.282,
-        "current_sl": 157.282,
+        "current_sl": 157.517,
         "tps": [
             157.674,
             157.83,
@@ -25830,8 +25832,10 @@
             158.221
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 15.7,
         "issued_time": "2026-10-26 20:05:19 UTC"
     },
     {
@@ -25867,5 +25871,22 @@
         "hit_tps": [],
         "secured_pips": 0.0,
         "issued_time": "2026-10-27 00:05:15 UTC"
+    },
+    {
+        "pair": "GBP/USD",
+        "direction": "SELL",
+        "entry": 1.33387,
+        "initial_sl": 1.3353,
+        "current_sl": 1.3353,
+        "tps": [
+            1.33292,
+            1.33196,
+            1.33082,
+            1.32958
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-10-27 01:05:12 UTC"
     }
 ]
