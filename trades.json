@@ -25789,7 +25789,7 @@
         "direction": "SELL",
         "entry": 1.11896,
         "initial_sl": 1.12045,
-        "current_sl": 1.11797,
+        "current_sl": 1.11697,
         "tps": [
             1.11797,
             1.11697,
@@ -25799,9 +25799,10 @@
         "status": "OPEN",
         "hit_tps": [
             1,
-            2
+            2,
+            3
         ],
-        "secured_pips": 19.9,
+        "secured_pips": 31.8,
         "issued_time": "2026-10-26 18:05:17 UTC"
     },
     {
@@ -25828,7 +25829,7 @@
         "direction": "BUY",
         "entry": 157.517,
         "initial_sl": 157.282,
-        "current_sl": 157.517,
+        "current_sl": 157.674,
         "tps": [
             157.674,
             157.83,
@@ -25837,9 +25838,10 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ],
-        "secured_pips": 15.7,
+        "secured_pips": 31.3,
         "issued_time": "2026-10-26 20:05:19 UTC"
     },
     {
@@ -25867,7 +25869,7 @@
         "direction": "SELL",
         "entry": 1.11747,
         "initial_sl": 1.11873,
-        "current_sl": 1.11747,
+        "current_sl": 1.11663,
         "tps": [
             1.11663,
             1.11579,
@@ -25876,9 +25878,10 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ],
-        "secured_pips": 8.4,
+        "secured_pips": 16.8,
         "issued_time": "2026-10-27 00:05:15 UTC"
     },
     {
@@ -25977,7 +25980,7 @@
         "direction": "SELL",
         "entry": 1.11667,
         "initial_sl": 1.11762,
-        "current_sl": 1.11762,
+        "current_sl": 1.11667,
         "tps": [
             1.11604,
             1.1154,
@@ -25985,8 +25988,27 @@
             1.11382
         ],
         "status": "OPEN",
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 6.3,
+        "issued_time": "2026-10-27 06:05:12 UTC"
+    },
+    {
+        "pair": "GBP/USD",
+        "direction": "SELL",
+        "entry": 1.33221,
+        "initial_sl": 1.33318,
+        "current_sl": 1.33318,
+        "tps": [
+            1.33156,
+            1.33091,
+            1.33013,
+            1.32929
+        ],
+        "status": "OPEN",
         "hit_tps": [],
         "secured_pips": 0.0,
-        "issued_time": "2026-10-27 06:05:12 UTC"
+        "issued_time": "2026-10-27 07:05:12 UTC"
     }
 ]
