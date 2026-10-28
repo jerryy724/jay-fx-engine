@@ -26292,7 +26292,7 @@
         "direction": "SELL",
         "entry": 1.11292,
         "initial_sl": 1.11404,
-        "current_sl": 1.11404,
+        "current_sl": 1.11292,
         "tps": [
             1.11217,
             1.11142,
@@ -26300,8 +26300,10 @@
             1.10955
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 7.5,
         "issued_time": "2026-10-28 00:05:16 UTC"
     },
     {
@@ -26354,5 +26356,22 @@
         "hit_tps": [],
         "secured_pips": 0.0,
         "issued_time": "2026-10-28 03:05:19 UTC"
+    },
+    {
+        "pair": "USD/CAD",
+        "direction": "BUY",
+        "entry": 1.40656,
+        "initial_sl": 1.40558,
+        "current_sl": 1.40558,
+        "tps": [
+            1.40722,
+            1.40787,
+            1.40866,
+            1.40951
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-10-28 04:05:17 UTC"
     }
 ]
