@@ -26639,5 +26639,22 @@
         "hit_tps": [],
         "secured_pips": -24.1,
         "issued_time": "2026-10-28 18:05:17 UTC"
+    },
+    {
+        "pair": "GBP/USD",
+        "direction": "SELL",
+        "entry": 1.33324,
+        "initial_sl": 1.33571,
+        "current_sl": 1.33571,
+        "tps": [
+            1.3316,
+            1.32995,
+            1.32798,
+            1.32584
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-10-28 19:05:21 UTC"
     }
 ]
