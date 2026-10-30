@@ -27050,7 +27050,7 @@
             1.34209,
             1.34443
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2,
@@ -27209,7 +27209,7 @@
         "direction": "SELL",
         "entry": 1.11862,
         "initial_sl": 1.12042,
-        "current_sl": 1.12042,
+        "current_sl": 1.11862,
         "tps": [
             1.11742,
             1.11622,
@@ -27217,8 +27217,10 @@
             1.11323
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 12.0,
         "issued_time": "2026-10-30 06:05:17 UTC"
     },
     {
@@ -27321,9 +27323,26 @@
             1.12278,
             1.12426
         ],
+        "status": "CLOSED_SL",
+        "hit_tps": [],
+        "secured_pips": -20.2,
+        "issued_time": "2026-10-30 12:05:15 UTC"
+    },
+    {
+        "pair": "GBP/USD",
+        "direction": "BUY",
+        "entry": 1.33951,
+        "initial_sl": 1.33737,
+        "current_sl": 1.33737,
+        "tps": [
+            1.34094,
+            1.34236,
+            1.34408,
+            1.34593
+        ],
         "status": "OPEN",
         "hit_tps": [],
         "secured_pips": 0.0,
-        "issued_time": "2026-10-30 12:05:15 UTC"
+        "issued_time": "2026-10-30 13:05:21 UTC"
     }
 ]
