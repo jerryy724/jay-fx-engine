@@ -28665,7 +28665,7 @@
         "direction": "BUY",
         "entry": 157.842,
         "initial_sl": 157.605,
-        "current_sl": 158.0,
+        "current_sl": 158.158,
         "tps": [
             158.0,
             158.158,
@@ -28675,9 +28675,10 @@
         "status": "OPEN",
         "hit_tps": [
             1,
-            2
+            2,
+            3
         ],
-        "secured_pips": 31.6,
+        "secured_pips": 50.6,
         "issued_time": "2026-11-02 20:05:18 UTC"
     },
     {
@@ -28972,7 +28973,7 @@
         "direction": "BUY",
         "entry": 158.191,
         "initial_sl": 158.013,
-        "current_sl": 158.013,
+        "current_sl": 158.191,
         "tps": [
             158.309,
             158.428,
@@ -28980,8 +28981,27 @@
             158.724
         ],
         "status": "OPEN",
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 11.8,
+        "issued_time": "2026-11-03 14:05:18 UTC"
+    },
+    {
+        "pair": "AUD/USD",
+        "direction": "SELL",
+        "entry": 0.69846,
+        "initial_sl": 0.70028,
+        "current_sl": 0.70028,
+        "tps": [
+            0.69725,
+            0.69603,
+            0.69458,
+            0.693
+        ],
+        "status": "OPEN",
         "hit_tps": [],
         "secured_pips": 0.0,
-        "issued_time": "2026-11-03 14:05:18 UTC"
+        "issued_time": "2026-11-03 15:05:19 UTC"
     }
 ]
