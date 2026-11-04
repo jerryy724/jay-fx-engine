@@ -28709,7 +28709,7 @@
         "direction": "BUY",
         "entry": 1.11933,
         "initial_sl": 1.11756,
-        "current_sl": 1.11933,
+        "current_sl": 1.12051,
         "tps": [
             1.12051,
             1.12169,
@@ -28718,9 +28718,10 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ],
-        "secured_pips": 11.8,
+        "secured_pips": 23.6,
         "issued_time": "2026-11-03 00:05:17 UTC"
     },
     {
@@ -29057,7 +29058,7 @@
         "direction": "BUY",
         "entry": 1.11965,
         "initial_sl": 1.11781,
-        "current_sl": 1.11781,
+        "current_sl": 1.11965,
         "tps": [
             1.12088,
             1.1221,
@@ -29065,8 +29066,10 @@
             1.12516
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 12.3,
         "issued_time": "2026-11-03 18:05:27 UTC"
     },
     {
@@ -29074,7 +29077,7 @@
         "direction": "BUY",
         "entry": 1.34243,
         "initial_sl": 1.34052,
-        "current_sl": 1.34052,
+        "current_sl": 1.34243,
         "tps": [
             1.34371,
             1.34498,
@@ -29082,8 +29085,10 @@
             1.34817
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 12.8,
         "issued_time": "2026-11-03 19:05:30 UTC"
     },
     {
@@ -29125,7 +29130,7 @@
         "direction": "BUY",
         "entry": 1.12044,
         "initial_sl": 1.11883,
-        "current_sl": 1.11883,
+        "current_sl": 1.12044,
         "tps": [
             1.12151,
             1.12258,
@@ -29133,8 +29138,10 @@
             1.12526
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 10.7,
         "issued_time": "2026-11-04 00:05:20 UTC"
     }
 ]
