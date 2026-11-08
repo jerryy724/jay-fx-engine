@@ -30801,7 +30801,7 @@
             2216.62,
             2208.0
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1
         ],
@@ -30824,5 +30824,22 @@
         "hit_tps": [],
         "secured_pips": 0.0,
         "issued_time": "2026-11-08 02:05:16 UTC"
+    },
+    {
+        "pair": "ETH/USD",
+        "direction": "SELL",
+        "entry": 2238.9,
+        "initial_sl": 2248.55,
+        "current_sl": 2248.55,
+        "tps": [
+            2232.47,
+            2226.04,
+            2218.32,
+            2209.97
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-11-08 03:05:13 UTC"
     }
 ]
