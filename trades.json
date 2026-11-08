@@ -30449,7 +30449,7 @@
         "direction": "SELL",
         "entry": 2246.0,
         "initial_sl": 2261.74,
-        "current_sl": 2246.0,
+        "current_sl": 2235.51,
         "tps": [
             2235.51,
             2225.01,
@@ -30458,9 +30458,10 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ],
-        "secured_pips": 10.5,
+        "secured_pips": 21.0,
         "issued_time": "2026-11-07 05:05:16 UTC"
     },
     {
@@ -31115,7 +31116,7 @@
         "direction": "SELL",
         "entry": 2233.72,
         "initial_sl": 2243.54,
-        "current_sl": 2243.54,
+        "current_sl": 2233.72,
         "tps": [
             2227.17,
             2220.63,
@@ -31123,8 +31124,10 @@
             2204.26
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 6.5,
         "issued_time": "2026-11-08 19:05:15 UTC"
     },
     {
@@ -31143,5 +31146,22 @@
         "hit_tps": [],
         "secured_pips": 0.0,
         "issued_time": "2026-11-08 20:05:15 UTC"
+    },
+    {
+        "pair": "ETH/USD",
+        "direction": "SELL",
+        "entry": 2223.56,
+        "initial_sl": 2233.52,
+        "current_sl": 2233.52,
+        "tps": [
+            2216.92,
+            2210.29,
+            2202.32,
+            2193.69
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-11-08 21:05:16 UTC"
     }
 ]
