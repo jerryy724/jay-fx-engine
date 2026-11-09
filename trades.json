@@ -30358,7 +30358,7 @@
         "direction": "SELL",
         "entry": 75903.12,
         "initial_sl": 76530.82,
-        "current_sl": 75903.12,
+        "current_sl": 75484.65,
         "tps": [
             75484.65,
             75066.18,
@@ -30367,9 +30367,10 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ],
-        "secured_pips": 418.5,
+        "secured_pips": 836.9,
         "issued_time": "2026-11-07 00:05:15 UTC"
     },
     {
@@ -30415,19 +30416,21 @@
         "direction": "SELL",
         "entry": 2248.41,
         "initial_sl": 2268.12,
-        "current_sl": 2235.27,
+        "current_sl": 2222.13,
         "tps": [
             2235.27,
             2222.13,
             2206.36,
             2189.27
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
-            2
+            2,
+            3,
+            4
         ],
-        "secured_pips": 26.3,
+        "secured_pips": 59.1,
         "issued_time": "2026-11-07 03:05:18 UTC"
     },
     {
@@ -30435,7 +30438,7 @@
         "direction": "SELL",
         "entry": 75910.01,
         "initial_sl": 76395.32,
-        "current_sl": 75910.01,
+        "current_sl": 75262.93,
         "tps": [
             75586.47,
             75262.93,
@@ -30444,9 +30447,11 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2,
+            3
         ],
-        "secured_pips": 323.5,
+        "secured_pips": 1035.3,
         "issued_time": "2026-11-07 04:05:18 UTC"
     },
     {
@@ -30454,19 +30459,21 @@
         "direction": "SELL",
         "entry": 2246.0,
         "initial_sl": 2261.74,
-        "current_sl": 2235.51,
+        "current_sl": 2225.01,
         "tps": [
             2235.51,
             2225.01,
             2212.42,
             2198.78
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
-            2
+            2,
+            3,
+            4
         ],
-        "secured_pips": 21.0,
+        "secured_pips": 47.2,
         "issued_time": "2026-11-07 05:05:16 UTC"
     },
     {
@@ -30937,13 +30944,14 @@
             75540.33,
             75376.01
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
             2,
-            3
+            3,
+            4
         ],
-        "secured_pips": 404.5,
+        "secured_pips": 568.8,
         "issued_time": "2026-11-08 08:05:17 UTC"
     },
     {
@@ -31108,19 +31116,21 @@
         "direction": "SELL",
         "entry": 75780.88,
         "initial_sl": 75998.39,
-        "current_sl": 75635.87,
+        "current_sl": 75490.87,
         "tps": [
             75635.87,
             75490.87,
             75316.86,
             75128.35
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
-            2
+            2,
+            3,
+            4
         ],
-        "secured_pips": 290.0,
+        "secured_pips": 652.5,
         "issued_time": "2026-11-08 18:05:14 UTC"
     },
     {
@@ -31128,19 +31138,21 @@
         "direction": "SELL",
         "entry": 2233.72,
         "initial_sl": 2243.54,
-        "current_sl": 2227.17,
+        "current_sl": 2220.63,
         "tps": [
             2227.17,
             2220.63,
             2212.77,
             2204.26
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
-            2
+            2,
+            3,
+            4
         ],
-        "secured_pips": 13.1,
+        "secured_pips": 29.5,
         "issued_time": "2026-11-08 19:05:15 UTC"
     },
     {
@@ -31148,19 +31160,21 @@
         "direction": "SELL",
         "entry": 75910.27,
         "initial_sl": 76144.34,
-        "current_sl": 75754.22,
+        "current_sl": 75598.18,
         "tps": [
             75754.22,
             75598.18,
             75410.92,
             75208.06
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
-            2
+            2,
+            3,
+            4
         ],
-        "secured_pips": 312.1,
+        "secured_pips": 702.2,
         "issued_time": "2026-11-08 20:05:15 UTC"
     },
     {
@@ -31168,18 +31182,21 @@
         "direction": "SELL",
         "entry": 2223.56,
         "initial_sl": 2233.52,
-        "current_sl": 2223.56,
+        "current_sl": 2210.29,
         "tps": [
             2216.92,
             2210.29,
             2202.32,
             2193.69
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
-            1
+            1,
+            2,
+            3,
+            4
         ],
-        "secured_pips": 6.6,
+        "secured_pips": 29.9,
         "issued_time": "2026-11-08 21:05:16 UTC"
     }
 ]
