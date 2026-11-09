@@ -31424,13 +31424,14 @@
             1.12131,
             1.12232
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
             2,
-            3
+            3,
+            4
         ],
-        "secured_pips": 24.9,
+        "secured_pips": 35.0,
         "issued_time": "2026-11-09 12:05:17 UTC"
     },
     {
@@ -31523,7 +31524,7 @@
         "direction": "BUY",
         "entry": 1.12035,
         "initial_sl": 1.11899,
-        "current_sl": 1.12035,
+        "current_sl": 1.12126,
         "tps": [
             1.12126,
             1.12216,
@@ -31532,9 +31533,10 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ],
-        "secured_pips": 9.1,
+        "secured_pips": 18.1,
         "issued_time": "2026-11-09 18:05:19 UTC"
     },
     {
