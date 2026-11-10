@@ -31570,9 +31570,9 @@
             157.277,
             157.063
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -25.0,
         "issued_time": "2026-11-09 20:05:16 UTC"
     },
     {
