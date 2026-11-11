@@ -31917,7 +31917,7 @@
         "direction": "BUY",
         "entry": 1.42034,
         "initial_sl": 1.41795,
-        "current_sl": 1.41795,
+        "current_sl": 1.42034,
         "tps": [
             1.42193,
             1.42352,
@@ -31925,8 +31925,10 @@
             1.4275
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 15.9,
         "issued_time": "2026-11-10 16:05:17 UTC"
     },
     {
@@ -32139,7 +32141,7 @@
         "direction": "SELL",
         "entry": 1.11583,
         "initial_sl": 1.11681,
-        "current_sl": 1.11517,
+        "current_sl": 1.11452,
         "tps": [
             1.11517,
             1.11452,
@@ -32149,9 +32151,10 @@
         "status": "OPEN",
         "hit_tps": [
             1,
-            2
+            2,
+            3
         ],
-        "secured_pips": 13.1,
+        "secured_pips": 21.0,
         "issued_time": "2026-11-11 06:05:16 UTC"
     },
     {
