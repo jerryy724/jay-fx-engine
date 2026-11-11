@@ -32300,13 +32300,14 @@
             1.11072,
             1.10956
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
             2,
-            3
+            3,
+            4
         ],
-        "secured_pips": 28.4,
+        "secured_pips": 40.0,
         "issued_time": "2026-11-11 12:05:16 UTC"
     },
     {
