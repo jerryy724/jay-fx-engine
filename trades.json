@@ -32044,13 +32044,14 @@
             1.11317,
             1.11172
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
             2,
-            3
+            3,
+            4
         ],
-        "secured_pips": 35.7,
+        "secured_pips": 50.2,
         "issued_time": "2026-11-11 00:05:17 UTC"
     },
     {
