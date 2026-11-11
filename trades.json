@@ -31937,7 +31937,7 @@
         "direction": "BUY",
         "entry": 0.8265,
         "initial_sl": 0.8244,
-        "current_sl": 0.8265,
+        "current_sl": 0.8279,
         "tps": [
             0.8279,
             0.8293,
@@ -31946,9 +31946,10 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ],
-        "secured_pips": 14.0,
+        "secured_pips": 28.0,
         "issued_time": "2026-11-10 17:05:18 UTC"
     },
     {
@@ -31994,7 +31995,7 @@
         "direction": "BUY",
         "entry": 158.801,
         "initial_sl": 158.575,
-        "current_sl": 158.801,
+        "current_sl": 158.952,
         "tps": [
             158.952,
             159.102,
@@ -32003,9 +32004,10 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ],
-        "secured_pips": 15.1,
+        "secured_pips": 30.1,
         "issued_time": "2026-11-10 20:05:24 UTC"
     },
     {
@@ -32069,7 +32071,7 @@
         "direction": "BUY",
         "entry": 158.852,
         "initial_sl": 158.634,
-        "current_sl": 158.852,
+        "current_sl": 158.998,
         "tps": [
             158.998,
             159.143,
@@ -32078,9 +32080,10 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ],
-        "secured_pips": 14.6,
+        "secured_pips": 29.1,
         "issued_time": "2026-11-11 02:05:16 UTC"
     },
     {
@@ -32186,7 +32189,7 @@
         "direction": "BUY",
         "entry": 158.87,
         "initial_sl": 158.703,
-        "current_sl": 158.87,
+        "current_sl": 158.982,
         "tps": [
             158.982,
             159.093,
@@ -32195,9 +32198,10 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ],
-        "secured_pips": 11.2,
+        "secured_pips": 22.3,
         "issued_time": "2026-11-11 08:05:16 UTC"
     },
     {
@@ -32212,7 +32216,7 @@
             0.68514,
             0.68435
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1
         ],
