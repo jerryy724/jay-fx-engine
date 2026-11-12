@@ -32609,7 +32609,7 @@
         "direction": "SELL",
         "entry": 1.32647,
         "initial_sl": 1.32812,
-        "current_sl": 1.32812,
+        "current_sl": 1.32647,
         "tps": [
             1.32537,
             1.32427,
@@ -32617,8 +32617,10 @@
             1.32153
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 11.0,
         "issued_time": "2026-11-12 07:05:17 UTC"
     },
     {
@@ -32643,7 +32645,7 @@
         "direction": "SELL",
         "entry": 0.68267,
         "initial_sl": 0.68409,
-        "current_sl": 0.68409,
+        "current_sl": 0.68267,
         "tps": [
             0.68172,
             0.68077,
@@ -32651,8 +32653,10 @@
             0.6784
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 9.5,
         "issued_time": "2026-11-12 09:05:13 UTC"
     },
     {
@@ -32716,7 +32720,7 @@
         "direction": "SELL",
         "entry": 1.32637,
         "initial_sl": 1.32802,
-        "current_sl": 1.32802,
+        "current_sl": 1.32637,
         "tps": [
             1.32527,
             1.32417,
@@ -32724,8 +32728,10 @@
             1.32141
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 11.0,
         "issued_time": "2026-11-12 13:05:16 UTC"
     },
     {
@@ -32733,7 +32739,7 @@
         "direction": "BUY",
         "entry": 159.704,
         "initial_sl": 159.469,
-        "current_sl": 159.469,
+        "current_sl": 159.704,
         "tps": [
             159.861,
             160.018,
@@ -32741,8 +32747,10 @@
             160.41
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 15.7,
         "issued_time": "2026-11-12 14:05:16 UTC"
     }
 ]
