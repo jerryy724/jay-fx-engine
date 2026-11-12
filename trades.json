@@ -32637,7 +32637,7 @@
             160.205,
             160.401
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1
         ],
@@ -32754,7 +32754,7 @@
             160.206,
             160.41
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1
         ],
