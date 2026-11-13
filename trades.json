@@ -32884,5 +32884,22 @@
         "hit_tps": [],
         "secured_pips": 0.0,
         "issued_time": "2026-11-12 21:05:17 UTC"
+    },
+    {
+        "pair": "EUR/USD",
+        "direction": "SELL",
+        "entry": 1.10491,
+        "initial_sl": 1.10663,
+        "current_sl": 1.10663,
+        "tps": [
+            1.10377,
+            1.10262,
+            1.10125,
+            1.09976
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-11-13 00:05:15 UTC"
     }
 ]
