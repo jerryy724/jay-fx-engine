@@ -32811,7 +32811,7 @@
             0.83758,
             0.83876
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2,
@@ -33114,9 +33114,9 @@
             0.84065,
             0.8418
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -14.8,
         "issued_time": "2026-11-13 11:05:16 UTC"
     },
     {
