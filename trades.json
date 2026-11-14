@@ -33390,7 +33390,7 @@
         "direction": "SELL",
         "entry": 66814.0,
         "initial_sl": 67671.16,
-        "current_sl": 66814.0,
+        "current_sl": 66242.56,
         "tps": [
             66242.56,
             65671.13,
@@ -33399,9 +33399,10 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ],
-        "secured_pips": 571.4,
+        "secured_pips": 1142.9,
         "issued_time": "2026-11-14 04:05:17 UTC"
     },
     {
@@ -33449,7 +33450,7 @@
         "direction": "SELL",
         "entry": 1905.88,
         "initial_sl": 1933.33,
-        "current_sl": 1887.58,
+        "current_sl": 1869.27,
         "tps": [
             1887.58,
             1869.27,
@@ -33459,9 +33460,10 @@
         "status": "OPEN",
         "hit_tps": [
             1,
-            2
+            2,
+            3
         ],
-        "secured_pips": 36.6,
+        "secured_pips": 58.6,
         "issued_time": "2026-11-14 07:05:15 UTC"
     },
     {
@@ -33529,7 +33531,7 @@
         "direction": "SELL",
         "entry": 1906.33,
         "initial_sl": 1933.56,
-        "current_sl": 1888.18,
+        "current_sl": 1870.03,
         "tps": [
             1888.18,
             1870.03,
@@ -33539,9 +33541,10 @@
         "status": "OPEN",
         "hit_tps": [
             1,
-            2
+            2,
+            3
         ],
-        "secured_pips": 36.3,
+        "secured_pips": 58.1,
         "issued_time": "2026-11-14 11:05:15 UTC"
     },
     {
@@ -33549,7 +33552,7 @@
         "direction": "SELL",
         "entry": 67250.0,
         "initial_sl": 67997.12,
-        "current_sl": 66751.92,
+        "current_sl": 66253.84,
         "tps": [
             66751.92,
             66253.84,
@@ -33559,9 +33562,10 @@
         "status": "OPEN",
         "hit_tps": [
             1,
-            2
+            2,
+            3
         ],
-        "secured_pips": 996.2,
+        "secured_pips": 1593.9,
         "issued_time": "2026-11-14 12:05:15 UTC"
     },
     {
