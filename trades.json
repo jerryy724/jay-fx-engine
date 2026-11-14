@@ -33619,7 +33619,7 @@
         "direction": "SELL",
         "entry": 1852.18,
         "initial_sl": 1884.21,
-        "current_sl": 1884.21,
+        "current_sl": 1852.18,
         "tps": [
             1830.82,
             1809.47,
@@ -33627,8 +33627,10 @@
             1756.08
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 21.4,
         "issued_time": "2026-11-14 15:05:14 UTC"
     },
     {
