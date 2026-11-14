@@ -33369,7 +33369,7 @@
         "direction": "SELL",
         "entry": 1910.92,
         "initial_sl": 1941.07,
-        "current_sl": 1941.07,
+        "current_sl": 1910.92,
         "tps": [
             1890.82,
             1870.72,
@@ -33377,8 +33377,10 @@
             1820.47
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 20.1,
         "issued_time": "2026-11-14 03:05:18 UTC"
     }
 ]
