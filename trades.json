@@ -33397,13 +33397,14 @@
             64985.4,
             64242.53
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
             2,
-            3
+            3,
+            4
         ],
-        "secured_pips": 1828.6,
+        "secured_pips": 2571.5,
         "issued_time": "2026-11-14 04:05:17 UTC"
     },
     {
