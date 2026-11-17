@@ -34781,7 +34781,7 @@
         "direction": "SELL",
         "entry": 0.67355,
         "initial_sl": 0.67474,
-        "current_sl": 0.67474,
+        "current_sl": 0.67355,
         "tps": [
             0.67276,
             0.67196,
@@ -34789,8 +34789,10 @@
             0.66998
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 7.9,
         "issued_time": "2026-11-17 09:05:15 UTC"
     },
     {
@@ -34798,7 +34800,7 @@
         "direction": "BUY",
         "entry": 1.42946,
         "initial_sl": 1.42807,
-        "current_sl": 1.42807,
+        "current_sl": 1.42946,
         "tps": [
             1.43039,
             1.43131,
@@ -34806,8 +34808,10 @@
             1.43362
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 9.3,
         "issued_time": "2026-11-17 10:05:17 UTC"
     },
     {
@@ -34834,7 +34838,7 @@
         "direction": "SELL",
         "entry": 1.09929,
         "initial_sl": 1.10086,
-        "current_sl": 1.10086,
+        "current_sl": 1.09929,
         "tps": [
             1.09824,
             1.09719,
@@ -34842,8 +34846,10 @@
             1.09457
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 10.5,
         "issued_time": "2026-11-17 12:05:17 UTC"
     },
     {
@@ -34851,7 +34857,7 @@
         "direction": "SELL",
         "entry": 1.31977,
         "initial_sl": 1.32154,
-        "current_sl": 1.32154,
+        "current_sl": 1.31977,
         "tps": [
             1.31859,
             1.31741,
@@ -34859,8 +34865,10 @@
             1.31447
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 11.8,
         "issued_time": "2026-11-17 13:05:18 UTC"
     }
 ]
