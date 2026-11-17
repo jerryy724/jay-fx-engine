@@ -34283,7 +34283,7 @@
         "direction": "BUY",
         "entry": 1.42776,
         "initial_sl": 1.42609,
-        "current_sl": 1.42887,
+        "current_sl": 1.42998,
         "tps": [
             1.42887,
             1.42998,
@@ -34293,9 +34293,10 @@
         "status": "OPEN",
         "hit_tps": [
             1,
-            2
+            2,
+            3
         ],
-        "secured_pips": 22.2,
+        "secured_pips": 35.5,
         "issued_time": "2026-11-16 04:05:37 UTC"
     },
     {
@@ -34435,7 +34436,7 @@
         "direction": "SELL",
         "entry": 1.1009,
         "initial_sl": 1.10237,
-        "current_sl": 1.1009,
+        "current_sl": 1.09992,
         "tps": [
             1.09992,
             1.09894,
@@ -34444,9 +34445,10 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ],
-        "secured_pips": 9.8,
+        "secured_pips": 19.6,
         "issued_time": "2026-11-16 12:05:15 UTC"
     },
     {
@@ -34454,7 +34456,7 @@
         "direction": "SELL",
         "entry": 1.31975,
         "initial_sl": 1.32163,
-        "current_sl": 1.31975,
+        "current_sl": 1.3185,
         "tps": [
             1.3185,
             1.31725,
@@ -34463,9 +34465,10 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ],
-        "secured_pips": 12.5,
+        "secured_pips": 25.0,
         "issued_time": "2026-11-16 13:05:19 UTC"
     },
     {
@@ -34545,7 +34548,7 @@
         "direction": "SELL",
         "entry": 1.10009,
         "initial_sl": 1.10178,
-        "current_sl": 1.10178,
+        "current_sl": 1.10009,
         "tps": [
             1.09897,
             1.09784,
@@ -34553,8 +34556,10 @@
             1.09503
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 11.2,
         "issued_time": "2026-11-16 18:05:15 UTC"
     },
     {
