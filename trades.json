@@ -34330,7 +34330,7 @@
             1.09907,
             1.09785
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2,
@@ -34443,7 +34443,7 @@
             1.09777,
             1.0965
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2
@@ -34463,7 +34463,7 @@
             1.31575,
             1.31412
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2
@@ -34555,7 +34555,7 @@
             1.09649,
             1.09503
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1
         ],
@@ -34625,7 +34625,7 @@
             1.09677,
             1.09542
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1
         ],
