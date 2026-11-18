@@ -34975,7 +34975,7 @@
         "direction": "SELL",
         "entry": 1.32191,
         "initial_sl": 1.32404,
-        "current_sl": 1.32404,
+        "current_sl": 1.32191,
         "tps": [
             1.32049,
             1.31907,
@@ -34983,8 +34983,10 @@
             1.31551
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 14.2,
         "issued_time": "2026-11-17 19:05:23 UTC"
     },
     {
@@ -35022,5 +35024,22 @@
         "hit_tps": [],
         "secured_pips": 0.0,
         "issued_time": "2026-11-17 21:05:18 UTC"
+    },
+    {
+        "pair": "EUR/USD",
+        "direction": "SELL",
+        "entry": 1.09858,
+        "initial_sl": 1.10024,
+        "current_sl": 1.10024,
+        "tps": [
+            1.09747,
+            1.09637,
+            1.09504,
+            1.0936
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-11-18 00:05:25 UTC"
     }
 ]
