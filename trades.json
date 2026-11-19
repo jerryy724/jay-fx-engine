@@ -35718,13 +35718,14 @@
             1.31153,
             1.30993
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
             2,
-            3
+            3,
+            4
         ],
-        "secured_pips": 39.5,
+        "secured_pips": 55.5,
         "issued_time": "2026-11-19 13:05:15 UTC"
     },
     {
