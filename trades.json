@@ -36067,13 +36067,14 @@
             0.66305,
             0.66165
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
             2,
-            3
+            3,
+            4
         ],
-        "secured_pips": 34.4,
+        "secured_pips": 48.4,
         "issued_time": "2026-11-20 09:05:17 UTC"
     },
     {
