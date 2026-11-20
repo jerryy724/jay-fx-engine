@@ -35761,13 +35761,14 @@
             0.66695,
             0.66553
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
             2,
-            3
+            3,
+            4
         ],
-        "secured_pips": 34.7,
+        "secured_pips": 48.9,
         "issued_time": "2026-11-19 15:05:18 UTC"
     },
     {
