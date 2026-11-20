@@ -33994,13 +33994,14 @@
             62258.32,
             60950.32
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
             2,
-            3
+            3,
+            4
         ],
-        "secured_pips": 3219.7,
+        "secured_pips": 4527.7,
         "issued_time": "2026-11-15 10:05:16 UTC"
     },
     {
