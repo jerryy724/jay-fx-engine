@@ -36343,7 +36343,7 @@
         "direction": "SELL",
         "entry": 59055.68,
         "initial_sl": 60312.32,
-        "current_sl": 58217.92,
+        "current_sl": 57380.17,
         "tps": [
             58217.92,
             57380.17,
@@ -36353,9 +36353,10 @@
         "status": "OPEN",
         "hit_tps": [
             1,
-            2
+            2,
+            3
         ],
-        "secured_pips": 1675.5,
+        "secured_pips": 2680.8,
         "issued_time": "2026-11-21 02:05:19 UTC"
     },
     {
@@ -36376,5 +36377,22 @@
         ],
         "secured_pips": 28.4,
         "issued_time": "2026-11-21 03:05:14 UTC"
+    },
+    {
+        "pair": "BTC/USD",
+        "direction": "SELL",
+        "entry": 56137.0,
+        "initial_sl": 57574.03,
+        "current_sl": 57574.03,
+        "tps": [
+            55178.98,
+            54220.96,
+            53071.34,
+            51825.92
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-11-21 04:05:17 UTC"
     }
 ]
