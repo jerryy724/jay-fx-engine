@@ -36304,7 +36304,7 @@
         "direction": "SELL",
         "entry": 58909.72,
         "initial_sl": 60211.59,
-        "current_sl": 60211.59,
+        "current_sl": 58041.81,
         "tps": [
             58041.81,
             57173.89,
@@ -36312,8 +36312,11 @@
             55004.11
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1,
+            2
+        ],
+        "secured_pips": 1735.8,
         "issued_time": "2026-11-21 00:05:16 UTC"
     },
     {
@@ -36321,7 +36324,7 @@
         "direction": "SELL",
         "entry": 1620.82,
         "initial_sl": 1666.67,
-        "current_sl": 1666.67,
+        "current_sl": 1620.82,
         "tps": [
             1590.25,
             1559.69,
@@ -36329,8 +36332,10 @@
             1483.27
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 30.6,
         "issued_time": "2026-11-21 01:05:19 UTC"
     },
     {
@@ -36338,7 +36343,7 @@
         "direction": "SELL",
         "entry": 59055.68,
         "initial_sl": 60312.32,
-        "current_sl": 59055.68,
+        "current_sl": 58217.92,
         "tps": [
             58217.92,
             57380.17,
@@ -36347,9 +36352,10 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ],
-        "secured_pips": 837.8,
+        "secured_pips": 1675.5,
         "issued_time": "2026-11-21 02:05:19 UTC"
     },
     {
@@ -36357,7 +36363,7 @@
         "direction": "SELL",
         "entry": 1613.49,
         "initial_sl": 1656.13,
-        "current_sl": 1656.13,
+        "current_sl": 1613.49,
         "tps": [
             1585.07,
             1556.64,
@@ -36365,8 +36371,10 @@
             1485.58
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 28.4,
         "issued_time": "2026-11-21 03:05:14 UTC"
     }
 ]
