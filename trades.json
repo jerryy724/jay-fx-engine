@@ -36478,9 +36478,9 @@
             1542.0,
             1505.02
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -44.3,
         "issued_time": "2026-11-21 09:05:19 UTC"
     },
     {
@@ -36495,9 +36495,9 @@
             55111.94,
             53944.47
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -1606.9,
         "issued_time": "2026-11-21 10:05:15 UTC"
     },
     {
@@ -36529,9 +36529,9 @@
             55388.37,
             54259.45
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -1425.4,
         "issued_time": "2026-11-21 12:05:13 UTC"
     },
     {
