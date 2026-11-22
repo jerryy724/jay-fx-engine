@@ -36668,7 +36668,7 @@
         "direction": "SELL",
         "entry": 60340.04,
         "initial_sl": 61356.25,
-        "current_sl": 60340.04,
+        "current_sl": 59662.57,
         "tps": [
             59662.57,
             58985.1,
@@ -36677,9 +36677,10 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ],
-        "secured_pips": 677.5,
+        "secured_pips": 1354.9,
         "issued_time": "2026-11-21 20:05:13 UTC"
     },
     {
@@ -36726,7 +36727,7 @@
         "direction": "SELL",
         "entry": 1684.14,
         "initial_sl": 1706.64,
-        "current_sl": 1684.14,
+        "current_sl": 1669.14,
         "tps": [
             1669.14,
             1654.14,
@@ -36735,9 +36736,10 @@
         ],
         "status": "OPEN",
         "hit_tps": [
-            1
+            1,
+            2
         ],
-        "secured_pips": 15.0,
+        "secured_pips": 30.0,
         "issued_time": "2026-11-22 01:05:16 UTC"
     },
     {
@@ -36765,7 +36767,7 @@
         "direction": "SELL",
         "entry": 1665.88,
         "initial_sl": 1683.43,
-        "current_sl": 1683.43,
+        "current_sl": 1665.88,
         "tps": [
             1654.18,
             1642.49,
@@ -36773,8 +36775,10 @@
             1613.24
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 11.7,
         "issued_time": "2026-11-22 03:05:25 UTC"
     },
     {
@@ -36801,7 +36805,7 @@
         "direction": "SELL",
         "entry": 1661.44,
         "initial_sl": 1676.25,
-        "current_sl": 1676.25,
+        "current_sl": 1661.44,
         "tps": [
             1651.57,
             1641.7,
@@ -36809,8 +36813,10 @@
             1617.02
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 9.9,
         "issued_time": "2026-11-22 05:05:16 UTC"
     }
 ]
