@@ -36546,9 +36546,9 @@
             1575.03,
             1538.05
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -47.0,
         "issued_time": "2026-11-21 13:05:18 UTC"
     },
     {
@@ -36563,7 +36563,7 @@
             57185.76,
             55800.69
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1
         ],
@@ -36582,7 +36582,7 @@
             1589.58,
             1547.03
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1
         ],
@@ -36882,9 +36882,9 @@
             1649.5,
             1633.93
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -25.2,
         "issued_time": "2026-11-22 09:05:19 UTC"
     }
 ]
