@@ -36812,11 +36812,28 @@
             1629.85,
             1617.02
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1
         ],
         "secured_pips": 9.9,
         "issued_time": "2026-11-22 05:05:16 UTC"
+    },
+    {
+        "pair": "BTC/USD",
+        "direction": "SELL",
+        "entry": 59130.01,
+        "initial_sl": 59659.59,
+        "current_sl": 59659.59,
+        "tps": [
+            58776.96,
+            58423.9,
+            58000.23,
+            57541.26
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-11-22 06:05:16 UTC"
     }
 ]
