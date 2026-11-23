@@ -36142,7 +36142,7 @@
             1.30818,
             1.30641
         ],
-        "status": "OPEN",
+        "status": "CLOSED_PROFIT",
         "hit_tps": [
             1,
             2,
@@ -37090,5 +37090,22 @@
         "hit_tps": [],
         "secured_pips": 0.0,
         "issued_time": "2026-11-22 21:05:18 UTC"
+    },
+    {
+        "pair": "EUR/USD",
+        "direction": "SELL",
+        "entry": 1.09756,
+        "initial_sl": 1.09869,
+        "current_sl": 1.09869,
+        "tps": [
+            1.09681,
+            1.09605,
+            1.09515,
+            1.09417
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-11-23 00:05:17 UTC"
     }
 ]
