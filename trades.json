@@ -36241,9 +36241,9 @@
             1.09264,
             1.09086
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -23.3,
         "issued_time": "2026-11-20 18:05:35 UTC"
     },
     {
@@ -37124,9 +37124,9 @@
             1.30833,
             1.30737
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -16.2,
         "issued_time": "2026-11-23 01:05:25 UTC"
     },
     {
