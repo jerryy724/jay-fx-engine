@@ -37349,13 +37349,14 @@
             1.30366,
             1.30185
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
             2,
-            3
+            3,
+            4
         ],
-        "secured_pips": 44.5,
+        "secured_pips": 62.6,
         "issued_time": "2026-11-23 13:05:25 UTC"
     },
     {
