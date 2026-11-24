@@ -1,0 +1,32 @@
+name: FX Backtest
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: fx-backtest-lock
+  cancel-in-progress: false
+jobs:
+  fx-backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+      - run: pip install -r requirements.txt
+      - run: python fx_backtest.py
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
+          ADMIN_CHAT_ID: ${{ secrets.ADMIN_CHAT_ID }}
+          TWELVE_DATA_API_KEY: ${{ secrets.TWELVE_DATA_API_KEY }}
+          TWELVE_DATA_API_KEY_2: ${{ secrets.TWELVE_DATA_API_KEY_2 }}
+          TWELVE_DATA_API_KEY_3: ${{ secrets.TWELVE_DATA_API_KEY_3 }}
+          TWELVE_DATA_API_KEY_4: ${{ secrets.TWELVE_DATA_API_KEY_4 }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fx-backtest-report
+          path: fx_backtest_report.txt
