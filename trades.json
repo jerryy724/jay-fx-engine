@@ -37460,9 +37460,9 @@
             1.29643,
             1.29386
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -31.7,
         "issued_time": "2026-11-23 19:05:18 UTC"
     },
     {
