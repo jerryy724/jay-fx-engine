@@ -38009,7 +38009,7 @@
         "direction": "SELL",
         "entry": 0.83635,
         "initial_sl": 0.83757,
-        "current_sl": 0.83554,
+        "current_sl": 0.83473,
         "tps": [
             0.83554,
             0.83473,
@@ -38019,9 +38019,10 @@
         "status": "OPEN",
         "hit_tps": [
             1,
-            2
+            2,
+            3
         ],
-        "secured_pips": 16.2,
+        "secured_pips": 26.0,
         "issued_time": "2026-11-25 05:05:27 UTC"
     },
     {
