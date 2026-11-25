@@ -38060,7 +38060,7 @@
         "direction": "BUY",
         "entry": 159.25,
         "initial_sl": 159.031,
-        "current_sl": 159.031,
+        "current_sl": 159.25,
         "tps": [
             159.396,
             159.543,
@@ -38068,8 +38068,10 @@
             159.908
         ],
         "status": "OPEN",
-        "hit_tps": [],
-        "secured_pips": 0.0,
+        "hit_tps": [
+            1
+        ],
+        "secured_pips": 14.6,
         "issued_time": "2026-11-25 08:05:18 UTC"
     }
 ]
