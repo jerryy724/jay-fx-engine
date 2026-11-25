@@ -37937,13 +37937,14 @@
             1.30774,
             1.30631
         ],
-        "status": "OPEN",
+        "status": "CLOSED_TP_MAX",
         "hit_tps": [
             1,
             2,
-            3
+            3,
+            4
         ],
-        "secured_pips": 35.1,
+        "secured_pips": 49.4,
         "issued_time": "2026-11-25 01:05:15 UTC"
     },
     {
