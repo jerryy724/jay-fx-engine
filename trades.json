@@ -38400,5 +38400,22 @@
         "hit_tps": [],
         "secured_pips": 0.0,
         "issued_time": "2026-11-26 04:05:18 UTC"
+    },
+    {
+        "pair": "USD/CHF",
+        "direction": "SELL",
+        "entry": 0.83229,
+        "initial_sl": 0.83358,
+        "current_sl": 0.83358,
+        "tps": [
+            0.83143,
+            0.83057,
+            0.82954,
+            0.82842
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-11-26 05:05:18 UTC"
     }
 ]
