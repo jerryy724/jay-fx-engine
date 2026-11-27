@@ -38277,9 +38277,9 @@
             1.31879,
             1.32135
         ],
-        "status": "OPEN",
+        "status": "CLOSED_SL",
         "hit_tps": [],
-        "secured_pips": 0.0,
+        "secured_pips": -30.4,
         "issued_time": "2026-11-25 19:05:20 UTC"
     },
     {
