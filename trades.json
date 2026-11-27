@@ -39007,5 +39007,22 @@
         "hit_tps": [],
         "secured_pips": 0.0,
         "issued_time": "2026-11-27 15:05:15 UTC"
+    },
+    {
+        "pair": "USD/CAD",
+        "direction": "SELL",
+        "entry": 1.42535,
+        "initial_sl": 1.42737,
+        "current_sl": 1.42737,
+        "tps": [
+            1.424,
+            1.42265,
+            1.42104,
+            1.41928
+        ],
+        "status": "OPEN",
+        "hit_tps": [],
+        "secured_pips": 0.0,
+        "issued_time": "2026-11-27 16:05:20 UTC"
     }
 ]
